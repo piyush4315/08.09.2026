@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deputy Manager (Finance) at the Store — Scrapping Policy</title>
+<style>
+:root{
+  --ink:#1a2330; --muted:#5a6b7f; --line:#dde4ec; --bg:#f6f8fb; --card:#ffffff;
+  --accent:#1565c0; --accent2:#6a1b9a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+.wrap{max-width:1180px; margin:0 auto; padding:32px 24px 96px}
+header.hero{
+  background:linear-gradient(135deg,#0d47a1 0%,#1565c0 45%,#6a1b9a 100%);
+  color:#fff; padding:44px 24px 38px; border-radius:0 0 18px 18px;
+  box-shadow:0 8px 30px rgba(21,101,192,.25);
+}
+header.hero .inner{max-width:1180px; margin:0 auto}
+header.hero h1{margin:0 0 8px; font-size:30px; letter-spacing:.2px}
+header.hero p{margin:0; opacity:.93; font-size:16px}
+header.hero .chips{margin-top:18px; display:flex; flex-wrap:wrap; gap:8px}
+header.hero .chip{
+  background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28);
+  padding:5px 12px; border-radius:999px; font-size:13px;
+}
+header.hero .chip a{color:#fff; text-decoration:none; border-bottom:1px solid rgba(255,255,255,.6)}
+header.hero .chip a:hover{border-bottom-color:#fff}
+nav.toc{
+  position:sticky; top:0; z-index:20; background:rgba(255,255,255,.96);
+  backdrop-filter:blur(6px); border-bottom:1px solid var(--line);
+}
+nav.toc .inner{max-width:1180px; margin:0 auto; padding:10px 24px; display:flex; gap:6px; flex-wrap:wrap}
+nav.toc a{
+  font-size:13px; color:var(--muted); text-decoration:none; padding:4px 10px;
+  border-radius:999px; border:1px solid transparent; white-space:nowrap;
+}
+nav.toc a:hover{background:#eef3fa; color:var(--accent); border-color:#cfe0f5}
+h1{font-size:30px; margin:8px 0 6px}
+h2{
+  font-size:22px; margin:44px 0 14px; padding:14px 18px; background:var(--card);
+  border-left:5px solid var(--accent); border-radius:8px; box-shadow:0 1px 3px rgba(16,32,64,.07);
+}
+h3{font-size:18px; margin:26px 0 8px; color:var(--accent)}
+p{margin:10px 0}
+blockquote{
+  margin:16px 0; padding:14px 18px; background:#eef3fa; border-left:5px solid var(--accent2);
+  border-radius:8px; color:#2b3a4d;
+}
+.diagram{
+  background:var(--card); border:1px solid var(--line); border-radius:12px;
+  padding:18px 12px; margin:18px 0 22px; overflow-x:auto;
+  box-shadow:0 2px 10px rgba(16,32,64,.06);
+}
+pre.mermaid{margin:0; text-align:center; background:transparent}
+pre.mermaid svg{max-width:100%; height:auto}
+table{border-collapse:collapse; width:100%; margin:16px 0; background:var(--card);
+  border-radius:10px; overflow:hidden; box-shadow:0 1px 3px rgba(16,32,64,.07); font-size:14.5px}
+th{background:#eef3fa; text-align:left; padding:11px 13px; font-size:13px;
+  text-transform:uppercase; letter-spacing:.04em; color:#3b4d63; border-bottom:2px solid var(--line)}
+td{padding:10px 13px; border-bottom:1px solid var(--line); vertical-align:top}
+tr:last-child td{border-bottom:none}
+ul,ol{margin:10px 0 10px 6px; padding-left:22px}
+li{margin:5px 0}
+code{background:#eef3fa; padding:1px 6px; border-radius:5px; font-size:14px; color:#0d47a1}
+pre{
+  background:#0f2233; color:#dbe7f2; padding:14px 16px; border-radius:10px;
+  overflow-x:auto; font-size:13px; line-height:1.5;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+pre code{background:transparent; color:inherit; padding:0; font-size:inherit}
+main.wrap > h1{font-size:32px; margin:6px 0 4px}
+main.wrap > h1 + h3{color:var(--muted); font-weight:500; margin-top:0}
+h2 + h3{margin-top:16px}
+h3{color:#0d47a1}
+blockquote strong{color:#0d47a1}
+td strong{color:#123}
+hr{border:none; border-top:1px solid var(--line); margin:34px 0}
+footer{max-width:1180px; margin:0 auto; padding:0 24px 40px; color:var(--muted); font-size:13px}
+@media print{
+  body{background:#fff}
+  nav.toc{display:none}
+  .diagram{break-inside:avoid; box-shadow:none}
+  h2{box-shadow:none}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="inner">
+    <h1>Deputy Manager (Finance) at the Store — Scrapping Policy</h1>
+    <p>Your responsibilities, your nine verifications, and the exact desk procedure for each — with a worked example, formats D-1 to D-6, and how to protect yourself on file.</p>
+    <div class="chips">
+      <span class="chip">You prepare · Manager (F&amp;A) certifies · Competent Authority approves</span>
+      <span class="chip">9 verifications: ask → check → how → write → if it fails</span>
+      <span class="chip">Worked example: T-1 from book value to journal entry</span>
+      <span class="chip">6 mini formats + escalation matrix</span>
+      <span class="chip"><a href='subordinate-training.html'>Training booklet →</a> · <a href='finance-officer-guide.html'>Finance head's manual →</a></span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc"><div class="inner">
+<a href="#msetcl-asset-retirement-scrap-declaration-disposal-policy-your-responsibilities-your-verification-points-and-the-exact-desk-procedure-for-each">MSETCL Asset Retirement, Scrap Declaration &amp; Disposal Policy — your responsibilities, your verification points, and the exact desk procedure for each</a>
+<a href="#part-0-your-seat-in-three-lines">Part 0 — Your seat in three lines</a>
+<a href="#part-1-your-twelve-responsibilities">Part 1 — Your twelve responsibilities</a>
+<a href="#part-2-your-nine-verifications-step-by-step">Part 2 — Your nine verifications, step by step</a>
+<a href="#part-3-a-full-worked-example-t-1-end-to-end">Part 3 — A full worked example (T-1, end to end)</a>
+<a href="#part-4-documents-you-must-demand-from-others">Part 4 — Documents you must demand from others</a>
+<a href="#part-5-your-routine">Part 5 — Your routine</a>
+<a href="#part-6-protecting-yourself">Part 6 — Protecting yourself</a>
+<a href="#part-7-red-flags-you-will-be-the-first-to-see">Part 7 — Red flags you will be the first to see</a>
+<a href="#part-8-escalation-matrix">Part 8 — Escalation matrix</a>
+<a href="#part-9-mini-formats-you-can-start-using-today">Part 9 — Mini formats you can start using today</a>
+<a href="#part-10-the-two-minute-briefing-for-your-assistant-or-the-store-clerk">Part 10 — The two-minute briefing for your assistant or the store clerk</a>
+<a href="#part-11-ten-questions-a-deputy-manager-actually-asks">Part 11 — Ten questions a Deputy Manager actually asks</a>
+<a href="#part-12-one-line-summary-you-can-pin-above-your-desk">Part 12 — One-line summary you can pin above your desk</a>
+</div></nav>
+
+<main class="wrap">
+<h1 id="deputy-manager-finance-at-the-store">Deputy Manager (Finance) at the Store</h1>
+<h2 id="msetcl-asset-retirement-scrap-declaration-disposal-policy-your-responsibilities-your-verification-points-and-the-exact-desk-procedure-for-each">MSETCL Asset Retirement, Scrap Declaration &amp; Disposal Policy — your responsibilities, your verification points, and the exact desk procedure for each</h2>
+<blockquote><strong>Read this first.</strong> The policy does <strong>not</strong> create a post called "Deputy Manager (Finance)". It names a <strong>Dy. Manager (Store)</strong> who "will be assisting all the activities executed by EE (Store)" <strong>[P 3.4(b)]</strong>, a <strong>Manager (F&amp;A)</strong> in CLARC who is "vital in arriving at the Book Value" <strong>[P 3.4(b)]</strong>, an <strong>AGM (F&amp;A)</strong> in the ZSC <strong>[P 3.1(c)]</strong> and a <strong>CGM/AGM (F&amp;A)</strong> who confirms RTGS receipts <strong>[P 5.0(vii)]</strong>.  <strong>So I am assuming this:</strong> you are the <strong>finance officer sitting at the Major Store who does the ground work</strong> for all of the above. You <em>prepare, compute, verify and put up</em>; your <strong>Manager (F&amp;A) / AGM (F&amp;A) certifies</strong>; the <strong>Competent Authority approves</strong>. This document is written for exactly that seat — the person who actually opens the register, pulls the printout, and does the arithmetic.  Every duty is tagged <strong>[P x.x]</strong> = clause of <code>Policy.pdf</code>; <strong>[Practice]</strong> = not in the policy, but standard finance discipline you must still follow.  <strong>Related:</strong> [finance-officer-guide.html](finance-officer-guide.html) (the finance head's full manual), [story-guide.html](story-guide.html) (plain-language story), [flowchart.html](flowchart.html) (diagrams).</blockquote>
+<hr>
+<h2 id="part-0-your-seat-in-three-lines">Part 0 — Your seat in three lines</h2>
+<blockquote><strong>You are the one who makes the numbers defensible.</strong> The Engineer decides <em>what</em> is scrap; the Committee decides <em>that</em> it is scrap; the Competent Authority decides <em>at what price</em> it may go. <strong>You decide whether the numbers on that file can survive an audit two years later.</strong></blockquote>
+<h3 id="0-1-the-signature-ladder-what-you-may-and-may-not-sign">0.1 The signature ladder — what you may and may not sign</h3>
+<p>This is the single most important table for you. Signing one line too high is how a Deputy Manager gets into trouble.</p>
+<table><thead><tr><th>Action</th><th>You (Dy. Manager, Finance)</th><th>Manager (F&amp;A)</th><th>AGM (F&amp;A) — ZSC</th><th>Competent Authority</th></tr></thead><tbody><tr><td>Pull register extract, compute WDV</td><td><strong>Prepare &amp; initial</strong></td><td>Certifies</td><td>—</td><td>—</td></tr><tr><td>Rough value of an item not in the register</td><td><strong>Prepare the working</strong></td><td>—</td><td>Zonal level committee approves <strong>[P 3.4(c)]</strong></td><td>—</td></tr><tr><td>Consolidated Scrapping List</td><td><strong>Prepare book-value column</strong></td><td>Verify</td><td>ZSC grants in-principle approval <strong>[P 3.4(d)]</strong></td><td>—</td></tr><tr><td>Reserve Price working sheet</td><td><strong>Recompute &amp; countersign</strong></td><td>Countersign</td><td>ZSC scrutinises <strong>[P 3.4(g)]</strong></td><td>Approves MRP</td></tr><tr><td>%STA computation</td><td><strong>Compute</strong></td><td>Verify</td><td>ZSC recommends <strong>[P 3.4(g)]</strong></td><td>Approves %STA</td></tr><tr><td><strong>Enter MRP &amp; %STA in the MSTC portal</strong></td><td><strong>You must NOT do this</strong> — it is EE (Store)'s duty, and the figures are confidential <strong>[P 4.7]</strong></td><td>—</td><td>—</td><td>—</td></tr><tr><td>Verify portal entry = approval</td><td><strong>Verify &amp; note on file</strong></td><td>—</td><td>—</td><td>—</td></tr><tr><td>Verify 100% payment received</td><td><strong>Verify and put up</strong></td><td>—</td><td>CGM/AGM (F&amp;A) confirms in writing <strong>[P 5.0(vii)]</strong></td><td>—</td></tr><tr><td>Generate Delivery Challan / GST Invoice / Gate Pass</td><td><strong>Prepare data; release only after F-4 verification</strong></td><td>—</td><td>—</td><td>—</td></tr><tr><td>De-capitalisation working and JV</td><td><strong>Prepare</strong></td><td>Verify</td><td>—</td><td>Sanction where write-off powers apply</td></tr><tr><td>Any change in STA%</td><td>Flag it</td><td>—</td><td><strong>ZSC must approve</strong> <strong>[P 3.4(g)]</strong></td><td>Approves revised</td></tr><tr><td>Withdrawal of an item after tenders</td><td>Flag it</td><td>Flag it</td><td>Flag it</td><td><strong>Only CA may permit</strong> <strong>[P 4.3]</strong></td></tr></tbody></table>
+<p><strong>Rule of thumb:</strong> <em>You sign "Prepared by". You may sign "Verified by" only where the policy or your office order gives you that authority — otherwise you write "Put up to Manager (F&amp;A) for certification". You never sign "Approved".</em></p>
+<div class="diagram"><pre class="mermaid">
+flowchart TD
+    START(["Item proposed<br/>for scrap"]) --> S1["<b>YOU — Dy. Manager (Finance)</b><br/>Prepare: register extract, WDV,<br/>rough value, RP recomputation,<br/>STA floor, payment tie-out, de-cap JV"]
+    S1 --> Q1{"Numbers tie out<br/>to source?"}
+    Q1 -->|"No"| BACK["Return to EE (Store) / Asset Owner<br/>with a written observation"]
+    BACK --> START
+    Q1 -->|"Yes"| S2["<b>Manager (F&amp;A)</b><br/>CERTIFIES book value<br/>(vital role — P 3.4(b))"]
+    S2 --> S3["<b>ZSC (AGM F&amp;A member)</b><br/>Scrutinises, recommends MRP + %STA"]
+    S3 --> S4["<b>Competent Authority (GO 1 F&amp;A)</b><br/>APPROVES"]
+    S4 --> S5["<b>EE (Store)</b> enters MRP &amp; STA<br/>in MSTC portal — confidential"]
+    S5 --> S6["<b>YOU</b> verify portal entry<br/>= approval (screenshot)"]
+    S6 --> S7["Auction → <b>YOU</b> verify 100% payment<br/>→ <b>CGM/AGM (F&amp;A)</b> confirms in 2 days"]
+    S7 --> S8["<b>YOU</b> prepare de-cap working<br/>→ Manager (F&amp;A) verifies → JV posted"]
+
+    style S1 fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style S2 fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style S3 fill:#fff8e1,stroke:#f9a825,stroke-width:2px
+    style S4 fill:#ffebee,stroke:#c62828,stroke-width:2px
+    style S6 fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style S7 fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style S8 fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style Q1 fill:#fff8e1,stroke:#f9a825,stroke-width:2px
+</pre></div>
+<hr>
+<h2 id="part-1-your-twelve-responsibilities">Part 1 — Your twelve responsibilities</h2>
+<table><thead><tr><th>#</th><th>Responsibility</th><th>Source</th><th>Frequency</th><th>Output you hand over</th></tr></thead><tbody><tr><td>1</td><td><strong>Extract and prepare the book value</strong> of every item proposed for scrap — asset code, gross block, accumulated depreciation, WDV</td><td><strong>[P 3.4(b)]</strong></td><td>Every CLARC cycle</td><td>Book value statement → Manager (F&amp;A)</td></tr><tr><td>2</td><td><strong>Flag items not in the Asset Register</strong> and prepare the rough-value working (purchase price estimate − depreciation)</td><td><strong>[P 3.4(c)]</strong></td><td>Every cycle</td><td>Rough-value note → Zonal level committee</td></tr><tr><td>3</td><td><strong>Ensure unregistered items are lotted separately</strong> from registered ones</td><td><strong>[P 9.0]</strong></td><td>At lotting</td><td>Lot composition note</td></tr><tr><td>4</td><td><strong>Recompute the Reserve Price working</strong> — rate source, date, quantity, arithmetic</td><td><strong>[P 3.4(e)]</strong></td><td>Within the 7-day window</td><td>Countersigned RP sheet</td></tr><tr><td>5</td><td><strong>Compute the STA floor</strong> for every lot and check the %STA is within the guided band</td><td><strong>[P 3.4(g), 4.8]</strong></td><td>With each proposal</td><td>STA computation sheet</td></tr><tr><td>6</td><td><strong>Verify the MSTC portal entry</strong> of MRP and %STA matches the Competent Authority's approval</td><td><strong>[P 4.7]</strong></td><td>After every entry</td><td>Dated screenshot, signed</td></tr><tr><td>7</td><td><strong>Maintain the finance columns of the scrap register</strong> — book value, MRP, H-1, payment, de-cap status</td><td><strong>[Practice]</strong>, supports <strong>[P 9.0]</strong></td><td>Continuously</td><td>Scrap register (D-2)</td></tr><tr><td>8</td><td><strong>Verify 100% payment</strong> — three-way tie-out of MSTC advice, bank credit and Sale Order value</td><td><strong>[P 5.0(vii)]</strong></td><td>On every sale</td><td>Payment Verification Note (D-3)</td></tr><tr><td>9</td><td><strong>Prepare the Delivery Challan, GST Invoice and Gate Pass data</strong> — release only after the payment check</td><td><strong>[P 5.0(vii)]</strong></td><td>On every sale</td><td>Invoice set</td></tr><tr><td>10</td><td><strong>Maintain the Security Deposit ledger</strong> and chase MSTC for refunds</td><td><strong>[P 5.0(iv)]</strong></td><td>Continuously</td><td>SD ledger (D-4)</td></tr><tr><td>11</td><td><strong>Prepare the de-capitalisation working</strong> and the journal voucher</td><td><strong>[P 9.0]</strong></td><td>After each lifting</td><td>De-cap working (D-5) + JV</td></tr><tr><td>12</td><td><strong>Keep the file audit-ready</strong> and prepare the monthly MIS</td><td><strong>[Practice]</strong></td><td>Monthly</td><td>File + MIS (D-6)</td></tr></tbody></table>
+<p><strong>And one coordination duty the policy states explicitly:</strong> the <strong>Dy. Manager (Store)</strong> assists EE (Store) in all these activities <strong>[P 3.4(b)]</strong>. He is your daily counterpart — every number you verify comes through him. Build that working relationship; it is the difference between a file that moves and a file that stalls.</p>
+<hr>
+<h2 id="part-2-your-nine-verifications-step-by-step">Part 2 — Your nine verifications, step by step</h2>
+<p>For each: <strong>what you ask for → what you check → how you do it at your desk → what you write on the file → what you do if it fails.</strong></p>
+<h3 id="verification-1-book-value-the-foundation-everything-else-depends-on-it">✅ Verification 1 — Book value (the foundation; everything else depends on it)</h3>
+<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><strong>Ask for</strong></td><td>The retirement proposal (Proforma-A/-B) + the joint inspection report + the item list from EE (Store)</td></tr><tr><td><strong>Check</strong></td><td>Asset code exists; description matches; WDV = Gross block − Accumulated depreciation</td></tr><tr><td><strong>How</strong></td><td>1. Open the asset register / asset accounting system and pull the <strong>individual asset ledger</strong> (never the summary). 2. Match on <strong>asset code</strong>, not description. 3. Recompute WDV in Excel. 4. Check the capitalisation date against the asset's useful life — if fully depreciated, WDV should equal the <strong>residual value</strong>, not necessarily zero. 5. Put a tick and your initials against every line</td></tr><tr><td><strong>Write on file</strong></td><td><em>"WDV verified from individual ledger page ___; recomputed; found correct. Prepared by ___, dated ___"</em></td></tr><tr><td><strong>If it fails</strong></td><td>Return to the Asset Owner in writing for the correct asset code. <strong>Never</strong> fill a value "approximately" to keep the file moving</td></tr></tbody></table>
+<blockquote><strong>Trap:</strong> an item shown at <strong>nil</strong> book value that is physically present and being sold for lakhs. That is the most common error in scrapping files, and it is your job to catch it, not the Committee's.</blockquote>
+<h3 id="verification-2-items-not-in-the-asset-register">✅ Verification 2 — Items not in the Asset Register</h3>
+<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><strong>Ask for</strong></td><td>The item list, and the O&amp;M <strong>weight guidelines</strong> <strong>[P 3.4(c)]</strong></td></tr><tr><td><strong>Check</strong></td><td>Search three ways before declaring "not found": by description, by cost centre, by year of purchase</td></tr><tr><td><strong>How</strong></td><td>Build the rough value: <strong>estimated purchase price − depreciation for years held</strong>. Source the purchase price from old work orders / rate contracts / last similar purchase — never from memory</td></tr><tr><td><strong>Write on file</strong></td><td>The source of every assumed figure, the committee approval, and the PPE verification reference</td></tr><tr><td><strong>If it fails</strong></td><td>Escalate to Manager (F&amp;A). Do not sign a rough value on your own authority — <strong>[P 3.4(c)]</strong> puts it with the Finance Department / Zonal level committee</td></tr></tbody></table>
+<h3 id="verification-3-lot-composition-the-segregation-check">✅ Verification 3 — Lot composition (the segregation check)</h3>
+<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><strong>Ask for</strong></td><td>The draft lot list from EE (Store)</td></tr><tr><td><strong>Check</strong></td><td><strong>No lot mixes registered and unregistered items</strong></td></tr><tr><td><strong>How</strong></td><td>Mark every line R (in register) or U (not in register). If a lot contains both, ask for it to be split</td></tr><tr><td><strong>Why</strong></td><td>The policy says it directly: if unregistered items make the de-capitalisation figure unascertainable, <em>"lots shall be suitably made by segregating all such items"</em> <strong>[P 9.0]</strong></td></tr><tr><td><strong>If it fails</strong></td><td>Written note to EE (Store) with a revised lotting suggestion. This is cheap now and impossible later</td></tr></tbody></table>
+<h3 id="verification-4-reserve-price">✅ Verification 4 — Reserve Price</h3>
+<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><strong>Ask for</strong></td><td>The RP working sheet + survey report from EE (Store)</td></tr><tr><td><strong>Check</strong></td><td>Rate source, <strong>date</strong> of rate, quantity basis, arithmetic, allowances</td></tr><tr><td><strong>How</strong></td><td>1. Open the <strong>MSTC site yourself</strong> and take a dated printout of the metal rate — do not accept a rate quoted over the phone. 2. Confirm it is the <strong>latest</strong> rate or the <strong>last auctioned rate</strong> <strong>[P 3.4(e)]</strong>. 3. Recompute every line: <code>= qty × rate</code>. Watch unit mismatches (MT vs kg). 4. Compare the derived ₹/kg with what we <strong>actually realised</strong> in our last three auctions for similar material. 5. Check allowances: contamination, dismantling, remote location, hazardous handling</td></tr><tr><td><strong>Write on file</strong></td><td><em>"RP recomputed; rate sourced from MSTC printout dated ___; derived rate ₹___/kg vs last three realisations ₹___/___/___. Countersigned ___"</em></td></tr><tr><td><strong>If it fails</strong></td><td>If the RP is far above our own best realisation, say so in writing — an unrealistic RP guarantees a "no bid" and six months of delay</td></tr></tbody></table>
+<h3 id="verification-5-sta-floor">✅ Verification 5 — STA floor</h3>
+<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><strong>Check</strong></td><td><code>STA floor = MRP − (%STA × MRP)</code> — i.e. <code>= MRP × (1 − STA%)</code> in Excel</td></tr><tr><td><strong>How</strong></td><td>Use the policy's own examples to test your formula: RP ₹50,000 with 10% → ₹45,000; RP ₹10,000 with 40% → ₹6,000 <strong>[P 4.8]</strong>. Then check: (a) the % is within the <strong>0%–50%</strong> band normally recommended <strong>[P 4.8]</strong>; (b) <strong>hazardous lots carry a high %</strong> so they sell first time; (c) the <strong>same Competent Authority</strong> who approved the MRP also authorised the %STA <strong>[P 3.4(g)]</strong>; (d) any <strong>revision</strong> of %STA was approved by <strong>ZSC</strong> <strong>[P 3.4(g)]</strong> — note that ZSC may even go to <strong>100% STA</strong> if warranted <strong>[P 6.3]</strong></td></tr><tr><td><strong>If it fails</strong></td><td>Wrong floor = either a genuine buyer rejected or a distress price approved. Put it in writing the same day</td></tr></tbody></table>
+<h3 id="verification-6-portal-entry-confidentiality-and-accuracy">✅ Verification 6 — Portal entry (confidentiality and accuracy)</h3>
+<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><strong>Ask for</strong></td><td>A system printout/screenshot from the MSTC login after EE (Store) has entered the figures</td></tr><tr><td><strong>Check</strong></td><td>MRP and %STA in the portal <strong>exactly equal</strong> the Competent Authority's approval letter, lot by lot</td></tr><tr><td><strong>How</strong></td><td>Sit with the EE (Store) or Dy. Manager (Store) while the screen is open; take the print; compare line by line; sign and date the print</td></tr><tr><td><strong>Write on file</strong></td><td><em>"Portal entry verified equal to CA approval no. ___ dated ___. Screenshot at page ___"</em></td></tr><tr><td><strong>Never</strong></td><td>Never yourself key in MRP/STA. The policy makes it EE (Store)'s job and calls the figures <em>"a confidential as well as an important matter"</em> <strong>[P 4.7]</strong>. If you were to key them in, you would lose your independent check — and you would own the leak if one happens</td></tr></tbody></table>
+<h3 id="verification-7-100-payment-your-highest-risk-verification">✅ Verification 7 — 100% payment (your highest-risk verification)</h3>
+<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><strong>Ask for</strong></td><td>Sale/Acceptance Order, Delivery Order, MSTC remittance advice, bank statement of the CGM/AGM (F&amp;A) account</td></tr><tr><td><strong>Check</strong></td><td>The <strong>three-way tie-out</strong>: <em>MSTC advice = bank credit = Sale Order value</em></td></tr><tr><td><strong>How</strong></td><td>1. Confirm the <strong>10% EMD</strong> was deposited within <strong>7 days</strong> <strong>[P 5.0(i),(iii)]</strong>. 2. Confirm the <strong>balance</strong> came within <strong>15 days</strong> (Net Sale Value below ₹50 lakh) or <strong>40 days</strong> (₹50 lakh and above) <strong>[P 5.0(iv)]</strong>. 3. Confirm the credit is in the account of the concerned <strong>CGM/AGM (F&amp;A)</strong> <strong>[P 5.0(vii)]</strong>. 4. Check <strong>no deduction</strong> was made — payments are forwarded <em>"without deduction of their Service Charges"</em> <strong>[P 5.0(vi)]</strong>. 5. Only then release the Delivery Challan, GST Invoice and Gate Pass</td></tr><tr><td><strong>Write on file</strong></td><td>Format <strong>D-3</strong> — one row per figure, each with its source</td></tr><tr><td><strong>If it fails</strong></td><td><strong>Stop.</strong> No challan, no invoice, no gate pass. Escalate immediately to Manager (F&amp;A) — a truck that leaves the gate unpaid is a loss you will be asked to explain</td></tr></tbody></table>
+<h3 id="verification-8-delivery-lifting-and-ground-rent">✅ Verification 8 — Delivery, lifting and ground rent</h3>
+<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><strong>Check</strong></td><td>Lifting within <strong>30 days</strong> of the Delivery Order; delivery only against the <strong>MSTC Photo-ID card</strong> (or a notarised copy with authorisation) <strong>[P 5.0(vi)]</strong>; gate pass and weighment slips match the DO quantity</td></tr><tr><td><strong>How</strong></td><td>Diarise the DO date the day it is issued. If delayed, compute ground rent: <strong>1% of material value per week or part thereof, maximum two weeks</strong> <strong>[P 5.0(vi)]</strong> — in Excel: <code>=MIN(CEILING(days_late/7,1),2) × 1% × material value</code></td></tr><tr><td><strong>Write on file</strong></td><td>Bill the ground rent, record the recovery, and report it in the MIS</td></tr><tr><td><strong>If it fails</strong></td><td>Material leaving without the ID card, or quantity short at the weighbridge — inform EE (Store) in writing the same day and mark the gate pass register</td></tr></tbody></table>
+<h3 id="verification-9-de-capitalisation">✅ Verification 9 — De-capitalisation</h3>
+<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><strong>Ask for</strong></td><td>The final weight/lifting statement and the item-wise scrap cost intimation <strong>[P 9.0]</strong></td></tr><tr><td><strong>Check</strong></td><td>Gross block <strong>and</strong> accumulated depreciation both removed (not just the WDV); gain/loss computed; division intimated</td></tr><tr><td><strong>How</strong></td><td><code>Gain/(loss) = Sale proceeds apportioned to the item − WDV − directly attributable expenses</code>. Apportion the lump-sum lot proceeds across items on a stated basis (reserve price ratio or weight ratio) and disclose the basis</td></tr><tr><td><strong>Write on file</strong></td><td>Format <strong>D-5</strong> + journal voucher, with the apportionment basis written in words</td></tr><tr><td><strong>If it fails</strong></td><td>If the de-cap figure cannot be ascertained because unregistered items are mixed in, <strong>say so in writing</strong> — the policy's answer is re-lotting <strong>[P 9.0]</strong>, not estimating</td></tr></tbody></table>
+<hr>
+<h2 id="part-3-a-full-worked-example-t-1-end-to-end">Part 3 — A full worked example (T-1, end to end)</h2>
+<p><em>All figures illustrative. In the story guide I used a ₹1 lakh book value to keep arithmetic simple; here I use ₹10 lakh, which is more realistic for a 5% residual on a ₹2 crore asset. <strong>The method is the point, not the numbers.</strong></em></p>
+<p><strong>Facts:</strong> 25 MVA transformer T-1, capitalised 01.04.1988, gross block <strong>₹2,00,00,000</strong>, useful life 25 years → fully depreciated, residual 5% retained.</p>
+<h3 id="step-1-book-value">Step 1 — Book value</h3>
+<table><thead><tr><th>Particulars</th><th>Amount (₹)</th><th>Source</th></tr></thead><tbody><tr><td>Gross block</td><td>2,00,00,000</td><td>Asset ledger page 47</td></tr><tr><td>Accumulated depreciation</td><td>1,90,00,000</td><td>Depreciation schedule</td></tr><tr><td><strong>WDV / book value</strong></td><td><strong>10,00,000</strong></td><td>Recomputed by me ✔</td></tr></tbody></table>
+<h3 id="step-2-reserve-price-from-mstc-rates-within-7-days">Step 2 — Reserve Price (from MSTC rates, within 7 days)</h3>
+<table><thead><tr><th>Material</th><th>Qty</th><th>Rate</th><th>Value (₹)</th></tr></thead><tbody><tr><td>Copper</td><td>2,000 kg</td><td>₹600/kg</td><td>12,00,000</td></tr><tr><td>Transformer steel</td><td>8,000 kg</td><td>₹30/kg</td><td>2,40,000</td></tr><tr><td>Aluminium</td><td>1,000 kg</td><td>₹150/kg</td><td>1,50,000</td></tr><tr><td>Oil</td><td>10,000 L</td><td>₹40/L</td><td>4,00,000</td></tr><tr><td>Gross</td><td></td><td></td><td>19,90,000</td></tr><tr><td>Less: dismantling, remote location, oil testing</td><td></td><td></td><td>(1,90,000)</td></tr><tr><td><strong>Reserve Price proposed</strong></td><td></td><td></td><td><strong>18,00,000</strong></td></tr></tbody></table>
+<p><em>Cross-check: derived rate ≈ ₹905/kg of metal content vs our last three realisations ₹880 / ₹910 / ₹870 per kg → reasonable. ✔</em></p>
+<h3 id="step-3-sta">Step 3 — STA</h3>
+<table><thead><tr><th>MRP</th><th>%STA</th><th>Floor = MRP × (1 − STA%)</th><th>Approved by</th></tr></thead><tbody><tr><td>18,00,000</td><td>10%</td><td><strong>16,20,000</strong></td><td>Same Competent Authority as MRP ✔</td></tr></tbody></table>
+<h3 id="step-4-auction-result-and-payment">Step 4 — Auction result and payment</h3>
+<table><thead><tr><th>Particulars</th><th>Amount (₹)</th><th>Check</th></tr></thead><tbody><tr><td>H-1 bid (Net Sale Value)</td><td>17,10,000</td><td>Above STA floor (16,20,000), below MRP → <strong>STA</strong> ✔</td></tr><tr><td>Applicable GST @18% (HSN 7404 — verify your HSN)</td><td>3,07,800</td><td>Verify HSN and rate — <strong>[Practice]</strong>, HSN required by <strong>[P 4.7]</strong></td></tr><tr><td>Total payable by buyer</td><td>20,17,800</td><td></td></tr><tr><td>EMD 10% due in 7 days</td><td>1,71,000</td><td>Received on day 5 ✔</td></tr><tr><td>Balance due — <strong>15 days</strong> (NSV &lt; ₹50 lakh)</td><td>15,39,000</td><td>Received on day 12 ✔</td></tr><tr><td><strong>Three-way tie-out</strong></td><td>MSTC advice = bank credit = Sale Order value</td><td>✔ F-4/D-3 signed</td></tr><tr><td>MSTC service charges</td><td>Billed separately — <strong>not</strong> deducted from the remittance <strong>[P 5.0(vi)]</strong></td><td>Verify</td></tr><tr><td>SD retained by MSTC, refundable within 15 days of completion <strong>[P 5.0(iv)]</strong></td><td>1,71,000</td><td>Entered in SD ledger ✔</td></tr></tbody></table>
+<h3 id="step-5-de-capitalisation-illustrative-entries-post-to-the-heads-your-co-prescribes">Step 5 — De-capitalisation (illustrative entries — post to the heads your CO prescribes)</h3>
+<table><thead><tr><th>Entry</th><th>Debit (₹)</th><th>Credit (₹)</th></tr></thead><tbody><tr><td><strong>On sale proceeds:</strong> Bank / MSTC receivable A/c — Dr</td><td>17,10,000</td><td></td></tr><tr><td>To Gain on disposal of asset A/c</td><td></td><td>17,10,000</td></tr><tr><td><strong>On de-recognition:</strong> Accumulated Depreciation A/c — Dr</td><td>1,90,00,000</td><td></td></tr><tr><td>Gain on disposal of asset A/c — Dr (WDV)</td><td>10,00,000</td><td></td></tr><tr><td>To Asset (Gross block) A/c</td><td></td><td>2,00,00,000</td></tr><tr><td><strong>GST collected on scrap sale:</strong> Bank A/c — Dr</td><td>3,07,800</td><td></td></tr><tr><td>To GST payable A/c</td><td></td><td>3,07,800</td></tr></tbody></table>
+<p><strong>Net result:</strong> gain of <strong>₹7,10,000</strong> (17,10,000 − 10,00,000), less any directly attributable expenses, taken to the P&amp;L <strong>[P 9.0]</strong>. Intimate the division so it writes the equipment off its asset book <strong>[P General Guideline 7]</strong>.</p>
+<blockquote><strong>Caution:</strong> these entries are illustrative. The policy only requires that the finance department <em>"de-capitalize the items from the Asset Register and do the proper accounting in P&amp;L"</em> <strong>[P 9.0]</strong>. Use the chart of accounts, GST treatment and approval route your Corporate Office prescribes.</blockquote>
+<hr>
+<h2 id="part-4-documents-you-must-demand-from-others">Part 4 — Documents you must demand from others</h2>
+<p>You cannot verify what you are not given. Make this your standing "call-for-papers" list.</p>
+<table><thead><tr><th>From whom</th><th>Ask for</th><th>Use it for</th><th>If they don't give it</th></tr></thead><tbody><tr><td><strong>Asset Owner</strong></td><td>Proforma-A/-B, joint inspection report, retirement certificate</td><td>Verification 1</td><td>Note to the division with a copy to CLARC convener; item stays out of the lot</td></tr><tr><td><strong>EE (Store)</strong></td><td>Consolidated scrapping list, survey report, RP working, catalogue copy, portal screenshot, auction result sheet, Sale Order, Delivery Order</td><td>Verifications 3–8</td><td>Written reminder; escalate to Manager (F&amp;A) — a file without the RP working cannot be countersigned</td></tr><tr><td><strong>Dy. Manager (Store)</strong></td><td>Weighed receipt, stock register extract, gate pass, weighment slips</td><td>Verifications 1, 7, 8</td><td>Visit the store; record the discrepancy in writing</td></tr><tr><td><strong>O&amp;M Section</strong></td><td>Weight guidelines for metal <strong>[P 3.4(c)]</strong></td><td>Verification 2, 4</td><td>Reminder citing the clause</td></tr><tr><td><strong>MSTC</strong></td><td>SD advice, remittance advice, service charge invoice, auction result</td><td>Verifications 7, 10</td><td>Follow up through EE (Store); mark the SD as outstanding in the MIS</td></tr><tr><td><strong>Bank / treasury</strong></td><td>Statement and UTR of the CGM/AGM (F&amp;A) account</td><td>Verification 7</td><td>Do not release the challan until you have the credit evidence</td></tr><tr><td><strong>Finance section, CO</strong></td><td>The <strong>uniform standard guidelines</strong> on RP and STA% <strong>[P 3.4(g)]</strong></td><td>Verifications 4, 5</td><td>Write and ask for them; keep the letter on file — it shows you tried</td></tr></tbody></table>
+<hr>
+<h2 id="part-5-your-routine">Part 5 — Your routine</h2>
+<table><thead><tr><th>When</th><th>What you do</th></tr></thead><tbody><tr><td><strong>Daily</strong></td><td>Check the CGM/AGM (F&amp;A) account for MSTC credits; update the SD ledger; tick off any lifting scheduled today</td></tr><tr><td><strong>Within 2 days of a credit</strong></td><td>Prepare the Payment Verification Note; ensure the written RTGS confirmation goes out to EE (Store)/Division <strong>[P 5.0(vii)]</strong></td></tr><tr><td><strong>Weekly</strong></td><td>Payment diary: EMD dues (7 days), balance dues (15 / 40 days), lifting dues (30 days), ground rent cases, SD refunds outstanding</td></tr><tr><td><strong>Every CLARC cycle</strong> (half-yearly for A(a), quarterly for A(b), B, C, D)</td><td>Book value statement for all items on the agenda <strong>[P 2.3.1]</strong></td></tr><tr><td><strong>Within 7 days of survey</strong></td><td>Countersign the RP working <strong>[P 3.4(e)]</strong></td></tr><tr><td><strong>Within 7 working days of an auction closing</strong></td><td>Ensure MSETCL's decision on STA lots has been posted online <strong>[P 5.0(iii)]</strong> — track the date yourself</td></tr><tr><td><strong>Monthly</strong></td><td>Scrap register reconciliation, MIS (D-6), exception report, file completeness check</td></tr><tr><td><strong>Quarterly</strong></td><td>ZSC meeting papers; consolidated report to CO R&amp;D; MIS on unsold lots</td></tr><tr><td><strong>At every PPE verification</strong></td><td>Fix values for unregistered items <strong>[P 3.4(c)]</strong></td></tr></tbody></table>
+<hr>
+<h2 id="part-6-protecting-yourself">Part 6 — Protecting yourself</h2>
+<p>You sign "Prepared by" on files that others approve. That still matters. Six habits:</p>
+<ol><li><strong>Never certify what you did not recompute.</strong> If you did not open the ledger, do not sign the book value.</li><li><strong>Always write the source and the date</strong> next to every figure: <em>"from MSTC printout dated 12.09"</em>, <em>"from asset ledger p.47"</em>.</li><li><strong>Record dissent in writing.</strong> If the RP looks unrealistic or a portal entry is wrong, write a note on the file and get an acknowledgement. A note you wrote is your protection; a complaint you only spoke is not.</li><li><strong>Use "Put up" language.</strong> Where you cannot certify, write <em>"Put up to Manager (F&amp;A) for certification"</em> rather than leaving a blank.</li><li><strong>Keep your own copy</strong> of the MSTC screenshot, the bank UTR and the payment note — three documents that prove you did your job.</li><li><strong>Never key in MRP or %STA.</strong> Verification 6 is yours <em>because</em> you are not the one entering them.</li></ol>
+<hr>
+<h2 id="part-7-red-flags-you-will-be-the-first-to-see">Part 7 — Red flags you will be the first to see</h2>
+<table><thead><tr><th>#</th><th>What you notice</th><th>What it may mean</th><th>Your move</th></tr></thead><tbody><tr><td>1</td><td>Item shows nil book value but is physically valuable</td><td>Fully depreciated asset, or a wrong asset code</td><td>Recheck the ledger; check the residual value policy</td></tr><tr><td>2</td><td>RP per kg far above our best-ever realisation</td><td>Unrealistic pricing → no bid</td><td>Written note with the comparison</td></tr><tr><td>3</td><td>Bids cluster just above the reserve price</td><td>Possible leak of the MRP</td><td>Report to Manager (F&amp;A); check the access trail <strong>[P 4.7]</strong></td></tr><tr><td>4</td><td>Portal figure ≠ approval letter</td><td>Data-entry error or worse</td><td>Stop; written note; get it corrected before bidding</td></tr><tr><td>5</td><td>Item present in the catalogue but missing at lifting</td><td>Withdrawal without approval <strong>[P 4.3]</strong></td><td>Demand the Competent Authority's approval</td></tr><tr><td>6</td><td>Weighment slip quantity &lt; DO quantity</td><td>Short delivery</td><td>Record it; inform EE (Store); hold the gate pass</td></tr><tr><td>7</td><td>Truck at the gate before the credit date</td><td>Payment not verified</td><td><strong>Stop the truck.</strong> Escalate immediately</td></tr><tr><td>8</td><td>SD not refunded after completion</td><td>Money stuck with MSTC</td><td>SD ledger; monthly follow-up <strong>[P 5.0(iv)]</strong></td></tr><tr><td>9</td><td>Lifting beyond 30 days with no demand for ground rent</td><td>Revenue leakage</td><td>Compute and bill 1%/week, max two weeks <strong>[P 5.0(vi)]</strong></td></tr><tr><td>10</td><td>One lot mixing registered and unregistered items</td><td>De-capitalisation will be impossible</td><td>Ask for re-lotting now <strong>[P 9.0]</strong></td></tr><tr><td>11</td><td>Division still shows the asset after the sale</td><td>Intimation not sent</td><td>Send the item-wise cost intimation <strong>[P 9.0, General Guideline 7]</strong></td></tr><tr><td>12</td><td>You are asked to sign something "because it is routine"</td><td>Pressure to skip verification</td><td>Ask for the source document. Routine is not a source</td></tr></tbody></table>
+<hr>
+<h2 id="part-8-escalation-matrix">Part 8 — Escalation matrix</h2>
+<table><thead><tr><th>Situation</th><th>First</th><th>Then</th><th>Never</th></tr></thead><tbody><tr><td>Book value cannot be tied to the register</td><td>Asset Owner (division)</td><td><strong>Manager (F&amp;A)</strong></td><td>Fill an assumed value</td></tr><tr><td>Rough value needed for an unregistered item</td><td>Manager (F&amp;A) for the working</td><td><strong>Zonal level committee</strong> approval <strong>[P 3.4(c)]</strong></td><td>Sign it yourself</td></tr><tr><td>RP looks unrealistic</td><td>EE (Store)</td><td><strong>ZSC</strong> through Manager (F&amp;A)</td><td>Stay silent</td></tr><tr><td>Portal entry wrong</td><td>EE (Store) immediately</td><td>Manager (F&amp;A) in writing</td><td>Correct it yourself in the portal</td></tr><tr><td>Payment short or not received</td><td>Hold the challan</td><td><strong>Manager (F&amp;A) / CGM-AGM (F&amp;A)</strong> the same day</td><td>Release material "on trust"</td></tr><tr><td>STA% needs revision</td><td>Note on file</td><td><strong>ZSC</strong> approval <strong>[P 3.4(g)]</strong></td><td>Accept a lower bid on your own</td></tr><tr><td>Item to be withdrawn after tenders</td><td>Note on file</td><td><strong>Competent Authority</strong> <strong>[P 4.3]</strong></td><td>Let it quietly drop out</td></tr><tr><td>You are pressured to sign</td><td>Manager (F&amp;A)</td><td>Record your note in writing</td><td>Sign and hope</td></tr></tbody></table>
+<hr>
+<h2 id="part-9-mini-formats-you-can-start-using-today">Part 9 — Mini formats you can start using today</h2>
+<h3 id="d-1-book-value-statement-your-daily-bread">D-1 — Book Value Statement (your daily bread)</h3>
+<table><thead><tr><th>Sr</th><th>Asset code</th><th>Description</th><th>Capitalised on</th><th>Life (yrs)</th><th>Gross block</th><th>Accum. dep.</th><th><strong>WDV</strong></th><th>In register?</th><th>Source (ledger page)</th><th>Initials</th></tr></thead><tbody></tbody></table>
+<h3 id="d-2-scrap-register-finance-columns">D-2 — Scrap Register (finance columns)</h3>
+<table><thead><tr><th>Date in</th><th>RC no.</th><th>Item</th><th>Asset code</th><th>Book value</th><th>Lot no.</th><th>MRP</th><th>%STA</th><th>Auction no.</th><th>H-1</th><th>Status</th><th>Payment received</th><th>DO date</th><th>Lifted on</th><th>De-cap JV no.</th></tr></thead><tbody></tbody></table>
+<h3 id="d-3-payment-verification-note-one-per-lot">D-3 — Payment Verification Note (one per lot)</h3>
+<table><thead><tr><th>Field</th><th>Value</th><th>Source document</th></tr></thead><tbody><tr><td>H-1 / Net Sale Value</td><td></td><td>Auction result sheet</td></tr><tr><td>GST (HSN ___, rate ___)</td><td></td><td>GST working</td></tr><tr><td>Total payable</td><td></td><td></td></tr><tr><td>EMD 10% — amount, date (due ___)</td><td></td><td>MSTC SD advice</td></tr><tr><td>Balance — amount, date (15 / 40 days)</td><td></td><td>MSTC advice</td></tr><tr><td>Credited to account of CGM/AGM (F&amp;A) on</td><td></td><td>Bank statement / UTR</td></tr><tr><td><strong>MSTC advice = bank credit = Sale Order value?</strong></td><td>Yes / No</td><td></td></tr><tr><td>Service charges deducted? (should be <strong>No</strong>)</td><td></td><td>Remittance advice</td></tr><tr><td><strong>Challan / GST Invoice / Gate Pass released on</strong></td><td></td><td>Signature, date</td></tr></tbody></table>
+<h3 id="d-4-security-deposit-ledger">D-4 — Security Deposit Ledger</h3>
+<table><thead><tr><th>Auction no.</th><th>Lot</th><th>SD amount</th><th>Retained by MSTC on</th><th>Due back (15 days of completion)</th><th>Received on</th><th>Balance outstanding</th><th>Ageing</th></tr></thead><tbody></tbody></table>
+<h3 id="d-5-de-capitalisation-working">D-5 — De-capitalisation Working</h3>
+<table><thead><tr><th>Asset code</th><th>Gross block</th><th>Accum. dep.</th><th>WDV</th><th>Sale proceeds apportioned</th><th>Basis of apportionment</th><th>Direct expenses</th><th><strong>Gain/(loss)</strong></th><th>JV no.</th><th>Register updated on</th></tr></thead><tbody></tbody></table>
+<h3 id="d-6-monthly-mis-one-page">D-6 — Monthly MIS (one page)</h3>
+<p>Lots auctioned · realised value · <strong>realisation vs MRP %</strong> · unsold lots with reasons · SD outstanding · ground rent billed/recovered · items pending de-capitalisation beyond 30 days · age of scrap lying at the store · files missing documents.</p>
+<hr>
+<h2 id="part-10-the-two-minute-briefing-for-your-assistant-or-the-store-clerk">Part 10 — The two-minute briefing for your assistant or the store clerk</h2>
+<blockquote>"Four things, every time.  <strong>One — value it.</strong> Before anything is scrapped, I want the asset code and the ledger page. Book value means the original cost minus all the depreciation charged so far. If the item is not in the register, tell me — do not quietly write zero.  <strong>Two — price it.</strong> The reserve price comes from the MSTC website's latest rate, and I want the printout with today's date. I will recompute quantity times rate, and compare it with what we got in our last three auctions. Then I compute the STA floor — the reserve price minus that percentage of it. If that floor is wrong, we either throw away a genuine buyer or we sell too cheap.  <strong>Three — check the portal.</strong> I never key in the reserve price. The store enters it; I take a screenshot and check it matches the approval letter word for word. Those numbers are confidential — they don't go on any WhatsApp group.  <strong>Four — count the money before the truck moves.</strong> No delivery challan, no GST invoice, no gate pass until I have matched three things: MSTC's advice, our bank credit, and the sale order value. All three must be equal. Then the RTGS receipt is confirmed in writing within two days. Then the truck goes out. Then we remove the item from the register.  And one habit: <strong>write the source and date next to every figure you give me.</strong> A number without a source is not a number — it's a guess, and I'm not signing a guess."</blockquote>
+<hr>
+<h2 id="part-11-ten-questions-a-deputy-manager-actually-asks">Part 11 — Ten questions a Deputy Manager actually asks</h2>
+<p><strong>1. "Can I sign the book value certificate myself?"</strong> Prepare it, initial every line, and put it up to the <strong>Manager (F&amp;A)</strong> — the policy makes that post "vital in arriving at the Book Value" <strong>[P 3.4(b)]</strong>.</p>
+<p><strong>2. "EE (Store) has asked me to enter the MRP in the MSTC portal. Should I?"</strong> No. It is EE (Store)'s duty and the figures are confidential <strong>[P 4.7]</strong>. You verify, you don't enter — that separation is what makes your check worth anything.</p>
+<p><strong>3. "The item is not in the register. Can I put a rough value?"</strong> Prepare the working, but the value must come through the Finance Department / Zonal level committee and the PPE verification <strong>[P 3.4(c)]</strong>.</p>
+<p><strong>4. "How do I know if the reserve price is too high?"</strong> Compute the ₹/kg you are asking for and compare it with your <strong>last three auctions' realised rates</strong>. If you are asking far more than you have ever got, the lot will get no bids.</p>
+<p><strong>5. "The bid is below the reserve price. Do I reject it?"</strong> Only if it is below the <strong>STA floor</strong>. Between the floor and the RP it goes to STA and the Competent Authority decides — within <strong>7 working days</strong> <strong>[P 5.0(ii),(iii)]</strong>.</p>
+<p><strong>6. "The buyer is pressing for material today and promises payment tomorrow."</strong> No. Delivery only after receipt of the full sale value including GST <strong>[P 5.0(vi)]</strong>. Escalate immediately rather than argue at the gate.</p>
+<p><strong>7. "How long does the buyer get, in total?"</strong> EMD 10% in <strong>7 days</strong>; balance in <strong>15 days</strong> below ₹50 lakh, <strong>40 days</strong> at or above <strong>[P 5.0(iv)]</strong>; lifting within <strong>30 days</strong> of the DO, after which ground rent of <strong>1% per week, maximum two weeks</strong> <strong>[P 5.0(vi)]</strong>.</p>
+<p><strong>8. "MSTC deducted its charges from our remittance."</strong> It should not — remittances come <em>without deduction of service charges</em> <strong>[P 5.0(vi)]</strong>. Flag it, and book the charges separately.</p>
+<p><strong>9. "Do I need to track the security deposit?"</strong> Yes. MSTC retains the 10% SD and refunds it to MSETCL on completion of the contract <strong>[P 5.0(iv)]</strong>. If nobody tracks it, nobody gets it back. That ledger is yours.</p>
+<p><strong>10. "What if I genuinely think the price is wrong but everyone else wants to go ahead?"</strong> Write your note on the file with the figures and the comparison, and get it acknowledged. You have then done your duty; the decision is not yours to make — and the note is your record that you flagged it.</p>
+<hr>
+<h2 id="part-12-one-line-summary-you-can-pin-above-your-desk">Part 12 — One-line summary you can pin above your desk</h2>
+<blockquote><strong>Value it from the ledger · price it from the MSTC printout · check the portal against the approval · count the money three ways before the truck moves · then take the asset off the books — and write the source and date beside every number you sign.</strong></blockquote>
+</main>
+
+<footer>
+  Generated by <code>docs/build_html.py</code> from <code>dy-manager-finance-guide.md</code>.
+  Mermaid is loaded from <code>docs/vendor/mermaid.min.js</code> (offline) with a CDN fallback.
+</footer>
+
+<script src="vendor/mermaid.min.js"></script>
+<script>
+if (!window.mermaid) {
+  document.write('<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"><\/script>');
+}
+</script>
+<script>
+const start = () => {
+  mermaid.initialize({
+    startOnLoad: true,
+    securityLevel: 'loose',
+    theme: 'base',
+    flowchart: { curve: 'basis', useMaxWidth: false, htmlLabels: true, nodeSpacing: 30, rankSpacing: 42, padding: 10 },
+    themeVariables: {
+      fontFamily: '-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
+      fontSize: '15px', primaryColor: '#eef4fb', primaryBorderColor: '#90b4dd',
+      primaryTextColor: '#1a2330', lineColor: '#7d90a6', secondaryColor: '#f4f0f8',
+      tertiaryColor: '#f7f9fc', edgeLabelBackground: '#ffffff'
+    }
+  });
+  mermaid.run({ querySelector: 'pre.mermaid' });
+};
+if (window.mermaid) { start(); } else { document.addEventListener('DOMContentLoaded', start); }
+</script>
+</body>
+</html>

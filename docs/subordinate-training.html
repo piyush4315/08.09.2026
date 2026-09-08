@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scrap Work at the Store — Learn It in One Sitting</title>
+<style>
+:root{
+  --ink:#1a2330; --muted:#5a6b7f; --line:#dde4ec; --bg:#f6f8fb; --card:#ffffff;
+  --accent:#1565c0; --accent2:#6a1b9a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+.wrap{max-width:1180px; margin:0 auto; padding:32px 24px 96px}
+header.hero{
+  background:linear-gradient(135deg,#0d47a1 0%,#1565c0 45%,#6a1b9a 100%);
+  color:#fff; padding:44px 24px 38px; border-radius:0 0 18px 18px;
+  box-shadow:0 8px 30px rgba(21,101,192,.25);
+}
+header.hero .inner{max-width:1180px; margin:0 auto}
+header.hero h1{margin:0 0 8px; font-size:30px; letter-spacing:.2px}
+header.hero p{margin:0; opacity:.93; font-size:16px}
+header.hero .chips{margin-top:18px; display:flex; flex-wrap:wrap; gap:8px}
+header.hero .chip{
+  background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28);
+  padding:5px 12px; border-radius:999px; font-size:13px;
+}
+header.hero .chip a{color:#fff; text-decoration:none; border-bottom:1px solid rgba(255,255,255,.6)}
+header.hero .chip a:hover{border-bottom-color:#fff}
+nav.toc{
+  position:sticky; top:0; z-index:20; background:rgba(255,255,255,.96);
+  backdrop-filter:blur(6px); border-bottom:1px solid var(--line);
+}
+nav.toc .inner{max-width:1180px; margin:0 auto; padding:10px 24px; display:flex; gap:6px; flex-wrap:wrap}
+nav.toc a{
+  font-size:13px; color:var(--muted); text-decoration:none; padding:4px 10px;
+  border-radius:999px; border:1px solid transparent; white-space:nowrap;
+}
+nav.toc a:hover{background:#eef3fa; color:var(--accent); border-color:#cfe0f5}
+h1{font-size:30px; margin:8px 0 6px}
+h2{
+  font-size:22px; margin:44px 0 14px; padding:14px 18px; background:var(--card);
+  border-left:5px solid var(--accent); border-radius:8px; box-shadow:0 1px 3px rgba(16,32,64,.07);
+}
+h3{font-size:18px; margin:26px 0 8px; color:var(--accent)}
+p{margin:10px 0}
+blockquote{
+  margin:16px 0; padding:14px 18px; background:#eef3fa; border-left:5px solid var(--accent2);
+  border-radius:8px; color:#2b3a4d;
+}
+.diagram{
+  background:var(--card); border:1px solid var(--line); border-radius:12px;
+  padding:18px 12px; margin:18px 0 22px; overflow-x:auto;
+  box-shadow:0 2px 10px rgba(16,32,64,.06);
+}
+pre.mermaid{margin:0; text-align:center; background:transparent}
+pre.mermaid svg{max-width:100%; height:auto}
+table{border-collapse:collapse; width:100%; margin:16px 0; background:var(--card);
+  border-radius:10px; overflow:hidden; box-shadow:0 1px 3px rgba(16,32,64,.07); font-size:14.5px}
+th{background:#eef3fa; text-align:left; padding:11px 13px; font-size:13px;
+  text-transform:uppercase; letter-spacing:.04em; color:#3b4d63; border-bottom:2px solid var(--line)}
+td{padding:10px 13px; border-bottom:1px solid var(--line); vertical-align:top}
+tr:last-child td{border-bottom:none}
+ul,ol{margin:10px 0 10px 6px; padding-left:22px}
+li{margin:5px 0}
+code{background:#eef3fa; padding:1px 6px; border-radius:5px; font-size:14px; color:#0d47a1}
+pre{
+  background:#0f2233; color:#dbe7f2; padding:14px 16px; border-radius:10px;
+  overflow-x:auto; font-size:13px; line-height:1.5;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+pre code{background:transparent; color:inherit; padding:0; font-size:inherit}
+main.wrap > h1{font-size:32px; margin:6px 0 4px}
+main.wrap > h1 + h3{color:var(--muted); font-weight:500; margin-top:0}
+h2 + h3{margin-top:16px}
+h3{color:#0d47a1}
+blockquote strong{color:#0d47a1}
+td strong{color:#123}
+hr{border:none; border-top:1px solid var(--line); margin:34px 0}
+footer{max-width:1180px; margin:0 auto; padding:0 24px 40px; color:var(--muted); font-size:13px}
+@media print{
+  body{background:#fff}
+  nav.toc{display:none}
+  .diagram{break-inside:avoid; box-shadow:none}
+  h2{box-shadow:none}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="inner">
+    <h1>Scrap Work at the Store — Learn It in One Sitting</h1>
+    <p>For a brand-new assistant who knows nothing. Plain words, one running example, five practice sums with answers, a ten-question quiz, a first-week plan and a one-page summary to pin above the desk.</p>
+    <div class="chips">
+      <span class="chip">Start from zero · 10 words in plain language</span>
+      <span class="chip">One story: Transformer T-1, start to finish</span>
+      <span class="chip">Practice sums + quiz with answers</span>
+      <span class="chip">First-week plan + desk summary</span>
+      <span class="chip"><a href='dy-manager-finance-guide.html'>For the Deputy Manager →</a> · <a href='story-guide.html'>Story version →</a></span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc"><div class="inner">
+<a href="#learn-the-whole-job-in-one-sitting-for-a-person-who-knows-nothing">Learn the whole job in one sitting — for a person who knows nothing</a>
+<a href="#chapter-1-the-engineer-reports-it">Chapter 1 — The engineer reports it</a>
+<a href="#chapter-2-the-committee-retires-it">Chapter 2 — The committee retires it</a>
+<a href="#chapter-3-it-comes-to-our-store">Chapter 3 — It comes to our store</a>
+<a href="#chapter-4-what-is-it-worth-on-paper-book-value">Chapter 4 — What is it worth on paper? (Book value)</a>
+<a href="#chapter-5-what-is-it-worth-in-the-market-reserve-price">Chapter 5 — What is it worth in the market? (Reserve Price)</a>
+<a href="#chapter-6-the-discount-permission-sta">Chapter 6 — The discount permission (STA)</a>
+<a href="#chapter-7-auction-day">Chapter 7 — Auction day</a>
+<a href="#chapter-8-the-money-comes-first-the-truck-goes-after">Chapter 8 — The money comes first, the truck goes after</a>
+<a href="#chapter-9-deleting-the-name">Chapter 9 — Deleting the name</a>
+</div></nav>
+
+<main class="wrap">
+<h1 id="scrap-work-at-the-store">Scrap Work at the Store</h1>
+<h2 id="learn-the-whole-job-in-one-sitting-for-a-person-who-knows-nothing">Learn the whole job in one sitting — for a person who knows nothing</h2>
+<blockquote><strong>For the boss reading this with your new assistant:</strong> read each lesson aloud, then do the practice sums in Lesson 9 together, then run the quiz in Lesson 10. Total time: about an hour. Everything here is written in plain words on purpose.  <strong>Assumptions made in this booklet:</strong> 1. You have just joined the <strong>finance section of a Major Store</strong> of MSETCL as an assistant / clerk. 2. You have never seen a scrap file. You do not know words like CLARC, ZSC, STA or MSTC. 3. Our example store is the <strong>Major Store at Wardha</strong>, in <strong>Amravati Zone</strong>. 4. Our example item is an old power transformer we will call <strong>T-1</strong>. 5. <strong>All money numbers in this booklet are made up</strong> to make the sums easy. The <em>method</em> is real. Real figures will be different.  <strong>When you want the full rules with clause numbers, read</strong> [finance-officer-guide.html](finance-officer-guide.html) <strong>or</strong> [dy-manager-finance-guide.html](dy-manager-finance-guide.html).</blockquote>
+<hr>
+<h1 id="lesson-1-ten-words-you-will-hear-every-day">Lesson 1 — Ten words you will hear every day</h1>
+<p>Learn these ten words and half the job is done.</p>
+<table><thead><tr><th>Word</th><th>What it really means</th><th>At home you would call it</th></tr></thead><tbody><tr><td><strong>Asset</strong></td><td>Anything costly the company owns — a transformer, a breaker, a computer, a cupboard</td><td>Your scooter, your fridge</td></tr><tr><td><strong>Asset Register</strong></td><td>The big list where every asset is written with its price and age</td><td>The "birth register" of company property</td></tr><tr><td><strong>Retire</strong></td><td>To say officially: "this thing is no longer working for us"</td><td>Retiring from a job</td></tr><tr><td><strong>Scrap</strong></td><td>The old junk left behind after something is retired</td><td>Old newspapers, broken chairs</td></tr><tr><td><strong>Book value</strong></td><td>What the thing is still <strong>worth on paper</strong></td><td>Resale price written for your old scooter</td></tr><tr><td><strong>Reserve Price</strong></td><td>The <strong>lowest</strong> price at which we will sell</td><td>The "minimum price" you tell the kabadiwala</td></tr><tr><td><strong>STA</strong></td><td><em>Subject To Approval</em> — we may take a little less, <strong>but only if the boss says yes</strong></td><td>"I'll take ₹90, but let me ask my father"</td></tr><tr><td><strong>Lot</strong></td><td>A bundle of junk sold as one item</td><td>A combo pack</td></tr><tr><td><strong>H-1</strong></td><td>The person who offered the <strong>highest</strong> price</td><td>The person who bid the biggest number</td></tr><tr><td><strong>EMD</strong></td><td>Token advance the buyer pays first — <strong>10%</strong></td><td>Booking amount for a flat</td></tr></tbody></table>
+<p><strong>The one line to remember:</strong></p>
+<blockquote><strong>Nothing is thrown away quietly, and nothing is sold privately. Everything is written, checked, and sold in the open on a government website.</strong></blockquote>
+<hr>
+<h1 id="lesson-2-what-our-company-does-and-where-scrap-comes-from">Lesson 2 — What our company does, and where scrap comes from</h1>
+<p><strong>MSETCL carries electricity across Maharashtra.</strong> Think of electricity like traffic:</p>
+<ul><li>Power stations are like factories at the edge of the city.</li><li>The wires to your house are like small lanes.</li><li><strong>MSETCL is the big highway in between.</strong></li></ul>
+<p>A <strong>sub-station</strong> is like a <strong>bus junction</strong> — power comes in, gets changed, goes out on different routes. The machine that changes the voltage is the <strong>transformer</strong>. Think of it as the <strong>gearbox</strong> of the electricity system.</p>
+<p>Now, our network is huge — <strong>51,518 kilometres of lines and 742 sub-stations</strong>. Things get old. When an old transformer is replaced, the old one is left behind. When a breaker burns, it is left behind. Slowly, every sub-station collects a heap of old junk. <strong>That heap is our "scrap", and dealing with it is our job.</strong></p>
+<h3 id="why-can-t-we-just-sell-it-to-the-neighbourhood-kabadiwala">Why can't we just sell it to the neighbourhood kabadiwala?</h3>
+<p>Three reasons, and you must be able to say all three:</p>
+<ol><li><strong>It is public money.</strong> The junk belongs to the company, not to us. If we sell it quietly, someone will ask where the money went.</li><li><strong>Copper is valuable.</strong> Old copper and aluminium attract thieves. Junk lying in a far-away sub-station gets stolen.</li><li><strong>Space and safety.</strong> A sub-station full of junk is unsafe and looks neglected.</li></ol>
+<p>So the company made one rule for everyone: <strong>write it down, check it, and sell it in the open on the government auction website.</strong></p>
+<hr>
+<h1 id="lesson-3-the-whole-job-in-six-steps">Lesson 3 — The whole job in six steps</h1>
+<div class="diagram"><pre class="mermaid">
+flowchart LR
+    A(["1. Old thing<br/>is found"]) --> B["2. Fill the form<br/>+ 3 people inspect"]
+    B --> C(["3. Committee says<br/>RETIRED"])
+    C --> D["4. Give the thing<br/>to the STORE<br/>+ write in register"]
+    D --> E["5. Fix the price,<br/>make the LOT"]
+    E --> F(["6. Boss approves"])
+    F --> G["7. Online auction<br/>on MSTC website"]
+    G --> H["8. Money comes first,<br/>truck goes after"]
+    H --> I(["9. Delete the name<br/>from the register"])
+
+    style A fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style C fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style F fill:#fff8e1,stroke:#f9a825,stroke-width:2px
+    style G fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+    style I fill:#eceff1,stroke:#546e7a,stroke-width:2px
+</pre></div>
+<p>Say it like this:</p>
+<blockquote><strong>Find it → fill the form → retire it → bring it to the store → fix a price → take permission → auction it → take the money → give the material → delete the name.</strong></blockquote>
+<p>That is the whole job. Everything else is detail.</p>
+<hr>
+<h1 id="lesson-4-the-people-you-will-deal-with">Lesson 4 — The people you will deal with</h1>
+<table><thead><tr><th>Who</th><th>What they do</th><th>Think of them as</th></tr></thead><tbody><tr><td><strong>Asset Owner</strong> (the engineer at the sub-station)</td><td>He has the old thing. He reports it and fills the form</td><td>The person whose scooter it was</td></tr><tr><td><strong>EE (Store)</strong></td><td>Boss of our store. <strong>After the item comes to the store, he runs the whole file</strong></td><td>The warehouse manager</td></tr><tr><td><strong>Dy. Manager (Store)</strong></td><td>Helps EE (Store) in everything</td><td>The senior clerk of the store</td></tr><tr><td><strong>You and me (Finance)</strong></td><td>We check every <strong>number</strong>: value, price, money</td><td>The accountant</td></tr><tr><td><strong>CLARC</strong> (Circle committee)</td><td>Says "yes, this is retired"</td><td>The taluka-level committee</td></tr><tr><td><strong>ZSC</strong> (Zone committee)</td><td>Says "yes, you may sell it, at this price"</td><td>The district-level committee</td></tr><tr><td><strong>Competent Authority</strong></td><td>The officer who has the power to say the final yes on <strong>money</strong></td><td>The person who signs the cheque</td></tr><tr><td><strong>MSTC</strong></td><td>The government company that runs the <strong>online auction</strong></td><td>Like an online auction website — a government OLX for scrap</td></tr><tr><td><strong>The buyer (H-1)</strong></td><td>The dealer who offers the highest price and pays us</td><td>The kabadiwala, but registered and online</td></tr></tbody></table>
+<p><strong>The most useful thing to remember:</strong> once the item and the retirement certificate reach our store, <strong>everything after that is our store's job</strong>. Nobody waits for the sub-station engineer again.</p>
+<hr>
+<h1 id="lesson-5-the-six-boxes">Lesson 5 — The six boxes</h1>
+<p>Every old thing is put into one of six boxes. The box decides what form we use.</p>
+<table><thead><tr><th>Box</th><th>In simple words</th><th>Example from your own house</th></tr></thead><tbody><tr><td><strong>A(a)</strong></td><td>Old, but <strong>still working fine</strong></td><td>A 20-year-old ceiling fan that still runs</td></tr><tr><td><strong>A(b)</strong></td><td>Old and <strong>taken out of use</strong></td><td>The fan you removed when you bought a new one</td></tr><tr><td><strong>B</strong></td><td>Not broken, but <strong>outdated</strong> — nobody can repair it</td><td>An old box TV</td></tr><tr><td><strong>C</strong></td><td><strong>Broken</strong> before its time</td><td>A fridge whose compressor is dead</td></tr><tr><td><strong>D</strong></td><td>Small junk with <strong>very little</strong> value</td><td>Old newspapers, empty bottles, a broken plastic chair</td></tr><tr><td><strong>E</strong></td><td><strong>Worthless</strong> — nobody will pay anything</td><td>Rotten wood, wet cardboard, dust and debris</td></tr></tbody></table>
+<p><strong>Easy way to remember:</strong> A = old, B = outdated, C = broken, D = cheap junk, E = worthless junk.</p>
+<ul><li>Boxes <strong>A, B, C</strong> → report <strong>every three months</strong> (quarterly).</li><li>Box <strong>A(a)</strong> → report <strong>twice a year</strong> (half-yearly), because it is still running.</li><li>Box <strong>E</strong> → no auction at all. We destroy it or throw it away like garbage.</li></ul>
+<p><strong>One rule before anything is retired:</strong> first check whether <strong>some other sub-station in Maharashtra can use it</strong>. Only when nobody can use it, we retire it.</p>
+<hr>
+<h1 id="lesson-6-the-story-of-t-1">Lesson 6 — The story of T-1</h1>
+<p>Follow this one transformer from the sub-station to the truck. Every file you will ever handle looks like this.</p>
+<h2 id="chapter-1-the-engineer-reports-it">Chapter 1 — The engineer reports it</h2>
+<p><strong>Baban</strong>, the junior engineer at Wardha sub-station, has an old transformer T-1. It is leaking oil and trips often. Repair would cost more than a new one. Baban writes a <strong>form</strong> saying: "T-1 is finished. Please retire it."</p>
+<p>Before he writes it, <strong>three people inspect T-1 together</strong> — the O&amp;M engineer, the <strong>Testing</strong> engineer, and a <strong>Finance</strong> person. Three pairs of eyes, so that nobody declares a good machine dead.</p>
+<h2 id="chapter-2-the-committee-retires-it">Chapter 2 — The committee retires it</h2>
+<p>The form goes to <strong>CLARC</strong>, the circle committee. They check the test reports and the papers. They say: <strong>"T-1 is retired."</strong> They give a <strong>Retirement Certificate</strong> — T-1's retirement letter.</p>
+<h2 id="chapter-3-it-comes-to-our-store">Chapter 3 — It comes to our store</h2>
+<p>Baban sends <strong>the transformer and the certificate to our EE (Store)</strong>. Our store:</p>
+<ul><li>takes the item in,</li><li>writes it in <strong>one register</strong> (one register for the whole zone — not loose papers),</li><li>keeps it safe with <strong>a guard and CCTV</strong> if needed.</li></ul>
+<p><strong>From this moment, the file is ours.</strong> That is where you and I come in.</p>
+<h2 id="chapter-4-what-is-it-worth-on-paper-book-value">Chapter 4 — What is it worth on paper? (Book value)</h2>
+<p>Now the first <strong>finance</strong> question: what is T-1 worth <strong>in our accounts</strong>?</p>
+<p>Look at your own scooter. You bought it for ₹60,000 ten years ago. Every year it loses value — that loss is called <strong>depreciation</strong>. Today, on paper, it may be worth only ₹5,000. That ₹5,000 is its <strong>book value</strong>.</p>
+<p>Same for T-1. Suppose:</p>
+<table><thead><tr><th></th><th>Amount</th></tr></thead><tbody><tr><td>Bought for (original cost)</td><td>₹2,00,00,000</td></tr><tr><td>Value lost over the years (depreciation)</td><td>₹1,90,00,000</td></tr><tr><td><strong>Worth on paper today (book value)</strong></td><td><strong>₹10,00,000</strong></td></tr></tbody></table>
+<p><strong>Your job:</strong> open the Asset Register, find T-1 by its <strong>code number</strong> (never by name alone — names get mixed up), and write these three figures. Then check the arithmetic yourself.</p>
+<p><strong>Watch out for this:</strong> sometimes an item is fully written off and shows <strong>zero</strong>. But it is still standing there, and someone will pay us for it. If you see zero on something valuable, <strong>tell me immediately</strong> — that is a mistake waiting to happen.</p>
+<h2 id="chapter-5-what-is-it-worth-in-the-market-reserve-price">Chapter 5 — What is it worth in the market? (Reserve Price)</h2>
+<p>Book value is what the <em>accounts</em> say. But the buyer pays for <strong>metal</strong>, not for our accounts. So now we fix the <strong>Reserve Price</strong> — the lowest price we will accept.</p>
+<p>Suppose T-1 contains:</p>
+<table><thead><tr><th>Material</th><th>How much</th><th>Market rate</th><th>Value</th></tr></thead><tbody><tr><td>Copper</td><td>2,000 kg</td><td>₹600 per kg</td><td>₹12,00,000</td></tr><tr><td>Steel</td><td>8,000 kg</td><td>₹30 per kg</td><td>₹2,40,000</td></tr><tr><td>Aluminium</td><td>1,000 kg</td><td>₹150 per kg</td><td>₹1,50,000</td></tr><tr><td><strong>Total</strong></td><td></td><td></td><td><strong>₹15,90,000</strong></td></tr></tbody></table>
+<p>The buyer must cut it, load it and carry it from a far-away sub-station. So we keep the Reserve Price a little lower — say <strong>₹15,00,000</strong> — to attract bidders.</p>
+<p><strong>Two rules you must never forget:</strong></p>
+<ol><li>Take the rate from the <strong>MSTC website</strong>, and <strong>print it with today's date</strong>. Never accept a rate somebody tells you over the phone.</li><li>Do this <strong>within 7 days</strong>.</li></ol>
+<p><strong>Your job:</strong> recompute every multiplication on a calculator or in Excel. Check the unit — if the rate is per <strong>kg</strong>, the quantity must be in <strong>kg</strong>, not in tonnes. This one mistake happens more often than you think.</p>
+<h2 id="chapter-6-the-discount-permission-sta">Chapter 6 — The discount permission (STA)</h2>
+<p>Now suppose the auction happens and the highest offer is only <strong>₹14,20,000</strong>. That is below our ₹15,00,000. Do we throw the offer away?</p>
+<p>No — we keep a <strong>cushion</strong>. Before the auction we decide: <em>"We will go down to a certain level, but only with the boss's permission."</em> That cushion is called <strong>STA — Subject To Approval</strong>.</p>
+<p>It works like this. Imagine you are selling your old bicycle and you tell your father:</p>
+<blockquote>"My price is ₹100. But if someone offers ₹90, I won't refuse — I will ask you first."</blockquote>
+<p>That "₹90" is your STA level. Simple.</p>
+<p>The policy's own example: if the Reserve Price is <strong>₹50,000</strong> and we allow <strong>10%</strong> STA, then any offer <strong>₹45,000 or above</strong> stays alive — it does not get thrown away; it goes to the boss for a decision.</p>
+<p>For T-1: Reserve Price ₹15,00,000 with 10% STA → <strong>floor = ₹13,50,000</strong>.</p>
+<ul><li>Offer of ₹15,20,000 → <strong>Sold</strong> at once.</li><li>Offer of ₹14,20,000 → between ₹13,50,000 and ₹15,00,000 → goes to <strong>STA</strong> — the boss decides within 7 working days.</li><li>Offer of ₹13,00,000 → <strong>below the floor → rejected</strong>. We try again with a lower price.</li></ul>
+<p><strong>Your job:</strong> compute this floor yourself every single time. <code>Floor = Reserve Price × (100% − STA%)</code>. If this sum is wrong, we either lose a genuine buyer or we sell too cheap.</p>
+<h2 id="chapter-7-auction-day">Chapter 7 — Auction day</h2>
+<p>Our store sends the list of "lots" to <strong>MSTC</strong>. A <strong>lot</strong> is a bundle — for example, "Lot No. 3: Wardha mixed scrap — T-1 plus three old breakers".</p>
+<p>MSTC puts it on their website. Dealers come and <strong>see the material with their own eyes</strong> — we must let them in and note their names and phone numbers. Then bidding opens online for <strong>4 hours</strong>. If someone bids in the last 8 minutes, the time extends by 8 minutes. The highest bidder is <strong>H-1</strong>. Nobody's name is shown, only the amount.</p>
+<p><strong>One very important rule:</strong> the Reserve Price and the STA percentage are <strong>secret</strong>. They are typed into the MSTC website — <strong>by EE (Store), not by us</strong>. Our job is to take a <strong>screenshot</strong> and check that what is typed is exactly what the boss approved. You never type those numbers yourself. If you did, you could not check them.</p>
+<h2 id="chapter-8-the-money-comes-first-the-truck-goes-after">Chapter 8 — The money comes first, the truck goes after</h2>
+<p>This is the rule I will never let you break.</p>
+<div class="diagram"><pre class="mermaid">
+flowchart TD
+    A(["Buyer pays the full amount"]) --> B{"Has 100% of the money<br/>come into OUR account?"}
+    B -->|"No"| C(["🛑 STOP.<br/>No paper, no truck."])
+    B -->|"Yes — check it 3 ways"| D["Give Delivery Challan,<br/>GST bill, Gate Pass"]
+    D --> E(["🚚 Truck goes out —<br/>within 30 days"])
+    E --> F{"Late?"}
+    F -->|"Yes"| G["Charge rent:<br/>1% per week,<br/>maximum 2 weeks"]
+    F -->|"No"| H(["✅ Done —<br/>delete the name"])
+
+    style C fill:#ffebee,stroke:#c62828,stroke-width:2px
+    style D fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style H fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style G fill:#fff8e1,stroke:#f9a825,stroke-width:2px
+</pre></div>
+<p>The buyer pays in two parts:</p>
+<ol><li><strong>10% advance (EMD)</strong> — within <strong>7 days</strong>. For a ₹15,00,000 deal that is ₹1,50,000.</li><li><strong>The rest</strong> — within <strong>15 days</strong> if the deal is below ₹50 lakh; within <strong>40 days</strong> if it is ₹50 lakh or more.</li></ol>
+<p><strong>Your job — the three-way check.</strong> Before any paper is given, match these three:</p>
+<table><thead><tr><th></th><th>Amount</th></tr></thead><tbody><tr><td>What MSTC says it sent us</td><td>₹15,00,000</td></tr><tr><td>What our <strong>bank</strong> shows as received</td><td>₹15,00,000</td></tr><tr><td>What the <strong>Sale Order</strong> says</td><td>₹15,00,000</td></tr></tbody></table>
+<p>All three must be <strong>exactly equal</strong>. Only then we give the Delivery Challan, the GST bill and the Gate Pass. <strong>If a truck driver argues, you do not argue back — you call me.</strong></p>
+<p>Then: the buyer has <strong>30 days</strong> to take the material. If he is late, we charge <strong>rent: 1% of the value for every week, up to two weeks only</strong>.</p>
+<h2 id="chapter-9-deleting-the-name">Chapter 9 — Deleting the name</h2>
+<p>After the material goes out, we remove T-1 from the Asset Register — like striking a retired employee's name from the muster roll. This is called <strong>de-capitalisation</strong>.</p>
+<p>We also note the profit or loss:</p>
+<table><thead><tr><th></th><th>Amount</th></tr></thead><tbody><tr><td>We sold T-1 for</td><td>₹15,00,000</td></tr><tr><td>It was worth on paper</td><td>₹10,00,000</td></tr><tr><td><strong>Profit</strong></td><td><strong>₹5,00,000</strong></td></tr></tbody></table>
+<p>And we tell the division: "T-1 is gone — please remove it from your books too."</p>
+<p><strong>Then the file is closed. That is the whole story, start to finish.</strong></p>
+<hr>
+<h1 id="lesson-7-what-i-will-ask-you-to-do-every-day">Lesson 7 — What I will ask you to do every day</h1>
+<ol><li><strong>Write in the register.</strong> Every item that comes in, with its date, code, and value.</li><li><strong>Open the Asset Register</strong> and find the value of each item. By <strong>code</strong>, not by name.</li><li><strong>Take the MSTC rate printout</strong> whenever a price is being fixed — with the date on it.</li><li><strong>Do the multiplication again</strong>, even if someone else has done it.</li><li><strong>Compute the STA floor</strong> and write it on the file.</li><li><strong>Take the screenshot</strong> of the MSTC portal and check it against the approval letter.</li><li><strong>Match the money three ways</strong> when payment comes.</li><li><strong>Note the dates</strong> — 7 days, 15/40 days, 30 days, 2 days. Put reminders in your diary.</li><li><strong>Keep the file tidy</strong>, page by page, so that anyone can read it two years later.</li><li><strong>Write the source next to every number.</strong> Example: <em>"rate from MSTC printout dated 12.09"</em>, <em>"value from ledger page 47"</em>.</li></ol>
+<p><strong>The golden habit:</strong> <em>a number without a source is a guess. We do not sign guesses.</em></p>
+<hr>
+<h1 id="lesson-8-four-things-you-must-never-do">Lesson 8 — Four things you must NEVER do</h1>
+<table><thead><tr><th>#</th><th>Never…</th><th>Because</th></tr></thead><tbody><tr><td>1</td><td><strong>Never let the truck go before the money comes</strong></td><td>If the material leaves unpaid, the loss is ours</td></tr><tr><td>2</td><td><strong>Never type the Reserve Price or STA into the website</strong></td><td>That is EE (Store)'s job and the number is secret. We only <strong>check</strong> it</td></tr><tr><td>3</td><td><strong>Never write a value from memory or "approximately"</strong></td><td>Open the register, or the MSTC site. Always</td></tr><tr><td>4</td><td><strong>Never mix items that are in the register with items that are not</strong></td><td>Later we will not be able to delete the names properly. Keep them in separate bundles</td></tr></tbody></table>
+<p><strong>And one more:</strong> if you are not sure — <strong>ask me</strong>. Asking takes two minutes. A wrong number can take two years to undo.</p>
+<hr>
+<h1 id="lesson-9-practice-time-do-these-with-me">Lesson 9 — Practice time (do these with me)</h1>
+<p>Take a pencil. Answers are at the end of this lesson.</p>
+<h3 id="sum-1-book-value">Sum 1 — Book value</h3>
+<p>A machine was bought for <strong>₹10,00,000</strong>. Depreciation charged so far is <strong>₹9,00,000</strong>. <strong>Question:</strong> What is its book value?</p>
+<h3 id="sum-2-reserve-price">Sum 2 — Reserve Price</h3>
+<p>Copper: <strong>500 kg</strong> at <strong>₹600 per kg</strong>. Iron: <strong>200 kg</strong> at <strong>₹30 per kg</strong>. <strong>Question:</strong> What is the total? If we keep the Reserve Price at a round figure just below the total, what would you suggest?</p>
+<h3 id="sum-3-sta-floor">Sum 3 — STA floor</h3>
+<p>Reserve Price is <strong>₹3,00,000</strong>. We allow <strong>10%</strong> STA. <strong>Question:</strong> What is the floor?</p>
+<h3 id="sum-4-what-happens-to-the-bid">Sum 4 — What happens to the bid?</h3>
+<p>Reserve Price <strong>₹3,00,000</strong>, floor <strong>₹2,70,000</strong>. For each offer, say <strong>Sold</strong>, <strong>STA</strong> or <strong>Rejected</strong>:</p>
+<table><thead><tr><th>Offer</th><th>Your answer</th></tr></thead><tbody><tr><td>(a) ₹3,10,000</td><td></td></tr><tr><td>(b) ₹2,80,000</td><td></td></tr><tr><td>(c) ₹2,50,000</td><td></td></tr></tbody></table>
+<h3 id="sum-5-late-lifting">Sum 5 — Late lifting</h3>
+<p>Delivery Order dated <strong>1 September</strong>. Material value <strong>₹3,00,000</strong>. The buyer lifts it on <strong>20 September</strong>. <strong>Question:</strong> How many weeks late? How much rent do we charge (1% per week, maximum two weeks)?</p>
+<h3 id="answers">✅ Answers</h3>
+<table><thead><tr><th>Sum</th><th>Answer</th><th>How</th></tr></thead><tbody><tr><td>1</td><td><strong>₹1,00,000</strong></td><td>10,00,000 − 9,00,000</td></tr><tr><td>2</td><td>Copper 500 × 600 = ₹3,00,000; Iron 200 × 30 = ₹6,000; total <strong>₹3,06,000</strong>. Suggest Reserve Price <strong>₹3,00,000</strong></td><td>Quantity × rate</td></tr><tr><td>3</td><td><strong>₹2,70,000</strong></td><td>3,00,000 × (100% − 10%) = 3,00,000 × 90%</td></tr><tr><td>4</td><td>(a) <strong>Sold</strong> — above the Reserve Price · (b) <strong>STA</strong> — between floor and RP, boss decides · (c) <strong>Rejected</strong> — below the floor</td><td>Compare with RP and floor</td></tr><tr><td>5</td><td>19 days late = 3 weeks, but the <strong>maximum is 2 weeks</strong> → 2% of ₹3,00,000 = <strong>₹6,000</strong></td><td>1% per week, capped at 2 weeks</td></tr></tbody></table>
+<hr>
+<h1 id="lesson-10-quiz-10-questions">Lesson 10 — Quiz (10 questions)</h1>
+<p>Write your answers, then check them.</p>
+<ol><li>What do we call the price below which we will not sell? ____________</li><li>What does <strong>STA</strong> stand for? ____________</li><li>Fill the blank: money comes ____________, truck goes ____________.</li><li>The buyer pays 10% advance within how many days? ____________</li><li>If the deal is below ₹50 lakh, the balance must come within how many days? ____________</li><li>Who types the Reserve Price into the MSTC website? ____________</li><li>If an item is not in the Asset Register, should you write zero? Yes / No</li><li>Box <strong>E</strong> items are sold by auction. True or False?</li><li>The buyer must lift the material within how many days of the Delivery Order? ____________</li><li>If the numbers don't match and someone is pressuring you — what do you do? ____________</li></ol>
+<h3 id="answers">✅ Answers</h3>
+<ol><li><strong>Reserve Price</strong></li><li><strong>Subject To Approval</strong></li><li><strong>first … after</strong></li><li><strong>7 days</strong></li><li><strong>15 days</strong> (40 days if ₹50 lakh or more)</li><li><strong>EE (Store)</strong> — we only check it</li><li><strong>No</strong> — prepare a rough value and get it approved</li><li><strong>False</strong> — Category E is destroyed or thrown away; no auction</li><li><strong>30 days</strong> (then rent of 1% per week, up to two weeks)</li><li><strong>Write your note on the file and tell me</strong> — never sign quietly</li></ol>
+<hr>
+<h1 id="lesson-11-your-first-week">Lesson 11 — Your first week</h1>
+<table><thead><tr><th>Day</th><th>Do this</th></tr></thead><tbody><tr><td><strong>Day 1</strong></td><td>Sit with the store register. Read the last 20 entries. Ask the meaning of every column</td></tr><tr><td><strong>Day 2</strong></td><td>Open the Asset Register. Learn how to find one item by its <strong>code</strong></td></tr><tr><td><strong>Day 3</strong></td><td>Take one old file and read it from page 1 to the last page — form, certificate, list, price, auction, money</td></tr><tr><td><strong>Day 4</strong></td><td>Open the MSTC website with the store team. See a live catalogue. Take a rate printout</td></tr><tr><td><strong>Day 5</strong></td><td>Do the five practice sums again, alone</td></tr><tr><td><strong>Day 6</strong></td><td>Sit with the gate. Watch one truck go out. See the challan, the bill and the gate pass</td></tr><tr><td><strong>Day 7</strong></td><td>Tell me the whole story of T-1 in your own words. If you can, you are ready</td></tr></tbody></table>
+<hr>
+<h1 id="lesson-12-one-page-summary-pin-this-above-your-desk">Lesson 12 — One-page summary (pin this above your desk)</h1>
+<pre><code>╔════════════════════════════════════════════════════════════════════════════╗
+║                   SCRAP WORK — NINE STEPS, ONE LINE EACH                   ║
+╠════════════════════════════════════════════════════════════════════════════╣
+║  1. FIND IT     → old / broken / outdated / extra? → put in box A–E        ║
+║  2. FILL FORM   → engineer reports + 3 people inspect                      ║
+║  3. RETIRE IT   → committee says &quot;RETIRED&quot; + gives certificate             ║
+║  4. BRING IT IN → item + certificate come to OUR store, in the register    ║
+║  5. VALUE IT    → book value from the Asset Register (by CODE)             ║
+║  6. PRICE IT    → reserve price from MSTC printout (dated!) in 7 days      ║
+║  7. TAKE OK     → boss approves price + STA discount                       ║
+║  8. AUCTION IT  → MSTC website, 4 hours, highest bidder = H-1              ║
+║  9. MONEY FIRST → 10% in 7 days, rest in 15/40 days, THEN truck            ║
+║ 10. DELETE NAME → remove from register, note profit or loss                ║
+╠════════════════════════════════════════════════════════════════════════════╣
+║  NEVER FORGET:                                                             ║
+║  • NO money = NO truck.                                                    ║
+║  • I never TYPE the reserve price — I only CHECK it.                       ║
+║  • Rate from the MSTC printout, with the DATE. Never from memory.          ║
+║  • Write the source beside every number.                                   ║
+║  • Not sure? ASK. Two minutes now saves two years later.                   ║
+╚════════════════════════════════════════════════════════════════════════════╝</code></pre>
+<hr>
+<h1 id="last-page-glossary-in-one-line-each">Last page — glossary in one line each</h1>
+<table><thead><tr><th>Word</th><th>One line</th></tr></thead><tbody><tr><td><strong>Asset Register</strong></td><td>The list where every company item is written with its price</td></tr><tr><td><strong>Book value</strong></td><td>Original cost minus all the value it has lost</td></tr><tr><td><strong>CLARC</strong></td><td>The circle committee that retires an item</td></tr><tr><td><strong>De-capitalisation</strong></td><td>Deleting the name from the Asset Register after sale</td></tr><tr><td><strong>Delivery Order</strong></td><td>The paper that allows the buyer to take the material</td></tr><tr><td><strong>Depreciation</strong></td><td>The value an item loses every year because of age</td></tr><tr><td><strong>EMD</strong></td><td>The 10% token advance the buyer pays first</td></tr><tr><td><strong>H-1</strong></td><td>The highest bidder</td></tr><tr><td><strong>Lot</strong></td><td>A bundle of scrap sold as one</td></tr><tr><td><strong>MSTC</strong></td><td>The government company that runs our online auction</td></tr><tr><td><strong>Reserve Price</strong></td><td>The lowest price we will accept</td></tr><tr><td><strong>Retirement</strong></td><td>The official "this item is finished" declaration</td></tr><tr><td><strong>STA</strong></td><td>The pre-decided discount we may accept with the boss's permission</td></tr><tr><td><strong>ZSC</strong></td><td>The zone committee that approves the sale and recommends the price</td></tr></tbody></table>
+<hr>
+<blockquote><strong>A last word from me to you.</strong> Nobody is born knowing this work. The only thing I ask from you is this: <strong>never write a number you have not seen with your own eyes.</strong> Open the register. Take the printout. Do the multiplication. Match the money. Write the source. Do these five things every single day and you will never get into trouble, and neither will I.</blockquote>
+</main>
+
+<footer>
+  Generated by <code>docs/build_html.py</code> from <code>subordinate-training.md</code>.
+  Mermaid is loaded from <code>docs/vendor/mermaid.min.js</code> (offline) with a CDN fallback.
+</footer>
+
+<script src="vendor/mermaid.min.js"></script>
+<script>
+if (!window.mermaid) {
+  document.write('<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"><\/script>');
+}
+</script>
+<script>
+const start = () => {
+  mermaid.initialize({
+    startOnLoad: true,
+    securityLevel: 'loose',
+    theme: 'base',
+    flowchart: { curve: 'basis', useMaxWidth: false, htmlLabels: true, nodeSpacing: 30, rankSpacing: 42, padding: 10 },
+    themeVariables: {
+      fontFamily: '-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
+      fontSize: '15px', primaryColor: '#eef4fb', primaryBorderColor: '#90b4dd',
+      primaryTextColor: '#1a2330', lineColor: '#7d90a6', secondaryColor: '#f4f0f8',
+      tertiaryColor: '#f7f9fc', edgeLabelBackground: '#ffffff'
+    }
+  });
+  mermaid.run({ querySelector: 'pre.mermaid' });
+};
+if (window.mermaid) { start(); } else { document.addEventListener('DOMContentLoaded', start); }
+</script>
+</body>
+</html>

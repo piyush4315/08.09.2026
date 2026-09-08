@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Scrap Story — MSETCL Asset Retirement, Scrap Declaration &amp; Disposal Policy</title>
+<style>
+:root{
+  --ink:#1a2330; --muted:#5a6b7f; --line:#dde4ec; --bg:#f6f8fb; --card:#ffffff;
+  --accent:#1565c0; --accent2:#6a1b9a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+.wrap{max-width:1180px; margin:0 auto; padding:32px 24px 96px}
+header.hero{
+  background:linear-gradient(135deg,#0d47a1 0%,#1565c0 45%,#6a1b9a 100%);
+  color:#fff; padding:44px 24px 38px; border-radius:0 0 18px 18px;
+  box-shadow:0 8px 30px rgba(21,101,192,.25);
+}
+header.hero .inner{max-width:1180px; margin:0 auto}
+header.hero h1{margin:0 0 8px; font-size:30px; letter-spacing:.2px}
+header.hero p{margin:0; opacity:.93; font-size:16px}
+header.hero .chips{margin-top:18px; display:flex; flex-wrap:wrap; gap:8px}
+header.hero .chip{
+  background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28);
+  padding:5px 12px; border-radius:999px; font-size:13px;
+}
+header.hero .chip a{color:#fff; text-decoration:none; border-bottom:1px solid rgba(255,255,255,.6)}
+header.hero .chip a:hover{border-bottom-color:#fff}
+nav.toc{
+  position:sticky; top:0; z-index:20; background:rgba(255,255,255,.96);
+  backdrop-filter:blur(6px); border-bottom:1px solid var(--line);
+}
+nav.toc .inner{max-width:1180px; margin:0 auto; padding:10px 24px; display:flex; gap:6px; flex-wrap:wrap}
+nav.toc a{
+  font-size:13px; color:var(--muted); text-decoration:none; padding:4px 10px;
+  border-radius:999px; border:1px solid transparent; white-space:nowrap;
+}
+nav.toc a:hover{background:#eef3fa; color:var(--accent); border-color:#cfe0f5}
+h1{font-size:30px; margin:8px 0 6px}
+h2{
+  font-size:22px; margin:44px 0 14px; padding:14px 18px; background:var(--card);
+  border-left:5px solid var(--accent); border-radius:8px; box-shadow:0 1px 3px rgba(16,32,64,.07);
+}
+h3{font-size:18px; margin:26px 0 8px; color:var(--accent)}
+p{margin:10px 0}
+blockquote{
+  margin:16px 0; padding:14px 18px; background:#eef3fa; border-left:5px solid var(--accent2);
+  border-radius:8px; color:#2b3a4d;
+}
+.diagram{
+  background:var(--card); border:1px solid var(--line); border-radius:12px;
+  padding:18px 12px; margin:18px 0 22px; overflow-x:auto;
+  box-shadow:0 2px 10px rgba(16,32,64,.06);
+}
+pre.mermaid{margin:0; text-align:center; background:transparent}
+pre.mermaid svg{max-width:100%; height:auto}
+table{border-collapse:collapse; width:100%; margin:16px 0; background:var(--card);
+  border-radius:10px; overflow:hidden; box-shadow:0 1px 3px rgba(16,32,64,.07); font-size:14.5px}
+th{background:#eef3fa; text-align:left; padding:11px 13px; font-size:13px;
+  text-transform:uppercase; letter-spacing:.04em; color:#3b4d63; border-bottom:2px solid var(--line)}
+td{padding:10px 13px; border-bottom:1px solid var(--line); vertical-align:top}
+tr:last-child td{border-bottom:none}
+ul,ol{margin:10px 0 10px 6px; padding-left:22px}
+li{margin:5px 0}
+code{background:#eef3fa; padding:1px 6px; border-radius:5px; font-size:14px; color:#0d47a1}
+pre{
+  background:#0f2233; color:#dbe7f2; padding:14px 16px; border-radius:10px;
+  overflow-x:auto; font-size:13px; line-height:1.5;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+pre code{background:transparent; color:inherit; padding:0; font-size:inherit}
+main.wrap > h1{font-size:32px; margin:6px 0 4px}
+main.wrap > h1 + h3{color:var(--muted); font-weight:500; margin-top:0}
+h2 + h3{margin-top:16px}
+h3{color:#0d47a1}
+blockquote strong{color:#0d47a1}
+td strong{color:#123}
+hr{border:none; border-top:1px solid var(--line); margin:34px 0}
+footer{max-width:1180px; margin:0 auto; padding:0 24px 40px; color:var(--muted); font-size:13px}
+@media print{
+  body{background:#fff}
+  nav.toc{display:none}
+  .diagram{break-inside:avoid; box-shadow:none}
+  h2{box-shadow:none}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="inner">
+    <h1>The Scrap Story — MSETCL Asset Retirement, Scrap Declaration &amp; Disposal Policy</h1>
+    <p>Explained from scratch, like a story, for someone who knows nothing — with assumptions, examples, and a two-minute script you can read out to your team. Built from <code>Policy.pdf</code>, <code>MSA wardha new scrapping policy.pdf</code> and <code>covering letter.pdf</code>.</p>
+    <div class="chips">
+      <span class="chip">Start at zero · 12 scary words in plain language</span>
+      <span class="chip">One story: Transformer T-1, from sub-station to weighbridge</span>
+      <span class="chip">Your calendar, checklist, 5 common mistakes</span>
+      <span class="chip">2-minute script + one-page handout for your team</span>
+      <span class="chip"><a href='subordinate-training.html'>New assistant? Start here →</a> · <a href='flowchart.html'>Flow charts →</a></span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc"><div class="inner">
+<a href="#part-0-before-we-start">Part 0 — Before we start</a>
+<a href="#part-1-the-world-you-have-just-inherited">Part 1 — The world you have just inherited</a>
+<a href="#part-2-meet-the-cast-who-decides-what">Part 2 — Meet the cast (who decides what)</a>
+<a href="#part-3-the-six-boxes-which-category-does-my-item-fall-into">Part 3 — The six boxes: which category does my item fall into?</a>
+<a href="#part-4-the-story-of-transformer-t-1">Part 4 — The story of Transformer T-1</a>
+<a href="#part-5-auction-day-selling-t-1-on-mstc">Part 5 — Auction day: selling T-1 on MSTC</a>
+<a href="#part-6-when-the-story-doesn-t-end-happily">Part 6 — When the story doesn&#x27;t end happily</a>
+<a href="#part-7-three-special-stories">Part 7 — Three special stories</a>
+<a href="#part-8-your-job-what-you-must-actually-do">Part 8 — Your job: what you must actually do</a>
+<a href="#part-9-how-to-explain-this-to-your-subordinate">Part 9 — How to explain this to your subordinate</a>
+<a href="#part-10-glossary-quick-reference-alphabetically">Part 10 — Glossary (quick reference, alphabetically)</a>
+<a href="#where-to-read-the-exact-wording">Where to read the exact wording</a>
+</div></nav>
+
+<main class="wrap">
+<h1 id="the-scrap-story">The Scrap Story</h1>
+<h3 id="msetcl-s-asset-retirement-scrap-declaration-amp-disposal-policy-explained-like-a-story-for-someone-who-knows-nothing">MSETCL's Asset Retirement, Scrap Declaration &amp; Disposal Policy — explained like a story, for someone who knows nothing</h3>
+<blockquote><strong>Who this is for:</strong> You have just been handed responsibility for scrapping in your zone/circle. You have never done this before. You don't know what CLARC, ZSC, STA or MSTC mean. By the end of this document you will understand the whole policy, and you will be able to explain it to your junior in two minutes.</blockquote>
+<p><strong>Prefer diagrams?</strong> Open [flowchart.html](flowchart.html) — the same policy drawn as flow charts. <strong>Training someone new?</strong> Open [subordinate-training.html](subordinate-training.html) — one sitting, plain words, practice sums and a quiz. <strong>Finance side?</strong> [finance-officer-guide.html](finance-officer-guide.html) and [dy-manager-finance-guide.html](dy-manager-finance-guide.html).</p>
+<hr>
+<h2 id="part-0-before-we-start">Part 0 — Before we start</h2>
+<h3 id="0-1-the-assumptions-i-have-made">0.1 The assumptions I have made</h3>
+<p>Since you asked me to assume, here is exactly what I am assuming. Change any of these in your head and the story still works — only the names change.</p>
+<table><thead><tr><th>#</th><th>Assumption</th></tr></thead><tbody><tr><td>1</td><td>You work for <strong>MSETCL</strong> (Maharashtra State Electricity Transmission Company Limited) — the state company that carries electricity across Maharashtra.</td></tr><tr><td>2</td><td>You have just been made the <strong>in-charge of the scrapping process</strong> for your zone — you chair or convey the committee, and juniors report to you.</td></tr><tr><td>3</td><td>Your juniors are engineers and store-keepers who are good at their technical work but have <strong>never handled a disposal file</strong>.</td></tr><tr><td>4</td><td>Our example zone is <strong>Amravati Zone</strong> and our example sub-station is <strong>132 kV Wardha sub-station</strong> — Wardha is where the presentation in this repo was made.</td></tr><tr><td>5</td><td>Our hero asset is a power transformer called <strong>T-1</strong>.</td></tr><tr><td>6</td><td>All <strong>money figures in the story are illustrative</strong> — made up to make the arithmetic easy. The <em>method</em> is real; the <em>numbers</em> are examples.</td></tr><tr><td>7</td><td>The policy text is from <code>Policy.pdf</code> and <code>MSA wardha new scrapping policy.pdf</code> in this repository. Where the policy is silent or unclear, I say so.</td></tr></tbody></table>
+<h3 id="0-2-the-twelve-scary-words-in-plain-language">0.2 The twelve scary words, in plain language</h3>
+<p>Read this table once and the rest of the document becomes easy.</p>
+<table><thead><tr><th>Word</th><th>What it really means</th><th>Everyday comparison</th></tr></thead><tbody><tr><td><strong>Asset</strong></td><td>Anything costly that the company owns — a transformer, a breaker, a vehicle, a computer, a cupboard</td><td>Your scooter, your fridge</td></tr><tr><td><strong>Asset Register</strong></td><td>The master list of every asset the company owns, with its price and age</td><td>The "birth register" of company property</td></tr><tr><td><strong>Retirement</strong></td><td>Declaring officially: "this item is no longer part of our working system"</td><td>An employee retiring — name struck off the muster roll</td></tr><tr><td><strong>Scrap</strong></td><td>The physical junk left after retirement — metal, wood, e-waste</td><td>Old newspapers and broken furniture at home</td></tr><tr><td><strong>Book value</strong></td><td>What the item is still <em>worth on paper</em> after years of wear</td><td>The resale value written for your 15-year-old scooter</td></tr><tr><td><strong>Depreciation</strong></td><td>The loss in value every year because of age and use</td><td>Your phone losing value every year</td></tr><tr><td><strong>Reserve Price (RP)</strong></td><td>The <strong>minimum</strong> price below which you refuse to sell</td><td>The "upset price" in an auction</td></tr><tr><td><strong>STA</strong></td><td><em>Subject To Approval</em> — you may accept a little less than RP, but only if your boss approves</td><td>"I'll take ₹45,000, but let me ask my father first"</td></tr><tr><td><strong>Lot</strong></td><td>A single bundle of scrap sold as one unit</td><td>A combo pack / thali at a restaurant</td></tr><tr><td><strong>H-1</strong></td><td>The <strong>highest</strong> bidder (H-2 is second highest, and so on)</td><td>The person who shouted the biggest number</td></tr><tr><td><strong>EMD / SD</strong></td><td>Earnest Money Deposit / Security Deposit — the token advance the buyer pays to prove he is serious</td><td>The token amount you pay when you book a flat</td></tr><tr><td><strong>De-capitalisation</strong></td><td>Removing the item from the Asset Register after it is sold</td><td>Deleting a retired employee's name from the payroll</td></tr></tbody></table>
+<h3 id="0-3-and-the-seven-offices-you-will-keep-hearing-about">0.3 And the seven offices you will keep hearing about</h3>
+<table><thead><tr><th>Short name</th><th>Full name</th><th>Think of it as</th></tr></thead><tbody><tr><td><strong>Asset Owner</strong></td><td>The engineer in whose sub-station/division the item sits</td><td>The person who "owns" the item, like the driver of a company jeep</td></tr><tr><td><strong>EE (Store)</strong></td><td>Executive Engineer (Store)</td><td>The warehouse manager — he runs the file from hand-over to sale</td></tr><tr><td><strong>CLARC</strong></td><td>Circle Level Asset Retirement Committee</td><td>The taluka-level committee that declares retirement</td></tr><tr><td><strong>ZSC</strong></td><td>Zonal Scrapping Committee</td><td>The zone-level committee that approves the sale</td></tr><tr><td><strong>CO R&amp;D</strong></td><td>Corporate Office Research &amp; Development Committee</td><td>The head-office think tank that studies why things fail</td></tr><tr><td><strong>Competent Authority</strong></td><td>The officer with financial power under <strong>GO No. 1 (F&amp;A)</strong></td><td>The person who holds the cheque-signing power</td></tr><tr><td><strong>MSTC</strong></td><td>Metal Scrap Trade Corporation Ltd.</td><td>A government-owned online auction company — "OLX/eBay for scrap"</td></tr></tbody></table>
+<hr>
+<h2 id="part-1-the-world-you-have-just-inherited">Part 1 — The world you have just inherited</h2>
+<h3 id="1-1-what-msetcl-actually-does">1.1 What MSETCL actually does</h3>
+<p>Imagine electricity as <strong>traffic</strong> and the transmission network as <strong>highways</strong>.</p>
+<ul><li>Power stations (generators) are like factories on the edge of the city.</li><li>Distribution companies (MSEDCL, etc.) are like the small roads that reach your house.</li><li><strong>MSETCL is the highway in between.</strong> It takes bulk power at very high voltage and carries it across the state.</li></ul>
+<p>How big is this highway? The covering letter in this repo tells us:</p>
+<blockquote><strong>51,518 circuit kilometres</strong> of transmission lines, <strong>742 EHV sub-stations</strong>, <strong>138,598 MVA</strong> of transformation capacity. MSETCL is the largest state transmission utility in the country.</blockquote>
+<p>A <strong>sub-station</strong> is like a <strong>bus depot and junction</strong> rolled into one: power comes in at high voltage, gets stepped down, and goes out on different routes. The machine that steps the voltage up or down is the <strong>transformer</strong> — think of it as the <strong>gearbox</strong> of the power system.</p>
+<h3 id="1-2-why-scrap-is-a-real-problem-not-a-small-problem">1.2 Why scrap is a real problem, not a small problem</h3>
+<p>Three things happen in a network this old and this large:</p>
+<p><strong>1. Equipment grows old.</strong> A transformer bought in 1988 has been standing in the sun, rain and load for decades. Its insulation weakens, oil leaks, and one day it fails without warning. The policy says this clearly: because of old age, performance degrades, and such equipment <strong>must be retired before it causes an interruption</strong>.</p>
+<p><strong>2. Scrap piles up.</strong> Every replacement leaves behind junk — old conductors, broken insulators, failed breakers, rusted structures, used batteries, empty cable drums, old computers. In the old days it just lay in a corner of the sub-station.</p>
+<p><strong>3. Lying scrap creates three risks:</strong></p>
+<ul><li><strong>Theft</strong> — copper and aluminium have high resale value. Scrap lying in a remote sub-station attracts thieves.</li><li><strong>Wasted space &amp; ugly premises</strong> — a sub-station full of junk looks neglected and blocks work.</li><li><strong>Lost money</strong> — that junk is worth real cash if sold properly through auction.</li></ul>
+<p>So the company framed this policy to do three jobs at once: <strong>retire unsafe equipment in time, dispose of the junk honestly and transparently, and earn revenue while doing it.</strong></p>
+<h3 id="1-3-the-one-sentence-that-explains-the-whole-policy">1.3 The one sentence that explains the whole policy</h3>
+<blockquote><strong>First take the item out of service officially (RETIREMENT), then sell or destroy the physical junk transparently through online auction (DISPOSAL) — and finally delete its name from the Asset Register (DE-CAPITALISATION).</strong></blockquote>
+<p>Everything in the policy is a detail of that one sentence.</p>
+<hr>
+<h2 id="part-2-meet-the-cast-who-decides-what">Part 2 — Meet the cast (who decides what)</h2>
+<p>Think of the policy as a <strong>school system</strong>.</p>
+<table><thead><tr><th>Level</th><th>Body</th><th>Who sits in it</th><th>What they decide</th><th>Comparison</th></tr></thead><tbody><tr><td><strong>Ground</strong></td><td><strong>Asset Owner</strong> (JE/AE/EE of the division)</td><td>The engineer responsible for that equipment</td><td>"This item is finished. Here are my reasons and my form."</td><td>The class teacher who reports a problem</td></tr><tr><td><strong>Circle</strong></td><td><strong>CLARC</strong></td><td>SE (O&amp;M) Circle — <strong>Chairman</strong>; EE (O&amp;M) division — <strong>Conveyor</strong>; EE (Testing) — Member; Manager (F&amp;A) — Member</td><td>"Yes, it is genuinely finished — <strong>retired</strong>." or "No, keep using it."</td><td>The school committee</td></tr><tr><td><strong>Zone</strong></td><td><strong>ZSC</strong></td><td>CE, EHV PC O&amp;M Zone — <strong>Chairman</strong>; SE (Testing) — Member; AGM (F&amp;A) — Member; EE (Store) — <strong>Conveyor</strong></td><td>"The list is correct. In-principle approval given. We recommend Reserve Price ₹X, STA Y%, and these lots."</td><td>The district education officer</td></tr><tr><td><strong>Head office</strong></td><td><strong>CO R&amp;D Committee</strong></td><td>Director (Operations) — <strong>Chairman</strong>; CE (O&amp;M) — <strong>Conveyor</strong>; CE (Design), CGM (Finance), SE (CPA) — Members</td><td>"Why are so many transformers failing at 20 years? Change the design/specification."</td><td>The textbook committee that fixes root causes</td></tr><tr><td><strong>Finance</strong></td><td><strong>Competent Authority</strong> as per <strong>GO No. 1 (F&amp;A)</strong></td><td>The officer holding delegated financial power</td><td>"Approved — sell it." This is the final signature.</td><td>The person who signs the cheque</td></tr><tr><td><strong>Outside</strong></td><td><strong>MSTC</strong></td><td>A government e-auction company</td><td>Runs the auction, collects money, issues the Delivery Order</td><td>The auctioneer</td></tr><tr><td><strong>Special</strong></td><td><strong>SCIT</strong> (IT scrap)</td><td>CGM (IT) — <strong>Chairman</strong>; EE (Admin) — Member; AGM (HR) — Member; IT Analyst — <strong>Conveyor</strong></td><td>IT equipment disposal (computers, printers)</td><td>A separate committee for computers</td></tr></tbody></table>
+<blockquote><strong>The single most useful thing to remember:</strong> after the asset owner hands over the item to <strong>EE (Store)</strong>, <em>every</em> further approval until the item leaves the gate is done by EE (Store). This is General Guideline 6 of the policy. The division is not chased again.</blockquote>
+<hr>
+<h2 id="part-3-the-six-boxes-which-category-does-my-item-fall-into">Part 3 — The six boxes: which category does my item fall into?</h2>
+<p>Before anything else, every item must be put into one of <strong>six boxes</strong>. The box decides which form you fill and how often you report.</p>
+<table><thead><tr><th>Box</th><th>In plain language</th><th>Real example</th></tr></thead><tbody><tr><td><strong>A(a)</strong></td><td>Completed its life but <strong>still working fine and still in use</strong></td><td>A 35-year-old transformer that is still carrying load without trouble</td></tr><tr><td><strong>A(b)</strong></td><td>Completed its life and <strong>taken out of use</strong> — or being replaced by better technology</td><td>The old electromechanical relay panel removed when a numerical relay panel came in</td></tr><tr><td><strong>B</strong></td><td>Not broken, but <strong>obsolete</strong> — keeping it costs more than it is worth</td><td>A CRT monitor or a DOS-based computer nobody can repair</td></tr><tr><td><strong>C</strong></td><td><strong>Damaged / unserviceable / beyond economic repair</strong> — and this happened <em>within</em> its life</td><td>A breaker that burst, a transformer that burnt</td></tr><tr><td><strong>D</strong></td><td>Odds and ends with <strong>very little</strong> value</td><td>E-waste, packing boxes, empty drums, old furniture, discarded stationery, out-of-date spares</td></tr><tr><td><strong>E</strong></td><td><strong>Worthless</strong> — no buyer, no value</td><td>Deteriorated wood, rotten packing material, debris</td></tr></tbody></table>
+<p><strong>A quick way to remember:</strong> A = old, B = outdated, C = broken, D = junk with a little value, E = junk with no value.</p>
+<h3 id="the-gate-before-you-retire-anything">The gate before you retire anything</h3>
+<p>The policy puts a condition before retirement (clause 1.3): you must first satisfy yourself that <strong>there is no other economic use for the item anywhere in MSETCL</strong>.</p>
+<p>In plain language: <em>"Before you declare this old transformer dead, check whether some other sub-station in Maharashtra can use it as a spare."</em> Only when the answer is "nobody can use it" do you start retirement.</p>
+<hr>
+<h2 id="part-4-the-story-of-transformer-t-1">Part 4 — The story of Transformer T-1</h2>
+<p>Now the whole policy as one continuous story. Follow T-1 from the sub-station to the weighbridge.</p>
+<h3 id="chapter-1-a-junior-engineer-notices-a-problem">Chapter 1 — A junior engineer notices a problem</h3>
+<p><strong>Baban</strong>, a Junior Engineer at 132 kV Wardha sub-station, has looked after T-1 for six years. T-1 was commissioned in <strong>1988</strong>. It is a 25 MVA, 132/33 kV transformer. In the last year Baban has noticed:</p>
+<ul><li>oil seeping from the gasket,</li><li>the winding temperature running high in summer,</li><li>BDV (breakdown voltage) of the oil falling below limit even after filtration,</li><li>two forced outages in six months.</li></ul>
+<p>Baban's first thought — "should I get it repaired?" — is exactly the right first question. The policy wants you to ask: <strong>is repair economical?</strong> In T-1's case, a rewind would cost more than a new transformer, and the old core is inefficient. Repair is <em>not</em> economical.</p>
+<p>So Baban decides: <strong>T-1 must be retired.</strong></p>
+<h3 id="chapter-2-the-identification-form-proforma-a-or-proforma-b">Chapter 2 — The identification form (Proforma-A or Proforma-B)</h3>
+<p>Baban fills a form. Which one?</p>
+<ul><li>If the item is <strong>A(a)</strong> — old but still running, and he only wants permission to keep using it — he fills <strong>Proforma-A</strong>, the <em>Asset Assessment Certificate</em>, and sends it <strong>twice a year</strong> (half-yearly).</li><li>If the item is <strong>A(b), B, C or D</strong> — genuinely to be retired — he fills <strong>Proforma-B</strong>, the <em>Asset Retirement Certificate</em>, and sends it <strong>every three months (quarterly)</strong>.</li></ul>
+<p>T-1 is old, out of favour and uneconomical to repair — call it <strong>Category A(b) / C</strong>. So: <strong>Proforma-B, quarterly.</strong></p>
+<p>Think of Proforma-B as the <strong>"retirement application"</strong> of the transformer. It records what the item is, where it is, how old it is, why it should go, and what it is worth on paper.</p>
+<p>Baban also does one more thing the policy requires: he <strong>organises a joint inspection</strong> through CLARC. That means he doesn't write the form alone in his room — the O&amp;M engineer, the <strong>Testing</strong> engineer and the <strong>Finance (F&amp;A)</strong> person physically see T-1 and sign. Three pairs of eyes stop fake or careless retirement.</p>
+<h3 id="chapter-3-the-clarc-meeting-the-retirement-decision">Chapter 3 — The CLARC meeting (the retirement decision)</h3>
+<p>The <strong>Circle Level Asset Retirement Committee</strong> meets. In the room:</p>
+<ul><li><strong>SE (O&amp;M) Circle</strong> — Chairman. He asks: <em>"Is the network safe if this goes?"</em></li><li><strong>EE (O&amp;M) of the division</strong> — Conveyor. He has put the file together.</li><li><strong>EE (Testing)</strong> — Member. He asks: <em>"Do the test results really prove it is finished?"</em> — oil BDV, winding resistance, IR values.</li><li><strong>Manager (F&amp;A)</strong> — Member. He asks: <em>"What is its book value? Is anything left to depreciate?"</em></li></ul>
+<p>Two outcomes are possible:</p>
+<ol><li><strong>For A(a) items</strong> — CLARC says <em>"continue in service"</em> and records its <strong>concurrence</strong>. The item keeps working and is reviewed again after six months.</li><li><strong>For A(b), B, C, D items</strong> — CLARC <strong>certifies retirement</strong>: identification → declaration → retirement. For T-1, CLARC declares it <strong>retired from MSETCL</strong>.</li></ol>
+<p>CLARC then prepares the <strong>Asset Retirement Report</strong>: the name and description of the item, its book value, and the reasons for retirement.</p>
+<h3 id="chapter-4-two-reporting-lines-out-of-clarc">Chapter 4 — Two reporting lines out of CLARC</h3>
+<p>CLARC's retirement report travels on <strong>two different tracks</strong>. This confuses many people, so watch carefully:</p>
+<p><strong>Track 1 — the money track (to ZSC):</strong> the report goes to the Zonal Scrapping Committee, which consolidates all such reports from the zone and processes them for sale. This happens for categories <strong>A, B and C</strong> — and specifically for anything that <strong>burnt, burst, or showed degraded technical parameters within its life</strong> (that is important: a failure inside the expected life is a red flag worth reporting upward).</p>
+<p><strong>Track 2 — the learning track (to CO R&amp;D):</strong> ZSC adds its own views and remarks and sends a consolidated report <strong>every quarter</strong> to the Corporate Office R&amp;D Committee. That committee — chaired by the Director (Operations) — asks the bigger question: <em>"Why did a transformer fail in 20 years when it should have lasted 25? Is there a design or specification problem?"</em> Then it orders corrective action.</p>
+<p>So the same dead transformer produces <strong>revenue</strong> on one track and <strong>knowledge</strong> on the other.</p>
+<h3 id="chapter-5-handing-over-the-keys-this-is-the-turning-point">Chapter 5 — Handing over the keys (this is the turning point)</h3>
+<p>CLARC has declared T-1 retired. Now the physical item and the retirement certificate are <strong>handed over to EE (Store)</strong>.</p>
+<p>From this moment:</p>
+<ul><li>The item moves to the <strong>Major Store</strong> (or to a space that EE (Store) identifies — if the store is full, he may use space at a nearby sub-station).</li><li>It is entered in <strong>one single stock register</strong> for the whole zone.</li><li><strong>Security guard / CCTV</strong> is arranged if needed.</li><li><strong>All further approvals until disposal are handled by EE (Store).</strong> Baban is free to go back to running the sub-station.</li></ul>
+<p>There is one important exception in the policy: material replaced under an <strong>LE (Life Extension) scheme</strong> or after a <strong>failure</strong> must be credited to the store — <strong>except ICT / Power Transformers</strong>, which need separate handling.</p>
+<p>The policy also says something smart: <strong>every work order given to a contractor must contain a line</strong> saying that the removed material will be moved from site to the Major Store immediately. So the contractor who installs the new transformer is contractually bound to cart the old one away.</p>
+<h3 id="chapter-6-what-is-it-worth-book-value">Chapter 6 — What is it worth? (book value)</h3>
+<p>EE (Store) now has to put a <strong>value</strong> on the junk. Two questions:</p>
+<p><strong>Question 1 — Is the item in the Asset Register?</strong> The Asset Register is the official list of company property. Big items like transformers are always in it. EE (Store) verifies the <strong>book value</strong> of every item, with the <strong>Manager (F&amp;A)</strong> playing the key role.</p>
+<p><strong>Question 2 — What if the item is NOT in the register?</strong> This happens surprisingly often with small things — an old cupboard, a cable drum, a rusted tank. The policy's answer:</p>
+<ul><li>The <strong>ZSC may arrive at a rough book value</strong> by asking: what would it have cost when new? How much has it depreciated? What is left today?</li><li>The <strong>Finance Department</strong> decides the value during the <strong>physical verification of Property, Plant and Equipment (PPE)</strong>.</li><li>The <strong>O&amp;M wing</strong> finalises guidelines for <strong>weight</strong> (for metal sold by kilogram).</li><li>For <strong>high-value</strong> assets, a <strong>separate committee with technical and finance members</strong> finalises a standard valuation method.</li></ul>
+<p><strong>A simple example.</strong> Assume T-1 was purchased in 1988 for ₹2 crore and the company depreciates transformer assets over 25 years. On paper, after full depreciation, only a small scrap value remains — say <strong>₹1 lakh</strong> <em>(illustrative number)</em>. That ₹1 lakh is the <strong>book value</strong>: what the accounts still show. Note carefully — book value is an <em>accounting</em> number. What a scrap dealer will actually pay depends on <strong>metal rates</strong>, not on the register.</p>
+<h3 id="chapter-7-the-consolidated-list-and-the-in-principle-approval">Chapter 7 — The consolidated list and the in-principle approval</h3>
+<p>EE (Store) prepares a <strong>Consolidated Scrapping List</strong> — every item with its book or depreciated value — and places it before <strong>ZSC</strong>.</p>
+<p>ZSC grants <strong>in-principle approval</strong>. Translation: <em>"Yes, in principle this junk may be sold. Now go and do the ground work properly."</em></p>
+<h3 id="chapter-8-the-ground-work-survey-reserve-price-lots">Chapter 8 — The ground work: survey, reserve price, lots</h3>
+<p>Three things happen now, and they decide whether the auction succeeds or fails.</p>
+<p><strong>(a) Physical survey.</strong> EE (Store) or his team physically inspects the material: what is it, how much of it, in what condition, where is it lying, can a truck reach it?</p>
+<p><strong>(b) Fix the Reserve Price — within 7 days.</strong> The rule: base it on the <strong>last auctioned rate</strong> or on the <strong>latest metal scrap rates published on the MSTC website</strong>. The clock is <strong>7 days</strong> — you price against today's market, not last year's.</p>
+<p><strong>(c) Make lots.</strong> Combine sensible items into saleable bundles.</p>
+<p>The policy says something very practical here: <strong>"Making lots and fixing a realistic Reserve Price is key to successful scrap disposal."</strong> In other words, an over-priced lot helps nobody — it just sits there.</p>
+<p>**Let us price T-1's remains <em>(illustrative arithmetic)</em>:**</p>
+<table><thead><tr><th>Material</th><th>Quantity</th><th>Assumed rate</th><th>Value</th></tr></thead><tbody><tr><td>Copper winding / bushing copper</td><td>2 tonnes</td><td>₹600 / kg</td><td>₹12,00,000</td></tr><tr><td>Transformer steel / core</td><td>8 tonnes</td><td>₹30 / kg</td><td>₹2,40,000</td></tr><tr><td>Aluminium radiators &amp; fittings</td><td>1 tonne</td><td>₹150 / kg</td><td>₹1,50,000</td></tr><tr><td>Insulating oil (if saleable)</td><td>10,000 litres</td><td>₹40 / litre</td><td>₹4,00,000</td></tr><tr><td><strong>Gross indicative value</strong></td><td></td><td></td><td><strong>₹19,90,000</strong></td></tr></tbody></table>
+<p>Now apply judgement. The scrap is lying in a remote sub-station; the buyer must arrange his own cutting, loading and transport; oil may need testing for PCB content. So EE (Store) proposes a <strong>Reserve Price of ₹18 lakh</strong> — slightly below gross value, to attract bidders.</p>
+<p>EE (Store) then creates <strong>Lot No. 3 — "Wardha Zone mixed scrap"</strong>, which contains T-1 plus a few other retired items, so that the lot is big enough to interest a serious dealer.</p>
+<h3 id="chapter-9-zsc-recommends-competent-authority-approves">Chapter 9 — ZSC recommends, Competent Authority approves</h3>
+<p>ZSC scrutinises the entire proposal and forwards its <strong>final recommendation</strong> — the <strong>MRP (Minimum Reserve Price)</strong>, the <strong>STA percentage</strong>, and the <strong>lot details</strong> — to the <strong>Competent Authority</strong> as per <strong>GO No. 1 (F&amp;A)</strong> of MSETCL.</p>
+<p>For our lot, assume ZSC recommends:</p>
+<ul><li><strong>MRP: ₹18,00,000</strong></li><li><strong>STA: 10%</strong> → the lot stays alive down to <strong>₹16,20,000</strong></li><li><strong>Lot No. 3, Wardha Zone mixed scrap</strong></li></ul>
+<p>The Competent Authority approves. Now — and only now — can the material be sold.</p>
+<hr>
+<h2 id="part-5-auction-day-selling-t-1-on-mstc">Part 5 — Auction day: selling T-1 on MSTC</h2>
+<h3 id="5-1-setting-up-the-auction">5.1 Setting up the auction</h3>
+<p>EE (Store) sends MSTC the <strong>list of lots</strong>, with the description of each item, <strong>HSN codes</strong> and the <strong>terms and conditions</strong> — preferably by email, followed by hard copies.</p>
+<p>MSTC then:</p>
+<ol><li><strong>Creates the auction</strong> and emails MSETCL the <strong>auction number and schedule</strong>.</li><li><strong>Builds the auction catalogue within 2–3 days</strong> — terms, material description, quantity.</li><li>EE (Store) <strong>checks the catalogue</strong> and reports any error.</li></ol>
+<h3 id="5-2-inspection-welcome-the-dealers">5.2 Inspection — welcome the dealers</h3>
+<p>Here is a detail juniors often get wrong. Once the auction is published, <strong>scrap dealers physically visit MSETCL premises</strong> to inspect the material. The policy says clearly: <strong>facilitate them smoothly</strong>, and it is wise to <strong>record their names and contact numbers</strong>.</p>
+<p>Think about it from the dealer's side. He is bidding lakhs of rupees on material he has never touched. If your store-keeper turns him away, he either bids very low or doesn't bid at all. Every rupee of courtesy converts into rupees of bid price.</p>
+<p><strong>Security rule:</strong> bids are on <strong>"as is where is"</strong> basis, subject to prior inspection, and <strong>no photography</strong> of lots by outsiders is allowed (campus security).</p>
+<h3 id="5-3-the-bidding">5.3 The bidding</h3>
+<ul><li>Bidding runs for <strong>4 hours</strong> initially.</li><li>If a bid arrives in the <strong>last 8 minutes</strong>, the closing time <strong>auto-extends by 8 minutes</strong>. This can happen up to <strong>3 times</strong>. (This prevents "sniping" — someone sneaking in a bid at the last second.)</li><li>At any moment the screen shows the <strong>H-1 (highest) bid</strong> — but <strong>never the bidder's name</strong>.</li><li>Anyone can see the <strong>last 10 bids</strong>.</li><li>The moment the auction closes, the result is visible online: which lots are <strong>confirmed</strong> and which are <strong>STA</strong>.</li></ul>
+<h3 id="5-4-our-auction-closes-and-it-lands-in-sta">5.4 Our auction closes — and it lands in STA</h3>
+<p>Assume the highest bid (<strong>H-1</strong>) for Lot No. 3 is <strong>₹17,10,000</strong>.</p>
+<p>Our Reserve Price was ₹18,00,000. So the bid is <strong>below RP</strong> — but it is <strong>above the STA floor</strong> of ₹16,20,000.</p>
+<p>What happens? The lot does <strong>not</strong> get rejected. It goes into <strong>STA — Subject To Approval</strong> mode. MSTC automatically issues a <strong>Provisional Sale Intimation Letter</strong> to the H-1 bidder, "subject to approval of MSETCL".</p>
+<h3 id="5-5-what-sta-actually-means-the-policy-s-own-example">5.5 What STA actually means — the policy's own example</h3>
+<table><thead><tr><th></th><th>Example 1</th><th>Example 2</th></tr></thead><tbody><tr><td>Reserve Price entered by MSETCL</td><td>₹50,000</td><td>₹10,000</td></tr><tr><td>% STA below RP</td><td>10% → ₹5,000</td><td>40% → ₹4,000</td></tr><tr><td>Lowest bid that stays alive</td><td><strong>₹45,000</strong></td><td><strong>₹6,000</strong></td></tr></tbody></table>
+<p>Read it like this: <em>"I have fixed ₹50,000 as my minimum, but if somebody offers ₹46,000 I won't throw the offer away — I'll put it up to my boss, because selling at ₹46,000 today is better than storing it for six more months and re-auctioning."</em></p>
+<p>Three rules from the policy:</p>
+<ol><li>The <strong>same Competent Authority</strong> that approves the minimum Reserve Price also has the power to approve the <strong>% STA</strong>.</li><li>If a lot remains unsold and ZSC wants to <strong>change the STA%</strong>, that change must be approved by <strong>ZSC</strong>.</li><li>ZSC generally works in a <strong>0% to 50% range</strong>, case by case.</li></ol>
+<h3 id="5-6-the-decision-the-money-the-gate-pass">5.6 The decision, the money, the gate pass</h3>
+<p>Back to our lot at ₹17,10,000.</p>
+<ol><li><strong>MSETCL reviews.</strong> The ZSC/Competent Authority reviews the overall situation and takes a final decision. The policy fixes a discipline: the decision must be communicated <strong>within 7 working days</strong> of the auction closing, by posting it online.</li><li><strong>If approved</strong> — MSTC asks the H-1 bidder to deposit <strong>10% Security Deposit / EMD</strong> (here, ₹1,71,000) within <strong>7 days</strong>.</li><li><strong>Balance payment</strong> is made by <strong>RTGS</strong>.</li><li><strong>Finance confirms.</strong> The <strong>CGM / AGM (F&amp;A)</strong> confirms receipt of payment <strong>in writing within 2 days</strong> to EE (Store)/the division.</li><li><strong>Delivery Order</strong> is issued.</li><li><strong>Lifting.</strong> The buyer's trucks arrive. EE (Store) must <strong>actively support</strong> smooth lifting: security clearance of the site, facilitating deployment of trucks, entry passes for the buyer's authorised personnel, weighment, gate pass.</li><li><strong>Handover complete.</strong></li></ol>
+<h3 id="5-7-the-last-page-of-the-story-deleting-the-name">5.7 The last page of the story — deleting the name</h3>
+<p>After the sale, EE (Store) intimates the <strong>item-wise scrap cost</strong> to the asset owner (Baban's division) and to Finance.</p>
+<p>Finance then <strong>de-capitalises</strong> the item: T-1's name is struck off the Asset Register, and the sale proceeds are properly accounted for. The new transformer that replaced it is <strong>capitalised</strong>. The circle is complete.</p>
+<hr>
+<h2 id="part-6-when-the-story-doesn-t-end-happily">Part 6 — When the story doesn't end happily</h2>
+<p>Not every lot sells first time. The policy plans for three failures.</p>
+<h3 id="failure-1-nobody-bid-at-all">Failure 1 — Nobody bid at all</h3>
+<p><strong>Why?</strong> Usually one of: the reserve price was unrealistic, the material is in an unreachable place, the lot is badly mixed, or loading/transport costs eat the profit.</p>
+<p><strong>What the policy says:</strong> the issue must be <strong>critically analysed</strong> by the committee and by ZSC — condition of the scrap, its location, loading/unloading, transportation and other practical issues — <strong>before</strong> fixing the MRP and STA% again. Facilitate dealer inspections and keep their contact numbers.</p>
+<h3 id="failure-2-there-was-a-bid-but-below-even-the-sta-floor">Failure 2 — There was a bid, but below even the STA floor</h3>
+<p>The lot is <strong>rejected</strong> and cannot be sold at that price. Same analysis as above; then ZSC recommends a <strong>new proposal and strategy</strong> — usually a lower MRP and a higher STA%.</p>
+<h3 id="failure-3-the-h-1-bidder-won-but-never-paid-the-emd">Failure 3 — The H-1 bidder won but never paid the EMD</h3>
+<p>Rare, but it happens. ZSC may recommend <strong>re-auction</strong>, and penal re-charges may apply to the defaulting party through MSTC.</p>
+<h3 id="the-exit-door-shifting-the-lot-to-category-e">The exit door: shifting the lot to Category E</h3>
+<p>If a lot fails again and again, ZSC may recommend <strong>shifting the lot from Category A–D to Category E</strong> — that is, <strong>destroy it or dispose of it as garbage/debris</strong>.</p>
+<p>Why would you do that instead of selling? Because the stated <strong>objective is to get rid of the scrap and free the occupied space</strong>. A lot that occupies a store for two years costs more in space, security and administration than it earns in a marginally better bid next year.</p>
+<p><strong>Special case — hazardous waste:</strong> the policy advises ZSC to keep a <strong>high STA%</strong> for hazardous lots so that they sell <strong>in the first attempt itself</strong>.</p>
+<div class="diagram"><pre class="mermaid">
+flowchart LR
+    A(["Lot put up<br/>for auction"]) --> B{"Result?"}
+    B -->|"H-1 ≥ RP"| C["SOLD ✔"]
+    B -->|"Between STA floor<br/>and RP"| D["STA → boss decides<br/>in 7 working days"]
+    D -->|"Approved"| C
+    D -->|"Rejected"| E
+    B -->|"Below STA floor"| E["REJECTED"]
+    B -->|"No bid"| E
+    E --> F["ZSC asks WHY:<br/>price? location? loading?"]
+    F --> G["Re-auction with<br/>lower MRP &amp; higher STA%"]
+    G --> H{"Sold now?"}
+    H -->|"Yes"| C
+    H -->|"No"| I(["Shift lot to<br/>CATEGORY E<br/>destroy / debris"])
+
+    style C fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style D fill:#fff8e1,stroke:#f9a825,stroke-width:2px
+    style E fill:#ffebee,stroke:#c62828,stroke-width:2px
+    style I fill:#eceff1,stroke:#546e7a,stroke-width:2px
+</pre></div>
+<hr>
+<h2 id="part-7-three-special-stories">Part 7 — Three special stories</h2>
+<h3 id="7-1-the-computer-story-it-equipment">7.1 The computer story (IT equipment)</h3>
+<p>In the accounts section there are 20 desktop computers bought in 2018. MERC regulations give such equipment a <strong>life of 5 years</strong>. They are now well past that life.</p>
+<p>The IT department starts the disposal proposal. Now there is a special first question, and it is a beautiful one:</p>
+<blockquote><strong>Are they still usable?</strong></blockquote>
+<p>If <strong>yes</strong> — the policy says such computers may be <strong>donated free of cost to Government educational institutes and schools under CSR</strong>, with the approval of the Competent Authority. The institutes are identified by <strong>CIRO</strong>. So a computer that is too slow for a sub-station may still be perfect for a Zilla Parishad school computer lab.</p>
+<p>If they are <strong>not usable</strong>, or if some still remain after donation, the file goes to <strong>SCIT</strong> — the Scrapping Committee for IT:</p>
+<ul><li><strong>CGM (IT)</strong> — Chairman</li><li><strong>EE (Admin), Zone office</strong> — Member</li><li><strong>AGM (HR), Zone office</strong> — Member</li><li><strong>IT Analyst</strong> — Conveyor</li></ul>
+<p>SCIT scrutinises the proposal and forwards it to the Competent Authority under <strong>GO 1 (F&amp;A)</strong>. After approval, <strong>EE (Store) disposes of them through MSTC</strong>, exactly like any other lot. Finally, Finance de-capitalises them.</p>
+<p><em>(Note: the policy states the MERC life as 5 years "at present" — always check the latest MERC regulation, because this number can change.)</em></p>
+<h3 id="7-2-the-battery-story-used-lead-acid-batteries">7.2 The battery story (used lead acid batteries)</h3>
+<p>At every sub-station there is a battery bank that supplies control power when everything else fails. When those batteries are used up, they are <strong>hazardous waste</strong> — full of lead and acid. You cannot simply sell them to the highest bidder.</p>
+<p>The policy's rules:</p>
+<ol><li>Make a <strong>separate lot tagged as hazardous waste</strong>.</li><li>In the MSTC auction, <strong>only recyclers registered with the Pollution Control Board may bid</strong>.</li><li>Alternatively, deposit them with the <strong>dealer / manufacturer / importer / assembler / registered recycler / re-conditioner</strong>, or at a <strong>designated collection centre</strong>.</li><li>Field offices must follow <strong>safety and environmental</strong> norms.</li><li>ZSC should keep a <strong>high STA%</strong> so the lot sells first time.</li></ol>
+<p>Everything else — reserve price, EMD, delivery order — is the same as a general lot.</p>
+<h3 id="7-3-the-small-stuff-story-scrap-below-5-000">7.3 The small-stuff story (scrap below ₹5,000)</h3>
+<p>Old newspapers, magazines, broken furniture and small miscellaneous items worth <strong>less than ₹5,000</strong> do <strong>not</strong> go to MSTC. The <strong>Office In-charge disposes of them regularly</strong>.</p>
+<p>The policy adds a purpose: this must be done <strong>frequently, so the office premises stay neat and clean at all times</strong>. Translation: don't wait for a committee to clear yesterday's newspapers.</p>
+<hr>
+<h2 id="part-8-your-job-what-you-must-actually-do">Part 8 — Your job: what you must actually do</h2>
+<p>If you are the person in charge, here is your working calendar and your control checklist.</p>
+<h3 id="8-1-the-clock-you-must-respect">8.1 The clock you must respect</h3>
+<table><thead><tr><th>When</th><th>What must happen</th><th>Who</th></tr></thead><tbody><tr><td><strong>Continuously</strong></td><td>Identify assets that are old, damaged, obsolete or surplus</td><td>Asset Owner (your juniors)</td></tr><tr><td><strong>Half-yearly</strong></td><td><strong>Proforma-A</strong> for Category A(a) items</td><td>Asset Owner → CLARC</td></tr><tr><td><strong>Quarterly</strong></td><td><strong>Proforma-B</strong> for Category A(b), B, C, D items</td><td>Asset Owner → CLARC</td></tr><tr><td><strong>Immediately on retirement</strong></td><td>Physical asset + retirement certificate handed to EE (Store)</td><td>Asset Owner</td></tr><tr><td><strong>Quarterly (4 times a year)</strong></td><td>Auctions held by each Major Store</td><td>EE (Store)</td></tr><tr><td><strong>Quarterly</strong></td><td>Consolidated retirement report to CO R&amp;D</td><td>ZSC</td></tr><tr><td><strong>Within 7 days</strong></td><td>Fix Reserve Price from last auctioned rate / latest MSTC rate</td><td>EE (Store)</td></tr><tr><td><strong>2–3 days</strong></td><td>MSTC prepares the catalogue</td><td>MSTC</td></tr><tr><td><strong>4 hours + 8 min × 3</strong></td><td>E-bidding window and auto-extensions</td><td>MSTC</td></tr><tr><td><strong>7 days</strong></td><td>Buyer deposits 10% EMD</td><td>Buyer</td></tr><tr><td><strong>≤ 7 working days</strong></td><td>MSETCL posts acceptance/rejection of STA bids online</td><td>Competent Authority</td></tr><tr><td><strong>2 days</strong></td><td>Finance confirms RTGS receipt in writing</td><td>CGM/AGM (F&amp;A)</td></tr></tbody></table>
+<h3 id="8-2-your-control-checklist-questions-to-ask-your-juniors">8.2 Your control checklist — questions to ask your juniors</h3>
+<p>Ask these every month. If the answer to any one is "no", you have found a leak.</p>
+<ol><li><strong>Is there a retired item lying at any sub-station?</strong> If yes, why has it not reached the Major Store?</li><li><strong>Is every item in the store entered in the single stock register?</strong> One register, whole zone.</li><li><strong>Is the CCTV / security guard in place</strong> at the store or the identified scrap space?</li><li><strong>Did the last two auctions happen this quarter?</strong> The target is four a year.</li><li><strong>Were dealers allowed to inspect the lots?</strong> Were their names and phone numbers recorded?</li><li><strong>Was the Reserve Price fixed within 7 days from MSTC rates?</strong></li><li><strong>Are the lots sensible?</strong> Heavy copper separate from light junk? Reachable material separate from remote material?</li><li><strong>How many lots went unsold last time, and did we record WHY?</strong></li><li><strong>Does every work order contain the clause</strong> that removed material goes to the Major Store?</li><li><strong>Were the sold items de-capitalised</strong> from the Asset Register, and was the division informed of the sale amount?</li></ol>
+<h3 id="8-3-the-five-most-common-mistakes">8.3 The five most common mistakes</h3>
+<table><thead><tr><th>Mistake</th><th>Why it hurts</th><th>The rule that prevents it</th></tr></thead><tbody><tr><td>Leaving retired material in the sub-station</td><td>Theft, space blocked, premises ugly</td><td>Hand over to EE (Store) immediately; work-order clause</td></tr><tr><td>Pricing the lot by "feel" or by last year's rate</td><td>No bids, or giveaway pricing</td><td>RP within 7 days, from MSTC rates / last auction rate</td></tr><tr><td>Fixing an unrealistic Reserve Price out of fear of "selling cheap"</td><td>Lot rejected, re-auction, six months lost</td><td>Realistic lotting + realistic RP + STA cushion</td></tr><tr><td>Not letting dealers inspect</td><td>Low bids or no bids</td><td>Facilitate inspection, record contacts</td></tr><tr><td>Forgetting de-capitalisation</td><td>Books show assets that no longer exist</td><td>EE (Store) intimates item-wise cost; Finance writes off</td></tr></tbody></table>
+<h3 id="8-4-the-twelve-documents-the-policy-creates">8.4 The twelve documents the policy creates</h3>
+<p>Keep this as your file-movement chart. If a file is missing any of these, it is incomplete.</p>
+<table><thead><tr><th>#</th><th>Document</th><th>Created by</th><th>Goes to</th></tr></thead><tbody><tr><td>1</td><td><strong>Proforma-A</strong> — Asset Assessment Certificate (half-yearly)</td><td>Asset Owner</td><td>CLARC</td></tr><tr><td>2</td><td><strong>Proforma-B</strong> — Asset Retirement Certificate (quarterly)</td><td>Asset Owner</td><td>CLARC</td></tr><tr><td>3</td><td><strong>Asset Retirement Report</strong> (description, book value, reasons)</td><td>CLARC</td><td>ZSC</td></tr><tr><td>4</td><td><strong>ZSC consolidated report</strong> with views (quarterly)</td><td>ZSC</td><td>CO R&amp;D</td></tr><tr><td>5</td><td><strong>Retirement Certificate</strong> + physical asset</td><td>CLARC / Asset Owner</td><td>EE (Store)</td></tr><tr><td>6</td><td><strong>Consolidated Scrapping List</strong> with book / depreciated value</td><td>EE (Store)</td><td>ZSC</td></tr><tr><td>7</td><td><strong>Survey report + Reserve Price note</strong> (within 7 days)</td><td>EE (Store)</td><td>ZSC</td></tr><tr><td>8</td><td><strong>Lot proposal: MRP + STA% + lot details</strong></td><td>ZSC</td><td>Competent Authority</td></tr><tr><td>9</td><td><strong>Approval under GO 1 (F&amp;A)</strong></td><td>Competent Authority</td><td>EE (Store) / MSTC</td></tr><tr><td>10</td><td><strong>Auction catalogue</strong></td><td>MSTC</td><td>Bidders + MSETCL</td></tr><tr><td>11</td><td><strong>Sale / Provisional Sale Intimation Letter</strong></td><td>MSTC</td><td>H-1 bidder</td></tr><tr><td>12</td><td><strong>Delivery Order</strong> → then <strong>de-capitalisation advice</strong></td><td>MSTC → EE (Store)</td><td>Buyer / Finance</td></tr></tbody></table>
+<hr>
+<h2 id="part-9-how-to-explain-this-to-your-subordinate">Part 9 — How to explain this to your subordinate</h2>
+<h3 id="9-1-the-two-minute-script-read-this-out-aloud">9.1 The two-minute script (read this out aloud)</h3>
+<blockquote>"Listen. Understand one thing: <strong>nothing in this company is thrown away on the spot, and nothing is sold privately.</strong> There are only two stages.  <strong>Stage one — retire it.</strong> You are the asset owner. If something in your sub-station is old, broken, useless or outdated, you decide its category — A, B, C, D or E — and you fill a form. Proforma-A, twice a year, if the item is old but still running. Proforma-B, every quarter, if it must go. Then we do a <strong>joint inspection</strong> — testing, O&amp;M and finance all see it — and the <strong>CLARC committee</strong> declares it retired. After that you hand over the item and the retirement certificate to <strong>EE Store</strong>, and your responsibility ends.  <strong>Stage two — sell it.</strong> EE Store checks the book value with the finance manager, prepares one consolidated list, and takes ZSC's in-principle approval. Then he physically surveys the material, fixes a <strong>Reserve Price within seven days</strong> using MSTC's latest rates, and makes <strong>lots</strong>. ZSC recommends the reserve price and the <strong>STA percentage</strong> — that is the small discount we are willing to accept with the boss's permission — and the <strong>Competent Authority</strong> approves. Then it goes for <strong>online e-auction on MSTC</strong>. Highest bidder pays 10% advance within seven days, pays the balance, gets the Delivery Order, and takes the material out. Finally finance <strong>deletes the item from the Asset Register</strong>.  Three habits I want from you. <strong>One:</strong> the moment something is retired, it goes to the Major Store — it does not sit in the sub-station. <strong>Two:</strong> never price a lot by guesswork — use MSTC rates. <strong>Three:</strong> when scrap dealers come to inspect, treat them well and note their names — every rupee they feel confident about comes back to us in the bid.  Do this and the zone earns money, nothing is stolen, and the premises look clean. Now — go and list every item lying in your sub-station."</blockquote>
+<h3 id="9-2-the-one-page-handout-pin-this-on-the-notice-board">9.2 The one-page handout (pin this on the notice board)</h3>
+<pre><code>╔════════════════════════════════════════════════════════════════════════════╗
+║                 SCRAP DISPOSAL — SIX STEPS. ONE LINE EACH.                 ║
+╠════════════════════════════════════════════════════════════════════════════╣
+║  1. SPOT IT      → old / broken / obsolete / surplus? → CATEGORY A–E       ║
+║  2. FILL FORM    → Proforma-A (half-yearly) or Proforma-B (quarterly)      ║
+║                    + joint inspection with Testing &amp; Finance               ║
+║  3. RETIRE IT    → CLARC declares it retired                               ║
+║  4. HAND IT OVER → item + certificate to EE (Store). YOUR JOB ENDS HERE    ║
+║  5. PRICE &amp; SELL → book value → survey → Reserve Price in 7 days           ║
+║                    → lots → ZSC → Competent Authority → MSTC auction       ║
+║  6. CLOSE IT     → 10% EMD → balance → Delivery Order → write off          ║
+╠════════════════════════════════════════════════════════════════════════════╣
+║  REMEMBER:                                                                 ║
+║  • Nothing stays in the sub-station — everything goes to the store.        ║
+║  • Reserve Price from MSTC rates — never from memory.                      ║
+║  • STA = &quot;I&#x27;ll accept a little less, if the boss says yes.&quot;                ║
+║  • No bid? Ask WHY. Then re-lot, re-price, re-auction.                     ║
+║  • Scrap below ₹5,000? Office In-charge disposes it — no auction.          ║
+║  • Used batteries = hazardous waste. Only registered recyclers.            ║
+║  • Computers past 5 years: try donating to a government school.            ║
+╚════════════════════════════════════════════════════════════════════════════╝</code></pre>
+<h3 id="9-3-ten-questions-your-subordinate-will-ask-you">9.3 Ten questions your subordinate will ask you</h3>
+<p><strong>1. "Sir, the item is old but still working. Do I retire it?"</strong> No. If it has completed its life but is still in use, it is <strong>Category A(a)</strong> — fill <strong>Proforma-A</strong> half-yearly and take CLARC's <strong>concurrence to continue</strong>. Retirement is only when it is no longer usable or uneconomical to keep.</p>
+<p><strong>2. "Sir, is it worth repairing?"</strong> Ask first: is the repair <strong>economical</strong>? If repair costs more than the benefit, or the item is beyond economic repair within its life, it is <strong>Category C</strong> — retire it.</p>
+<p><strong>3. "Sir, the item is not in the Asset Register. What do I write as its value?"</strong> Don't guess alone. ZSC works out a rough value from <strong>likely purchase price minus depreciation</strong>; Finance finalises values during <strong>PPE physical verification</strong>; O&amp;M gives the <strong>weight</strong> guidelines.</p>
+<p><strong>4. "Sir, who decides the price?"</strong> EE (Store) proposes the <strong>Reserve Price within 7 days</strong> from the last auctioned rate or the latest MSTC rates. <strong>ZSC recommends</strong> the MRP and STA%. The <strong>Competent Authority</strong> approves. The market decides the final price.</p>
+<p><strong>5. "Sir, what is STA in one line?"</strong> <em>Subject To Approval</em> — a safety net. We fix a reserve price, but we also fix a percentage below it at which we will consider the bid <strong>with the boss's approval</strong> instead of rejecting it outright.</p>
+<p><strong>6. "Sir, the bid came lower than our reserve price. What now?"</strong> If it is within the STA band → it goes to <strong>STA</strong> mode and the Competent Authority decides within <strong>7 working days</strong>. If it is below the STA floor → <strong>rejected</strong>, and ZSC re-analyses, re-prices and re-auctions.</p>
+<p><strong>7. "Sir, the buyer won but has not paid."</strong> If the H-1 bidder does not deposit the 10% EMD, ZSC may recommend <strong>re-auction</strong> through MSTC.</p>
+<p><strong>8. "Sir, nobody bid at all. Did we do something wrong?"</strong> Probably — and the policy wants you to find out: was the price unrealistic, the location unreachable, the lot badly mixed, or loading too costly? ZSC must critically analyse and then fix the MRP and STA%.</p>
+<p><strong>9. "Sir, can I just sell the old newspapers and broken chairs?"</strong> Yes — if the value is <strong>below ₹5,000</strong>, the <strong>Office In-charge</strong> disposes of it regularly, and should do it often to keep the premises clean.</p>
+<p><strong>10. "Sir, why are we filling so many forms?"</strong> Because this is public money. Every form protects you. The form proves that three officers inspected the item, that the price was fixed from market rates, that the sale was by open auction, and that the item was removed from the books. <strong>A file with all twelve documents is your safety shield.</strong></p>
+<h3 id="9-4-the-whole-policy-in-one-paragraph">9.4 The whole policy in one paragraph</h3>
+<blockquote>Old, broken, obsolete or surplus material is first <strong>identified and categorised</strong> by the engineer who owns it, then <strong>retired</strong> by a circle committee (CLARC) after a joint inspection, then <strong>handed over to the store</strong> with a retirement certificate. The store department checks its <strong>book value</strong>, surveys it physically, fixes a <strong>reserve price from market rates within seven days</strong>, and makes <strong>lots</strong>. A zonal committee (ZSC) recommends the price and the permitted discount, the <strong>Competent Authority</strong> approves, and the material is sold by <strong>online e-auction through MSTC</strong>. The buyer pays an advance and the balance, gets a <strong>delivery order</strong>, lifts the material, and finally the item is <strong>deleted from the Asset Register</strong>. Anything that cannot be sold is destroyed or disposed of as debris, so that space is freed and theft is prevented.</blockquote>
+<hr>
+<h2 id="part-10-glossary-quick-reference-alphabetically">Part 10 — Glossary (quick reference, alphabetically)</h2>
+<table><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody><tr><td><strong>A(a) / A(b)</strong></td><td>Completed useful life — (a) still in use, (b) removed from use</td></tr><tr><td><strong>Asset Register</strong></td><td>Official list of all company assets with values</td></tr><tr><td><strong>As is where is</strong></td><td>The buyer takes the material in its present condition and location</td></tr><tr><td><strong>BDV</strong></td><td>Breakdown Voltage — a test on transformer oil</td></tr><tr><td><strong>Book value</strong></td><td>Value of the asset in the accounts after depreciation</td></tr><tr><td><strong>Category B / C / D / E</strong></td><td>Obsolete / damaged / meagre-value junk / worthless debris</td></tr><tr><td><strong>CLARC</strong></td><td>Circle Level Asset Retirement Committee — declares retirement</td></tr><tr><td><strong>CO R&amp;D Committee</strong></td><td>Head-office committee that studies failures and orders corrective action</td></tr><tr><td><strong>Consolidated Scrapping List</strong></td><td>EE (Store)'s single list of all items proposed for scrap, with values</td></tr><tr><td><strong>De-capitalisation</strong></td><td>Removing the sold item from the Asset Register</td></tr><tr><td><strong>Depreciation</strong></td><td>Yearly loss of value due to age and use</td></tr><tr><td><strong>Delivery Order</strong></td><td>The document that allows the buyer to take the material away</td></tr><tr><td><strong>EMD / SD</strong></td><td>Earnest Money / Security Deposit — 10% advance paid by the buyer</td></tr><tr><td><strong>GO 1 (F&amp;A)</strong></td><td>The office order that defines who has financial power to approve</td></tr><tr><td><strong>H-1</strong></td><td>Highest bidder</td></tr><tr><td><strong>HSN</strong></td><td>Harmonised System of Nomenclature — the commodity code used in GST</td></tr><tr><td><strong>ICT / Power Transformer</strong></td><td>Large transformers — handled separately from routine scrap</td></tr><tr><td><strong>LE scheme</strong></td><td>Life Extension scheme — repairing/reconditioning to extend life</td></tr><tr><td><strong>Lot</strong></td><td>A bundle of scrap sold as one unit</td></tr><tr><td><strong>MERC</strong></td><td>Maharashtra Electricity Regulatory Commission — sets asset lives</td></tr><tr><td><strong>MRP</strong></td><td>Minimum Reserve Price</td></tr><tr><td><strong>MSTC</strong></td><td>Government company that runs the e-auction</td></tr><tr><td><strong>PPE</strong></td><td>Property, Plant and Equipment — the physical verification exercise</td></tr><tr><td><strong>Proforma-A / Proforma-B</strong></td><td>Asset Assessment Certificate / Asset Retirement Certificate</td></tr><tr><td><strong>Reserve Price (RP)</strong></td><td>Minimum price below which the lot will not be sold outright</td></tr><tr><td><strong>Retirement</strong></td><td>Official declaration that an asset is out of MSETCL's service</td></tr><tr><td><strong>SCIT</strong></td><td>Scrapping Committee for IT equipment</td></tr><tr><td><strong>STA</strong></td><td>Subject To Approval — the permitted discount below Reserve Price</td></tr><tr><td><strong>ZSC</strong></td><td>Zonal Scrapping Committee — approves and recommends the sale</td></tr></tbody></table>
+<hr>
+<h2 id="where-to-read-the-exact-wording">Where to read the exact wording</h2>
+<ul><li><code>Policy.pdf</code> — the official circular; clauses 1.3 (no alternate use), 2.1 (categories), 2.2 (CLARC), 2.3 (procedure), 3 (scrapping procedure), 4 (e-auction), 5 (sale/delivery), 6 (failure cases), 7 (batteries), 8 (IT equipment), 9 (de-capitalisation) and the General Guidelines.</li><li><code>MSA wardha new scrapping policy.pdf</code> — the slide version, useful for training your team.</li><li><code>covering letter.pdf</code> — why the policy was issued.</li><li><code>flowchart.html</code> — the same content drawn as flow charts.</li></ul>
+<blockquote><strong>A closing caution:</strong> pages 14–15 of <code>Policy.pdf</code> (the table of Competent Authority / financial powers under GO 1 (F&amp;A)) are a scanned image with no extractable text. Before you sign anything, read that table from the original file and confirm <strong>which officer is the Competent Authority for your lot value</strong>. When in doubt, route the file upward and let the office decide — a file that moves is a file that is safe.</blockquote>
+</main>
+
+<footer>
+  Generated by <code>docs/build_html.py</code> from <code>story-guide.md</code>.
+  Mermaid is loaded from <code>docs/vendor/mermaid.min.js</code> (offline) with a CDN fallback.
+</footer>
+
+<script src="vendor/mermaid.min.js"></script>
+<script>
+if (!window.mermaid) {
+  document.write('<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"><\/script>');
+}
+</script>
+<script>
+const start = () => {
+  mermaid.initialize({
+    startOnLoad: true,
+    securityLevel: 'loose',
+    theme: 'base',
+    flowchart: { curve: 'basis', useMaxWidth: false, htmlLabels: true, nodeSpacing: 30, rankSpacing: 42, padding: 10 },
+    themeVariables: {
+      fontFamily: '-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
+      fontSize: '15px', primaryColor: '#eef4fb', primaryBorderColor: '#90b4dd',
+      primaryTextColor: '#1a2330', lineColor: '#7d90a6', secondaryColor: '#f4f0f8',
+      tertiaryColor: '#f7f9fc', edgeLabelBackground: '#ffffff'
+    }
+  });
+  mermaid.run({ querySelector: 'pre.mermaid' });
+};
+if (window.mermaid) { start(); } else { document.addEventListener('DOMContentLoaded', start); }
+</script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+# Local, untracked copy of the Mermaid runtime used for offline preview
+# (the generated HTML falls back to the jsDelivr CDN when it is absent)
+docs/vendor/

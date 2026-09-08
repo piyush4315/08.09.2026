@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MSETCL — Asset Retirement, Scrap Declaration &amp; Disposal Policy</title>
+<style>
+:root{
+  --ink:#1a2330; --muted:#5a6b7f; --line:#dde4ec; --bg:#f6f8fb; --card:#ffffff;
+  --accent:#1565c0; --accent2:#6a1b9a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+.wrap{max-width:1180px; margin:0 auto; padding:32px 24px 96px}
+header.hero{
+  background:linear-gradient(135deg,#0d47a1 0%,#1565c0 45%,#6a1b9a 100%);
+  color:#fff; padding:44px 24px 38px; border-radius:0 0 18px 18px;
+  box-shadow:0 8px 30px rgba(21,101,192,.25);
+}
+header.hero .inner{max-width:1180px; margin:0 auto}
+header.hero h1{margin:0 0 8px; font-size:30px; letter-spacing:.2px}
+header.hero p{margin:0; opacity:.93; font-size:16px}
+header.hero .chips{margin-top:18px; display:flex; flex-wrap:wrap; gap:8px}
+header.hero .chip{
+  background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28);
+  padding:5px 12px; border-radius:999px; font-size:13px;
+}
+header.hero .chip a{color:#fff; text-decoration:none; border-bottom:1px solid rgba(255,255,255,.6)}
+header.hero .chip a:hover{border-bottom-color:#fff}
+nav.toc{
+  position:sticky; top:0; z-index:20; background:rgba(255,255,255,.96);
+  backdrop-filter:blur(6px); border-bottom:1px solid var(--line);
+}
+nav.toc .inner{max-width:1180px; margin:0 auto; padding:10px 24px; display:flex; gap:6px; flex-wrap:wrap}
+nav.toc a{
+  font-size:13px; color:var(--muted); text-decoration:none; padding:4px 10px;
+  border-radius:999px; border:1px solid transparent; white-space:nowrap;
+}
+nav.toc a:hover{background:#eef3fa; color:var(--accent); border-color:#cfe0f5}
+h1{font-size:30px; margin:8px 0 6px}
+h2{
+  font-size:22px; margin:44px 0 14px; padding:14px 18px; background:var(--card);
+  border-left:5px solid var(--accent); border-radius:8px; box-shadow:0 1px 3px rgba(16,32,64,.07);
+}
+h3{font-size:18px; margin:26px 0 8px; color:var(--accent)}
+p{margin:10px 0}
+blockquote{
+  margin:16px 0; padding:14px 18px; background:#eef3fa; border-left:5px solid var(--accent2);
+  border-radius:8px; color:#2b3a4d;
+}
+.diagram{
+  background:var(--card); border:1px solid var(--line); border-radius:12px;
+  padding:18px 12px; margin:18px 0 22px; overflow-x:auto;
+  box-shadow:0 2px 10px rgba(16,32,64,.06);
+}
+pre.mermaid{margin:0; text-align:center; background:transparent}
+pre.mermaid svg{max-width:100%; height:auto}
+table{border-collapse:collapse; width:100%; margin:16px 0; background:var(--card);
+  border-radius:10px; overflow:hidden; box-shadow:0 1px 3px rgba(16,32,64,.07); font-size:14.5px}
+th{background:#eef3fa; text-align:left; padding:11px 13px; font-size:13px;
+  text-transform:uppercase; letter-spacing:.04em; color:#3b4d63; border-bottom:2px solid var(--line)}
+td{padding:10px 13px; border-bottom:1px solid var(--line); vertical-align:top}
+tr:last-child td{border-bottom:none}
+ul,ol{margin:10px 0 10px 6px; padding-left:22px}
+li{margin:5px 0}
+code{background:#eef3fa; padding:1px 6px; border-radius:5px; font-size:14px; color:#0d47a1}
+pre{
+  background:#0f2233; color:#dbe7f2; padding:14px 16px; border-radius:10px;
+  overflow-x:auto; font-size:13px; line-height:1.5;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+pre code{background:transparent; color:inherit; padding:0; font-size:inherit}
+main.wrap > h1{font-size:32px; margin:6px 0 4px}
+main.wrap > h1 + h3{color:var(--muted); font-weight:500; margin-top:0}
+h2 + h3{margin-top:16px}
+h3{color:#0d47a1}
+blockquote strong{color:#0d47a1}
+td strong{color:#123}
+hr{border:none; border-top:1px solid var(--line); margin:34px 0}
+footer{max-width:1180px; margin:0 auto; padding:0 24px 40px; color:var(--muted); font-size:13px}
+@media print{
+  body{background:#fff}
+  nav.toc{display:none}
+  .diagram{break-inside:avoid; box-shadow:none}
+  h2{box-shadow:none}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="inner">
+    <h1>MSETCL — Asset Retirement, Scrap Declaration &amp; Disposal Policy</h1>
+    <p>The complete policy, explained as flow charts. Built from <code>Policy.pdf</code> and <code>MSA wardha new scrapping policy.pdf</code> in this repository.</p>
+    <div class="chips">
+      <span class="chip">Part 1 — Asset Retirement</span>
+      <span class="chip">Part 2 — Scrap Declaration &amp; Disposal</span>
+      <span class="chip">CLARC → ZSC → CO R&amp;D → Competent Authority → MSTC</span>
+      <span class="chip">8 flow charts + document-trail &amp; deadline tables</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc"><div class="inner">
+<a href="#1-flow-chart-symbols-used">Flow-chart symbols used</a>
+<a href="#2-chart-0-master-flow-the-whole-policy-on-one-line">Chart 0 — Master flow: the whole policy on one line</a>
+<a href="#3-chart-1-which-category-the-entry-gate">Chart 1 — Which category? (the entry gate)</a>
+<a href="#4-chart-2-part-1-asset-retirement-approval-chain">Chart 2 — Part 1: Asset Retirement approval chain</a>
+<a href="#5-chart-3-part-2-scrapping-disposal-procedure">Chart 3 — Part 2: Scrapping &amp; disposal procedure</a>
+<a href="#6-chart-4-the-mstc-e-auction-fate-of-each-lot">Chart 4 — The MSTC e-auction: fate of each lot</a>
+<a href="#7-chart-5-it-equipment-pc-laptop-printer-scanner">Chart 5 — IT equipment (PC, laptop, printer, scanner)</a>
+<a href="#8-chart-6-used-lead-acid-batteries-hazardous-waste">Chart 6 — Used lead acid batteries (hazardous waste)</a>
+<a href="#9-chart-7-the-paper-trail-every-document-the-policy-creates">Chart 7 — The paper trail (every document the policy creates)</a>
+<a href="#10-chart-8-the-clock-every-deadline-in-the-policy">Chart 8 — The clock: every deadline in the policy</a>
+<a href="#11-housekeeping-rules-general-guidelines">Housekeeping rules (General Guidelines)</a>
+<a href="#12-why-the-policy-exists-stated-advantages">Why the policy exists (stated advantages)</a>
+</div></nav>
+
+<main class="wrap">
+<h1 id="msetcl-asset-retirement-scrap-declaration-disposal-policy">MSETCL — Asset Retirement, Scrap Declaration &amp; Disposal Policy</h1>
+<h3 id="the-whole-policy-as-diagrammatic-flow-charts">The whole policy as diagrammatic flow charts</h3>
+<p>Source documents in this repo:</p>
+<ul><li><code>Policy.pdf</code> — the policy circular (signed by Director (Operations))</li><li><code>MSA wardha new scrapping policy.pdf</code> — the 19-slide presentation of the same policy</li><li><code>covering letter.pdf</code> — covering letter from the Chief Engineer (Trans O&amp;M), dated 02.12.2024</li></ul>
+<p>The policy is <strong>two halves that run back to back</strong>:</p>
+<blockquote><strong>Part 1 — ASSET RETIREMENT</strong> (take the asset out of service and out of the books) → <strong>Part 2 — SCRAP DECLARATION &amp; DISPOSAL</strong> (sell or destroy the material and recover money).</blockquote>
+<hr>
+<h2 id="1-flow-chart-symbols-used">1. Flow-chart symbols used</h2>
+<div class="diagram"><pre class="mermaid">
+flowchart LR
+    L1(["TERMINATOR<br/>start / end"]) --> L2["PROCESS<br/>an action or step"]
+    L2 --> L3{"DECISION<br/>yes / no question"}
+    L3 --> L4[/"DOCUMENT<br/>form, certificate, report"/]
+    L4 --> L5[("DATABASE<br/>register / record")]
+    L5 --> L6[["SUB-PROCESS<br/>detailed in another chart"]]
+    L6 --> L7((("CONNECTOR<br/>goes to next chart")))
+
+    style L1 fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style L2 fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style L3 fill:#fff8e1,stroke:#f9a825,stroke-width:2px
+    style L4 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    style L5 fill:#eceff1,stroke:#546e7a,stroke-width:2px
+    style L6 fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+    style L7 fill:#e1f5fe,stroke:#0277bd,stroke-width:2px
+</pre></div>
+<p><strong>Colour = who owns the step</strong></p>
+<table><thead><tr><th>Colour</th><th>Actor</th></tr></thead><tbody><tr><td>🔵 Blue</td><td>Asset Owner / Division</td></tr><tr><td>🟢 Green</td><td><strong>CLARC</strong> — Circle Level Asset Retirement Committee</td></tr><tr><td>🟠 Amber</td><td><strong>ZSC</strong> — Zonal Scrapping Committee</td></tr><tr><td>🔴 Red</td><td><strong>Competent Authority</strong> (GO 1 F&amp;A) / Finance</td></tr><tr><td>🟣 Purple</td><td><strong>MSTC</strong> — e-auction platform</td></tr><tr><td>⚪ Grey</td><td>IT / stores / housekeeping</td></tr></tbody></table>
+<hr>
+<h2 id="2-chart-0-master-flow-the-whole-policy-on-one-line">2. Chart 0 — Master flow: the whole policy on one line</h2>
+<div class="diagram"><pre class="mermaid">
+flowchart LR
+    START(["ASSET IN<br/>SERVICE"]) --> S1["<b>1 · IDENTIFY</b><br/>Asset Owner<br/>Category A–E"]
+    S1 --> S2["<b>2 · RETIRE</b><br/>CLARC<br/>Proforma-A / -B"]
+    S2 --> S3["<b>3 · HAND OVER</b><br/>to EE (Store)<br/>+ certificate"]
+    S3 --> S4["<b>4 · VALUE</b><br/>EE (Store)<br/>RP + STA%"]
+    S4 --> S5["<b>5 · APPROVE</b><br/>ZSC → Competent<br/>Authority"]
+    S5 --> S6["<b>6 · AUCTION</b><br/>MSTC e-auction"]
+    S6 --> S7["<b>7 · REALISE</b><br/>EMD → RTGS<br/>→ Delivery Order"]
+    S7 --> S8["<b>8 · DE-CAP</b><br/>Finance writes off"]
+    S8 --> FINISH(["REVENUE IN<br/>ASSET OFF BOOKS"])
+
+    S2 -.->|"A(a): concurrence<br/>to keep running"| START
+    S1 -.->|"Category E"| KILL(["Destroy /<br/>dispose as debris"])
+    S1 -.->|"IT equipment"| IT[["Chart 5<br/>SCIT route"]]
+    S3 -.->|"Lead acid<br/>batteries"| HAZ[["Chart 6<br/>hazardous lot"]]
+    S6 -.->|"no bid / below STA /<br/>H-1 defaults"| RE["Re-lot · re-fix MRP<br/>· raise STA%"]
+    RE -.->|"re-auction"| S6
+    RE -.->|"still unsold"| KILL
+
+    START2(("Chart 1")) --> S1
+    S2 --> C2(("Chart 2"))
+    S4 --> C3(("Chart 3"))
+    S6 --> C4(("Chart 4"))
+
+    style S1 fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style S2 fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style S3 fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style S4 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    style S5 fill:#fff8e1,stroke:#f9a825,stroke-width:2px
+    style S6 fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+    style S7 fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+    style S8 fill:#ffebee,stroke:#c62828,stroke-width:2px
+    style START fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style FINISH fill:#e8f5e9,stroke:#2e7d32,stroke-width:3px
+    style KILL fill:#eceff1,stroke:#546e7a,stroke-width:2px
+    style RE fill:#fff8e1,stroke:#f9a825,stroke-width:2px
+    style START2 fill:#e1f5fe,stroke:#0277bd
+    style C2 fill:#e1f5fe,stroke:#0277bd
+    style C3 fill:#e1f5fe,stroke:#0277bd
+    style C4 fill:#e1f5fe,stroke:#0277bd
+</pre></div>
+<table><thead><tr><th>#</th><th>Step</th><th>Owner</th><th>Input → Output</th><th>Frequency / clock</th></tr></thead><tbody><tr><td>1</td><td>Identify &amp; categorise</td><td>Asset Owner</td><td>Asset → Category A(a), A(b), B, C, D or E</td><td>Continuous</td></tr><tr><td>2</td><td>Declare retirement</td><td>CLARC</td><td>Proforma-A / -B → <strong>Retirement Certificate</strong></td><td>A(a) half-yearly · others quarterly</td></tr><tr><td>3</td><td>Hand over</td><td>Asset Owner → EE (Store)</td><td>Asset + certificate → <strong>Store stock register</strong></td><td>Immediately on retirement</td></tr><tr><td>4</td><td>Value &amp; lot</td><td>EE (Store)</td><td>Stock → <strong>Reserve Price + STA% + lots</strong></td><td>RP fixed within <strong>7 days</strong></td></tr><tr><td>5</td><td>Approve</td><td>ZSC → Competent Authority</td><td>Lot proposal → <strong>approval per GO 1 (F&amp;A)</strong></td><td>ZSC meets quarterly cycle</td></tr><tr><td>6</td><td>Auction</td><td>MSTC</td><td>Approved lot → <strong>H-1 bid</strong></td><td>Bidding <strong>4 h + 8 min × 3</strong></td></tr><tr><td>7</td><td>Realise</td><td>Buyer / EE (Store)</td><td>10% EMD + balance by RTGS → <strong>Delivery Order</strong></td><td>EMD <strong>7 days</strong> · lift after DO</td></tr><tr><td>8</td><td>De-capitalise</td><td>Finance</td><td>Sale proceeds → <strong>item removed from Asset Register</strong></td><td>After lifting</td></tr></tbody></table>
+<hr>
+<h2 id="3-chart-1-which-category-the-entry-gate">3. Chart 1 — Which category? (the entry gate)</h2>
+<div class="diagram"><pre class="mermaid">
+flowchart TD
+    START(["Asset under review"]) --> Q1{"Served its<br/>useful life?"}
+
+    Q1 -->|"Yes"| Q1B{"Still in<br/>active use?"}
+    Q1B -->|"Yes"| AA["<b>CATEGORY A(a)</b><br/>life over,<br/>still running"]
+    Q1B -->|"No"| AB["<b>CATEGORY A(b)</b><br/>life over,<br/>out of service"]
+
+    Q1 -->|"No"| Q2{"Damaged / unserviceable /<br/>beyond economic repair<br/>WITHIN its life?"}
+    Q2 -->|"Yes"| CC["<b>CATEGORY C</b><br/>failed, burnt,<br/>burst, degraded"]
+
+    Q2 -->|"No"| Q3{"Obsolete — retention<br/>uneconomical?"}
+    Q3 -->|"Yes"| BB["<b>CATEGORY B</b><br/>obsolete"]
+
+    Q3 -->|"No"| Q4{"Salvage value?"}
+    Q4 -->|"Meagre"| DD["<b>CATEGORY D</b><br/>e-waste, packing,<br/>furniture, dead spares"]
+    Q4 -->|"Nil"| EE["<b>CATEGORY E</b><br/>deteriorated wood,<br/>debris"]
+
+    AA --> PA[/"Proforma-A<br/><b>half-yearly</b>"/]
+    AB --> PB[/"Proforma-B<br/><b>quarterly</b>"/]
+    BB --> PB
+    CC --> PB
+    DD --> PB
+    EE --> BIN(["Destroy / dispose<br/>as garbage-debris"])
+
+    PA --> OUT(("Chart 2"))
+    PB --> OUT
+
+    style AA fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style AB fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style BB fill:#fff8e1,stroke:#f9a825,stroke-width:2px
+    style CC fill:#ffebee,stroke:#c62828,stroke-width:2px
+    style DD fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+    style EE fill:#eceff1,stroke:#546e7a,stroke-width:2px
+    style START fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style BIN fill:#eceff1,stroke:#546e7a,stroke-width:2px
+    style OUT fill:#e1f5fe,stroke:#0277bd
+</pre></div>
+<table><thead><tr><th>Category</th><th>Meaning</th><th>Form</th><th>Reporting</th><th>Ends in</th></tr></thead><tbody><tr><td><strong>A(a)</strong></td><td>Useful life over, <strong>still in active use</strong></td><td>Proforma-A</td><td>Half-yearly</td><td>Concurrence to continue <strong>or</strong> retirement</td></tr><tr><td><strong>A(b)</strong></td><td>Useful life over, <strong>removed from active use</strong> / to be replaced by advanced equipment</td><td>Proforma-B</td><td>Quarterly</td><td>Retirement → scrap</td></tr><tr><td><strong>B</strong></td><td>Obsolete, retention uneconomical</td><td>Proforma-B</td><td>Quarterly</td><td>Retirement → scrap</td></tr><tr><td><strong>C</strong></td><td>Damaged / unserviceable / beyond economic repair <strong>within</strong> defined life</td><td>Proforma-B</td><td>Quarterly</td><td>Retirement → scrap</td></tr><tr><td><strong>D</strong></td><td>Misc. scrap with meagre salvage value — e-waste, packing boxes, containers, furniture, discarded stationery, dead spares</td><td>Proforma-B</td><td>Quarterly</td><td>Retirement → scrap</td></tr><tr><td><strong>E</strong></td><td>Nil worth — deteriorated wood, packing, debris</td><td>—</td><td>—</td><td>Destroy / garbage, <strong>no auction</strong></td></tr></tbody></table>
+<blockquote><strong>Gate before retiring (Policy 1.3):</strong> the asset owner must first satisfy that <strong>no alternate economic use exists anywhere in MSETCL</strong>. Only then can retirement start.</blockquote>
+<hr>
+<h2 id="4-chart-2-part-1-asset-retirement-approval-chain">4. Chart 2 — Part 1: Asset Retirement approval chain</h2>
+<div class="diagram"><pre class="mermaid">
+flowchart TD
+    START(["Asset identified<br/>+ categorised"]) --> O1
+
+    subgraph LANE1["🔵 ASSET OWNER — concerned division"]
+        O1["Inspect the asset<br/>with EE (Testing)"]
+        O2[/"Prepare certificate:<br/><b>Proforma-A</b> for A(a)<br/><b>Proforma-B</b> for A(b), B, C, D"/]
+        O3["Arrange JOINT INSPECTION<br/>through CLARC"]
+        O1 --> O2 --> O3
+    end
+
+    subgraph LANE2["🟢 CLARC — Circle Level Asset Retirement Committee"]
+        C1{"Which<br/>category?"}
+        C2["Ascertain need to<br/>CONTINUE IN SERVICE"]
+        C3["Certify identification →<br/>declaration → RETIREMENT"]
+        C4[/"<b>Asset Retirement Report</b><br/>description · book value · reasons"/]
+        C1 -->|"A(a)"| C2
+        C1 -->|"A(b), B, C, D"| C3 --> C4
+    end
+
+    subgraph LANE3["🟠 ZSC — Zonal Scrapping Committee"]
+        Z1["Consolidate all CLARC<br/>reports of the zone"]
+        Z2[/"ZSC report + views<br/>&amp; observations"/]
+        Z1 --> Z2
+    end
+
+    subgraph LANE4["🔵 CO R&amp;D Committee — Corporate Office"]
+        R1["Review trends &amp; failures"]
+        R2["Issue CORRECTIVE ACTION<br/>to design / O&amp;M / finance"]
+        R1 --> R2
+    end
+
+    O3 --> C1
+    C2 -->|"Concurrence given"| KEEP(["Asset continues<br/>in service"])
+    KEEP -.->|"reviewed again<br/>next half-year"| O1
+    C4 -->|"Cat. A, B, C — and anything<br/>burnt, burst or degraded<br/>within its life"| Z1
+    Z2 -->|"EVERY QUARTER"| R1
+    C4 -->|"Cat. D"| NEXT(("Chart 3"))
+    C3 -->|"Cat. D"| NEXT
+    R2 -.->|"design / spec feedback"| O1
+
+    style C1 fill:#fff8e1,stroke:#f9a825,stroke-width:2px
+    style C2 fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style C3 fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style Z2 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    style C4 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    style O2 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    style START fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style KEEP fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style NEXT fill:#e1f5fe,stroke:#0277bd
+</pre></div>
+<table><thead><tr><th>Committee</th><th>Composition</th><th>Job in this chart</th></tr></thead><tbody><tr><td><strong>CLARC</strong></td><td>SE (O&amp;M) Circle — <strong>Chairman</strong> · EE (O&amp;M) division — <strong>Conveyor</strong> · EE (Testing) — Member · Manager (F&amp;A) — Member</td><td>Concurrence for A(a); declare retirement for A(b), B, C, D; issue the Asset Retirement Report</td></tr><tr><td><strong>ZSC</strong></td><td>CE, EHV PC O&amp;M Zone — <strong>Chairman</strong> · SE (Testing) — Member · AGM (F&amp;A) — Member · EE (Store) — <strong>Conveyor</strong></td><td>Consolidate every CLARC report → CO R&amp;D each quarter</td></tr><tr><td><strong>CO R&amp;D</strong></td><td>Director (Operations) — <strong>Chairman</strong> · CE (O&amp;M) — <strong>Conveyor</strong> · CE (Design) · CGM (Finance) · SE (CPA)</td><td>Corrective action on retirement/failure trends</td></tr></tbody></table>
+<hr>
+<h2 id="5-chart-3-part-2-scrapping-disposal-procedure">5. Chart 3 — Part 2: Scrapping &amp; disposal procedure</h2>
+<div class="diagram"><pre class="mermaid">
+flowchart TD
+    START(["CLARC declares<br/>asset RETIRED"]) --> D1[/"<b>Retirement Certificate</b><br/>+ physical asset"/]
+    D1 --> P1["EE (Store) takes over the file"]
+    P1 --> P2["Scrutinise the proposal<br/>+ reason for scrap"]
+    P2 --> P3["Verify BOOK VALUE<br/>item by item"]
+    REG[("Asset<br/>Register")] -.-> P3
+    P3 --> DEC{"Value available<br/>in the Asset<br/>Register?"}
+    DEC -->|"No"| ALT["Estimate rough value:<br/>purchase price − depreciation<br/>(Finance fixes value at PPE<br/>verification · O&amp;M fixes weight)"]
+    DEC -->|"Yes"| P4
+    ALT --> P4[/"<b>Consolidated Scrapping List</b><br/>book / depreciated value"/]
+
+    P4 --> Z1{"ZSC grants<br/>IN-PRINCIPLE<br/>approval?"}
+    Z1 -->|"No — back for<br/>correction"| P2
+    Z1 -->|"Yes"| P5["EE (Store) conducts<br/>PHYSICAL SURVEY"]
+    P5 --> P6["Fix RESERVE PRICE within<br/><b>7 days</b> — last auctioned rate<br/>or latest MSTC metal rate"]
+    P6 --> P7["MAKE LOTS — realistic lotting<br/>is the key to a sale"]
+    P7 --> Z2[/"<b>ZSC recommendation</b><br/>MRP + STA% + lot details"/]
+    Z2 --> CA{"COMPETENT AUTHORITY<br/>approval as per<br/><b>GO 1 (F&amp;A)</b>?"}
+    CA -->|"Query / revise"| P7
+    CA -->|"Approved"| AUC[["Chart 4 ·<br/>MSTC e-auction"]]
+    CA -->|"Rejected"| P2
+
+    style START fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style D1 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    style P4 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    style Z2 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    style REG fill:#eceff1,stroke:#546e7a,stroke-width:2px
+    style Z1 fill:#fff8e1,stroke:#f9a825,stroke-width:2px
+    style CA fill:#ffebee,stroke:#c62828,stroke-width:3px
+    style AUC fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+</pre></div>
+<table><thead><tr><th>Block</th><th>What actually happens</th></tr></thead><tbody><tr><td>Book-value check</td><td>Manager (F&amp;A) is the key player. If an item is <strong>not in the Asset Register</strong>, ZSC estimates a rough value from likely purchase price less depreciation; Finance fixes the value during <strong>PPE physical verification</strong>; O&amp;M issues the <strong>weight</strong> guidelines</td></tr><tr><td>High-value assets</td><td>A <strong>separate committee with Technical + Finance members</strong> finalises the standardised valuation method</td></tr><tr><td>Reserve Price</td><td>Minimum RP, fixed within 7 days from the last auctioned rate or the latest scrap rates on the MSTC site</td></tr><tr><td>After hand-over</td><td>General Guideline 6: once the material + certificate reach EE (Store), <strong>all</strong> further approvals till disposal are done by EE (Store)</td></tr></tbody></table>
+<hr>
+<h2 id="6-chart-4-the-mstc-e-auction-fate-of-each-lot">6. Chart 4 — The MSTC e-auction: fate of each lot</h2>
+<div class="diagram"><pre class="mermaid">
+flowchart TD
+    START(["Lot approved by<br/>Competent Authority"]) --> A1[/"<b>Lot list + HSN + terms</b><br/>sent to MSTC"/]
+    A1 --> A2[["MSTC builds the<br/><b>Auction Catalogue</b><br/>(2–3 days)"]]
+    A2 --> A3["E-bidding opens<br/><b>4 hours</b> · auto-extension<br/><b>8 min × 3</b>"]
+    A3 --> A4(["Auction closes —<br/>result online at once"])
+    A4 --> Q1{"Where did the<br/><b>H-1 bid</b> land?"}
+
+    Q1 -->|"H-1 ≥ Reserve Price"| SOLD["<b>CONFIRMED</b><br/>Sale Intimation Letter<br/>auto-issued"]
+    Q1 -->|"Between STA floor<br/>and RP"| STA["<b>STA</b> — Subject To Approval<br/>Provisional Sale Intimation Letter"]
+    Q1 -->|"Below STA floor"| REJ["<b>REJECTED</b>"]
+    Q1 -->|"No bid received"| NOBID["<b>NO BID</b>"]
+
+    STA --> Q2{"Competent Authority<br/>accepts the STA bid?<br/><b>≤ 7 working days</b>"}
+    Q2 -->|"Yes"| SOLD
+    Q2 -->|"No"| REJ
+
+    SOLD --> EMD["H-1 deposits<br/><b>10% EMD</b> within 7 days"]
+    EMD --> Q3{"EMD received?"}
+    Q3 -->|"Yes"| PAY["Balance by RTGS ·<br/>CGM/AGM (F&amp;A) confirms<br/>receipt in writing in <b>2 days</b>"]
+    Q3 -->|"No — default"| REJ
+
+    PAY --> DO[/"<b>Delivery Order</b>"/]
+    DO --> LIFT["EE (Store) facilitates security<br/>clearance, trucks, entry passes"]
+    LIFT --> DONE(["<b>DISPOSED</b><br/>→ Chart 3 de-capitalisation"])
+
+    REJ --> RE1["ZSC re-analysis: condition, location,<br/>loading &amp; transport issues"]
+    NOBID --> RE1
+    RE1 --> RE2["Raise STA% (0–50% band)<br/>and/or re-fix MRP"]
+    RE2 --> Q4{"Sold on<br/>re-auction?"}
+    Q4 -->|"Yes"| PAY
+    Q4 -->|"No"| SHIFT["Shift the lot from<br/>Category A–D → <b>Category E</b><br/>destroy / dispose as debris"]
+    SHIFT --> DONE
+
+    style START fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style A4 fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+    style DONE fill:#e8f5e9,stroke:#2e7d32,stroke-width:3px
+    style SOLD fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style STA fill:#fff8e1,stroke:#f9a825,stroke-width:2px
+    style REJ fill:#ffebee,stroke:#c62828,stroke-width:2px
+    style NOBID fill:#ffebee,stroke:#c62828,stroke-width:2px
+    style SHIFT fill:#eceff1,stroke:#546e7a,stroke-width:2px
+    style DO fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+</pre></div>
+<p><strong>STA in one picture</strong></p>
+<pre><code>        Reserve Price (RP)  ───────────────────────────────  H-1 ≥ RP  →  CONFIRMED
+                            │                              │
+        STA floor           │  RP − (STA% × RP)            │  bid in this band  →  STA (needs approval)
+                            │                              │
+                            ▼                              ▼
+                    below STA floor  →  REJECTED  →  ZSC raises STA% / re-fixes MRP  →  re-auction</code></pre>
+<table><thead><tr><th>Entered by MSETCL</th><th>Example 1</th><th>Example 2</th></tr></thead><tbody><tr><td>Reserve Price</td><td>₹ 50,000</td><td>₹ 10,000</td></tr><tr><td>% STA below RP</td><td>10% → ₹ 5,000</td><td>40% → ₹ 4,000</td></tr><tr><td>Lowest bid that survives</td><td>₹ 45,000</td><td>₹ 6,000</td></tr></tbody></table>
+<ul><li>The <strong>same Competent Authority</strong> that approves the minimum RP also approves the <strong>% STA</strong>.</li><li>Any <strong>change in % STA</strong> because a lot stayed unsold must be approved by <strong>ZSC</strong>.</li><li><strong>Hazardous waste:</strong> keep a high STA% so it sells first time.</li></ul>
+<hr>
+<h2 id="7-chart-5-it-equipment-pc-laptop-printer-scanner">7. Chart 5 — IT equipment (PC, laptop, printer, scanner)</h2>
+<div class="diagram"><pre class="mermaid">
+flowchart TD
+    START(["IT asset completes<br/><b>5 years</b> from capitalisation<br/>(MERC life)"]) --> I1["IT Department raises<br/>the disposal proposal"]
+    I1 --> Q1{"Still fit<br/>for use?"}
+    Q1 -->|"Yes"| GIFT["Donate FREE OF COST to Government<br/>schools / institutes under CSR<br/>— identified by CIRO"]
+    GIFT --> Q2{"Competent Authority<br/>approves?"}
+    Q2 -->|"No"| I2
+    Q2 -->|"Yes"| GIFTED(["Asset leaves MSETCL<br/>— no auction"])
+    Q1 -->|"No / surplus"| I2[/"Proposal to <b>SCIT</b><br/>Scrapping Committee – IT"/]
+
+    subgraph SCIT["⚪ SCIT composition"]
+        S1["CGM (IT) — Chairman<br/>EE (Admin), Zone — Member<br/>AGM (HR), Zone — Member<br/>IT Analyst — Conveyor"]
+    end
+
+    I2 --> S1
+    S1 --> I3["SCIT scrutinises &amp; forwards<br/>for approval"]
+    I3 --> Q3{"Competent Authority<br/>as per <b>GO 1 (F&amp;A)</b>?"}
+    Q3 -->|"No"| I2
+    Q3 -->|"Yes"| I4[["EE (Store) disposes<br/>through MSTC<br/>— same as a general lot"]]
+    I4 --> I5(["Finance de-capitalises<br/>the item"])
+
+    style START fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style GIFTED fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style I5 fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style I2 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    style I4 fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+    style GIFT fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+</pre></div>
+<hr>
+<h2 id="8-chart-6-used-lead-acid-batteries-hazardous-waste">8. Chart 6 — Used lead acid batteries (hazardous waste)</h2>
+<div class="diagram"><pre class="mermaid">
+flowchart TD
+    START(["Used lead acid<br/>battery"]) --> B1["Make a SEPARATE lot<br/>tagged <b>HAZARDOUS WASTE</b>"]
+    B1 --> B2{"Route"}
+    B2 -->|"Channel 1"| B3["Deposit with dealer / manufacturer /<br/>importer / assembler / registered<br/>recycler / re-conditioner"]
+    B2 -->|"Channel 2"| B4["Deposit at a designated<br/>collection centre"]
+    B2 -->|"Channel 3"| B5[["MSTC e-auction — ONLY recyclers<br/>registered with the Pollution<br/>Control Board may bid"]]
+    B3 --> B6["Field offices ensure safety &amp;<br/>environmental compliance"]
+    B4 --> B6
+    B5 --> B6
+    B6 --> B7["ZSC keeps a <b>HIGH STA%</b><br/>so it sells first time"]
+    B7 --> DONE(["DISPOSED — rest of the<br/>procedure same as a general lot"])
+
+    style START fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style DONE fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style B1 fill:#ffebee,stroke:#c62828,stroke-width:2px
+    style B5 fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+    style B7 fill:#fff8e1,stroke:#f9a825,stroke-width:2px
+</pre></div>
+<hr>
+<h2 id="9-chart-7-the-paper-trail-every-document-the-policy-creates">9. Chart 7 — The paper trail (every document the policy creates)</h2>
+<div class="diagram"><pre class="mermaid">
+flowchart LR
+    D1[/"<b>Proforma-A</b><br/>half-yearly<br/><i>Asset Owner</i>"/] --> D2[/"<b>Proforma-B</b><br/>quarterly<br/><i>Asset Owner</i>"/]
+    D2 --> D3[/"<b>Asset Retirement Report</b><br/><i>CLARC</i>"/]
+    D3 --> D4[/"<b>ZSC consolidated report</b><br/>quarterly<br/><i>ZSC</i>"/]
+    D4 --> D5[/"<b>Retirement Certificate</b><br/><i>CLARC</i>"/]
+    D5 --> D6[/"<b>Consolidated Scrapping List</b><br/><i>EE (Store)</i>"/]
+    D6 --> D7[/"<b>Lot proposal: MRP + STA%</b><br/><i>ZSC → Competent Authority</i>"/]
+    D7 --> D8[/"<b>Auction Catalogue</b><br/><i>MSTC</i>"/]
+    D8 --> D9[/"<b>Sale / Provisional Sale<br/>Intimation Letter</b><br/><i>MSTC</i>"/]
+    D9 --> D10[/"<b>Delivery Order</b><br/><i>MSTC</i>"/]
+    D10 --> D11[/"<b>De-capitalisation advice</b><br/><i>EE (Store) → Finance</i>"/]
+    D11 --> D12[("Asset<br/>Register<br/>updated")]
+
+    style D1 fill:#fff3e0,stroke:#ef6c00
+    style D2 fill:#fff3e0,stroke:#ef6c00
+    style D3 fill:#fff3e0,stroke:#ef6c00
+    style D4 fill:#fff3e0,stroke:#ef6c00
+    style D5 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    style D6 fill:#fff3e0,stroke:#ef6c00
+    style D7 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    style D8 fill:#f3e5f5,stroke:#6a1b9a
+    style D9 fill:#f3e5f5,stroke:#6a1b9a
+    style D10 fill:#f3e5f5,stroke:#6a1b9a
+    style D11 fill:#ffebee,stroke:#c62828
+    style D12 fill:#eceff1,stroke:#546e7a,stroke-width:2px
+</pre></div>
+<hr>
+<h2 id="10-chart-8-the-clock-every-deadline-in-the-policy">10. Chart 8 — The clock: every deadline in the policy</h2>
+<div class="diagram"><pre class="mermaid">
+flowchart LR
+    T1(["Half-yearly<br/>Proforma-A"]) --> T2(["Quarterly<br/>Proforma-B"])
+    T2 --> T3(["Quarterly<br/>ZSC → CO R&amp;D"])
+    T3 --> T4(["Quarterly<br/>4 auctions a year"])
+    T4 --> T5(["7 days<br/>fix Reserve Price"])
+    T5 --> T6(["2–3 days<br/>MSTC catalogue"])
+    T6 --> T7(["4 h + 8 min × 3<br/>e-bidding"])
+    T7 --> T8(["7 days<br/>buyer deposits EMD"])
+    T8 --> T9(["≤ 7 working days<br/>STA decision"])
+    T9 --> T10(["2 days<br/>payment confirmation"])
+
+    style T1 fill:#e3f2fd,stroke:#1565c0
+    style T2 fill:#e3f2fd,stroke:#1565c0
+    style T3 fill:#fff8e1,stroke:#f9a825
+    style T4 fill:#f3e5f5,stroke:#6a1b9a
+    style T5 fill:#fff3e0,stroke:#ef6c00
+    style T6 fill:#f3e5f5,stroke:#6a1b9a
+    style T7 fill:#f3e5f5,stroke:#6a1b9a
+    style T8 fill:#ffebee,stroke:#c62828
+    style T9 fill:#ffebee,stroke:#c62828
+    style T10 fill:#ffebee,stroke:#c62828
+</pre></div>
+<table><thead><tr><th>When</th><th>What</th><th>Owner</th></tr></thead><tbody><tr><td><strong>Half-yearly</strong></td><td>Proforma-A for Category A(a)</td><td>Asset Owner → CLARC</td></tr><tr><td><strong>Quarterly</strong></td><td>Proforma-B for Category A(b), B, C, D</td><td>Asset Owner → CLARC</td></tr><tr><td><strong>Quarterly</strong></td><td>Consolidated report to CO R&amp;D</td><td>ZSC</td></tr><tr><td><strong>4× a year</strong></td><td>Auction of approved scrap by each Major Store</td><td>EE (Store)</td></tr><tr><td><strong>Immediately</strong></td><td>Material replaced under LE scheme / on failure credited to the Major Store or a location identified by EE (Store) — <em>except ICT / Power Transformer</em></td><td>Work-executing agency</td></tr><tr><td><strong>7 days</strong></td><td>Fix Reserve Price from last auctioned rate / latest MSTC rate</td><td>EE (Store)</td></tr><tr><td><strong>2–3 days</strong></td><td>MSTC prepares the auction catalogue</td><td>MSTC</td></tr><tr><td><strong>4 h + 8 min × 3</strong></td><td>E-bidding duration and auto-extensions</td><td>MSTC</td></tr><tr><td><strong>7 days</strong></td><td>H-1 deposits 10% EMD / security deposit</td><td>Buyer</td></tr><tr><td><strong>≤ 7 working days</strong></td><td>MSETCL posts acceptance / rejection of STA bids online</td><td>Competent Authority → MSTC</td></tr><tr><td><strong>2 days</strong></td><td>CGM/AGM (F&amp;A) confirms RTGS receipt in writing</td><td>Finance</td></tr></tbody></table>
+<hr>
+<h2 id="11-housekeeping-rules-general-guidelines">11. Housekeeping rules (General Guidelines)</h2>
+<ol><li><strong>Misc. scrap below ₹ 5,000</strong> (newspapers, magazines, broken furniture, odd items) is disposed of <strong>regularly by the Office In-charge</strong> — no MSTC auction; do it often to keep premises clean.</li><li>Every <strong>work order</strong> to a work-executing agency must state that removed material goes to the Major Store or the space identified by EE (Store).</li><li><strong>Extra security guard / CCTV</strong> at every Major Store or identified scrap space, if required.</li><li>If the Major Store is full, EE (Store) identifies space at a <strong>nearby substation</strong>.</li><li>Once material + retirement certificate reach <strong>EE (Store)</strong>, all further approvals till disposal are handled by EE (Store).</li><li>After auction, EE (Store) intimates the amount to the division so the equipment can be <strong>written off</strong> in the asset book.</li><li>All bids are <strong>"as is where is"</strong>, subject to prior inspection; <strong>no photography</strong> of lots by outsiders (security).</li><li>Amendments are issued whenever needed for smooth implementation.</li></ol>
+<h2 id="12-why-the-policy-exists-stated-advantages">12. Why the policy exists (stated advantages)</h2>
+<ul><li>Scrap collects <strong>at one place</strong> instead of being scattered across the zone → <strong>theft risk falls</strong>.</li><li><strong>One stock register</strong> for all scrap in the zone, kept by the Major Store.</li><li>Scrapping becomes <strong>smooth, fast and simple</strong>; administrative approvals become <strong>directional and fast</strong>.</li><li><strong>Timely revenue</strong> and <strong>no unnecessary inventory build-up</strong>.</li><li>Sub-station premises stay <strong>aesthetic</strong> — no scrap lying around.</li></ul>
+</main>
+
+<footer>
+  Generated by <code>docs/build_html.py</code> from <code>flowchart.md</code>.
+  Mermaid is loaded from <code>docs/vendor/mermaid.min.js</code> (offline) with a CDN fallback.
+</footer>
+
+<script src="vendor/mermaid.min.js"></script>
+<script>
+if (!window.mermaid) {
+  document.write('<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"><\/script>');
+}
+</script>
+<script>
+const start = () => {
+  mermaid.initialize({
+    startOnLoad: true,
+    securityLevel: 'loose',
+    theme: 'base',
+    flowchart: { curve: 'basis', useMaxWidth: false, htmlLabels: true, nodeSpacing: 30, rankSpacing: 42, padding: 10 },
+    themeVariables: {
+      fontFamily: '-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
+      fontSize: '15px', primaryColor: '#eef4fb', primaryBorderColor: '#90b4dd',
+      primaryTextColor: '#1a2330', lineColor: '#7d90a6', secondaryColor: '#f4f0f8',
+      tertiaryColor: '#f7f9fc', edgeLabelBackground: '#ffffff'
+    }
+  });
+  mermaid.run({ querySelector: 'pre.mermaid' });
+};
+if (window.mermaid) { start(); } else { document.addEventListener('DOMContentLoaded', start); }
+</script>
+</body>
+</html>
