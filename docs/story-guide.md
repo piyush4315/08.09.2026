@@ -3,7 +3,7 @@
 
 > **Who this is for:** You have just been handed responsibility for scrapping in your zone/circle. You have never done this before. You don't know what CLARC, ZSC, STA or MSTC mean. By the end of this document you will understand the whole policy, and you will be able to explain it to your junior in two minutes.
 
-**Prefer diagrams?** Open [flowchart.html](flowchart.html) — the same policy drawn as flow charts. **Are you the finance officer at the store?** Open [finance-officer-guide.html](finance-officer-guide.html) — your duties, verification points and formats.
+**Prefer diagrams?** Open [flowchart.html](flowchart.html) — the same policy drawn as flow charts. **Training someone new?** Open [subordinate-training.html](subordinate-training.html) — one sitting, plain words, practice sums and a quiz. **Finance side?** [finance-officer-guide.html](finance-officer-guide.html) and [dy-manager-finance-guide.html](dy-manager-finance-guide.html).
 
 ---
 
