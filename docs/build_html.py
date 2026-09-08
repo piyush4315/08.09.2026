@@ -217,7 +217,7 @@ const start = () => {
     startOnLoad: true,
     securityLevel: 'loose',
     theme: 'base',
-    flowchart: { curve: 'basis', useMaxWidth: true, htmlLabels: true, nodeSpacing: 34, rankSpacing: 46 },
+    flowchart: { curve: 'basis', useMaxWidth: false, htmlLabels: true, nodeSpacing: 30, rankSpacing: 42, padding: 10 },
     themeVariables: {
       fontFamily: '-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif',
       fontSize: '15px', primaryColor: '#eef4fb', primaryBorderColor: '#90b4dd',
@@ -264,7 +264,7 @@ def main() -> None:
       <span class="chip">Part 1 — Asset Retirement</span>
       <span class="chip">Part 2 — Scrap Declaration &amp; Disposal</span>
       <span class="chip">CLARC → ZSC → CO R&amp;D → Competent Authority → MSTC</span>
-      <span class="chip">6 flow charts + responsibility &amp; timeline tables</span>
+      <span class="chip">8 flow charts + document-trail &amp; deadline tables</span>
     </div>
   </div>
 </header>

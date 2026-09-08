@@ -1,312 +1,485 @@
 # MSETCL — Asset Retirement, Scrap Declaration & Disposal Policy
-### The whole policy explained as flow charts
+### The whole policy as diagrammatic flow charts
 
 Source documents in this repo:
-- `Policy.pdf` — the policy circular (Ref: MSETCL/CO/Trans(O&M)/…, signed by Director (Operations))
+- `Policy.pdf` — the policy circular (signed by Director (Operations))
 - `MSA wardha new scrapping policy.pdf` — the 19-slide presentation of the same policy
-- `covering letter.pdf` — covering letter from the Chief Engineer (Trans O&M) dated 02.12.2024
+- `covering letter.pdf` — covering letter from the Chief Engineer (Trans O&M), dated 02.12.2024
 
-The policy has **two halves** that run one after the other:
+The policy is **two halves that run back to back**:
 
-> **Part 1 — ASSET RETIREMENT** (take the asset out of the books/service) → **Part 2 — SCRAP DECLARATION & DISPOSAL** (sell/destroy the physical material and recover money).
+> **Part 1 — ASSET RETIREMENT** (take the asset out of service and out of the books) →
+> **Part 2 — SCRAP DECLARATION & DISPOSAL** (sell or destroy the material and recover money).
 
 ---
 
-## 0. Master flow — one page, end to end
+## 1. Flow-chart symbols used
 
 ```mermaid
-flowchart TD
-    A["ASSET IN SERVICE<br/>Transmission line &amp; sub-station material,<br/>machinery, vehicles, office furniture, IT equipment"]
-    A --> B["<b>STEP 1 — IDENTIFY &amp; CATEGORISE</b><br/>Asset Owner sorts the asset into<br/>Category A(a), A(b), B, C, D or E<br/>(see Chart 1)"]
-    B --> C["<b>STEP 2 — DECLARE RETIREMENT</b><br/>Proforma-A / Proforma-B → CLARC<br/>CLARC declares the asset retired from MSETCL<br/>(see Chart 2)"]
-    C --> D["<b>STEP 3 — HAND OVER</b><br/>Asset owner hands the asset + retirement<br/>certificate to Executive Engineer (Store)"]
-    D --> E["<b>STEP 4 — VALUE &amp; MAKE LOTS</b><br/>Check book value → physical survey →<br/>fix Reserve Price &amp; STA% → make lots<br/>(see Chart 3)"]
-    E --> F["<b>STEP 5 — APPROVE</b><br/>ZSC scrutinises &amp; recommends MRP + STA% →<br/>Competent Authority approves as per GO 1 (F&amp;A)"]
-    F --> G["<b>STEP 6 — DISPOSE</b><br/>e-Auction of approved lots through MSTC<br/>(see Chart 4)"]
-    G --> H["<b>STEP 7 — REALISE</b><br/>H-1 bidder pays 10% EMD + balance by RTGS<br/>→ Delivery Order → material lifted"]
-    H --> I["<b>STEP 8 — DE-CAPITALISE</b><br/>EE (Store) intimates item-wise scrap cost →<br/>Finance deletes item from Asset Register"]
+flowchart LR
+    L1(["TERMINATOR<br/>start / end"]) --> L2["PROCESS<br/>an action or step"]
+    L2 --> L3{"DECISION<br/>yes / no question"}
+    L3 --> L4[/"DOCUMENT<br/>form, certificate, report"/]
+    L4 --> L5[("DATABASE<br/>register / record")]
+    L5 --> L6[["SUB-PROCESS<br/>detailed in another chart"]]
+    L6 --> L7((("CONNECTOR<br/>goes to next chart")))
 
-    B -.->|"Category E<br/>(zero salvage value)"| X["Destroy / dispose as garbage-debris<br/>No auction"]
-    B -.->|"IT equipment<br/>(PC, laptop, printer, scanner)"| IT["SCIT route<br/>(see Chart 5)"]
-    D -.->|"Used lead acid batteries"| BT["Separate HAZARDOUS WASTE lot<br/>only registered recyclers may bid<br/>(see Chart 6)"]
-    G -.->|"No bid / bid below STA% /<br/>H-1 defaults on EMD"| R["ZSC re-analysis → raise STA% or re-fix MRP<br/>→ re-auction → if still unsold, shift lot to Category E"]
-
-    style B fill:#e3f2fd,stroke:#1565c0
-    style C fill:#e8f5e9,stroke:#2e7d32
-    style F fill:#fff8e1,stroke:#f9a825
-    style G fill:#f3e5f5,stroke:#6a1b9a
-    style I fill:#eceff1,stroke:#455a64
+    style L1 fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style L2 fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style L3 fill:#fff8e1,stroke:#f9a825,stroke-width:2px
+    style L4 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    style L5 fill:#eceff1,stroke:#546e7a,stroke-width:2px
+    style L6 fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+    style L7 fill:#e1f5fe,stroke:#0277bd,stroke-width:2px
 ```
 
+**Colour = who owns the step**
+
+| Colour | Actor |
+|---|---|
+| 🔵 Blue | Asset Owner / Division |
+| 🟢 Green | **CLARC** — Circle Level Asset Retirement Committee |
+| 🟠 Amber | **ZSC** — Zonal Scrapping Committee |
+| 🔴 Red | **Competent Authority** (GO 1 F&A) / Finance |
+| 🟣 Purple | **MSTC** — e-auction platform |
+| ⚪ Grey | IT / stores / housekeeping |
+
 ---
 
-## 1. Chart 1 —Which category does the asset fall in? (the entry gate)
-
-Every asset is first sorted into one of six buckets. The category decides **which form is used** and **how often** it is reported.
+## 2. Chart 0 — Master flow: the whole policy on one line
 
 ```mermaid
-flowchart TD
-    S(["Asset found unserviceable / aged / surplus"]) --> L{"Has it served its<br/>useful life?"}
-    L -->|"Yes — but STILL IN ACTIVE USE"| AA["<b>CATEGORY A(a)</b><br/>Life over, still running"]
-    L -->|"Yes — REMOVED from active use,<br/>or to be replaced by<br/>technologically advanced equipment"| AB["<b>CATEGORY A(b)</b><br/>Life over, taken out of service"]
-    L -->|No| D1{"Damaged, unserviceable or<br/>beyond economic repair<br/>WITHIN its defined life?"}
-    D1 -->|Yes| CC["<b>CATEGORY C</b><br/>Failed / beyond repair<br/>(incl. burnt, burst, degraded parameters)"]
-    D1 -->|No| O1{"Obsolete and retention<br/>has become uneconomical?"}
-    O1 -->|Yes| BB["<b>CATEGORY B</b><br/>Obsolete, uneconomic to keep"]
-    O1 -->|No| V1{"Any salvage value left?"}
-    V1 -->|"Meagre value — e-waste, packing boxes,<br/>empty containers, office furniture,<br/>discarded stationery, out-of-date spares"| DD["<b>CATEGORY D</b><br/>Misc. scrap with meagre salvage value"]
-    V1 -->|"No worth at all — deteriorated wood,<br/>packing material, debris"| EE["<b>CATEGORY E</b><br/>Zero salvage value"]
+flowchart LR
+    START(["ASSET IN<br/>SERVICE"]) --> S1["<b>1 · IDENTIFY</b><br/>Asset Owner<br/>Category A–E"]
+    S1 --> S2["<b>2 · RETIRE</b><br/>CLARC<br/>Proforma-A / -B"]
+    S2 --> S3["<b>3 · HAND OVER</b><br/>to EE (Store)<br/>+ certificate"]
+    S3 --> S4["<b>4 · VALUE</b><br/>EE (Store)<br/>RP + STA%"]
+    S4 --> S5["<b>5 · APPROVE</b><br/>ZSC → Competent<br/>Authority"]
+    S5 --> S6["<b>6 · AUCTION</b><br/>MSTC e-auction"]
+    S6 --> S7["<b>7 · REALISE</b><br/>EMD → RTGS<br/>→ Delivery Order"]
+    S7 --> S8["<b>8 · DE-CAP</b><br/>Finance writes off"]
+    S8 --> FINISH(["REVENUE IN<br/>ASSET OFF BOOKS"])
 
-    AA --> P1["Proforma-A — HALF-YEARLY to CLARC"]
-    AB --> P2["Proforma-B — QUARTERLY to CLARC"]
-    BB --> P2
-    CC --> P2
-    DD --> P2
-    EE --> P3["Recommended for destruction /<br/>disposal as garbage-debris"]
+    S2 -.->|"A(a): concurrence<br/>to keep running"| START
+    S1 -.->|"Category E"| KILL(["Destroy /<br/>dispose as debris"])
+    S1 -.->|"IT equipment"| IT[["Chart 5<br/>SCIT route"]]
+    S3 -.->|"Lead acid<br/>batteries"| HAZ[["Chart 6<br/>hazardous lot"]]
+    S6 -.->|"no bid / below STA /<br/>H-1 defaults"| RE["Re-lot · re-fix MRP<br/>· raise STA%"]
+    RE -.->|"re-auction"| S6
+    RE -.->|"still unsold"| KILL
 
-    style AA fill:#e3f2fd,stroke:#1565c0
-    style AB fill:#e3f2fd,stroke:#1565c0
-    style BB fill:#fff8e1,stroke:#f9a825
-    style CC fill:#ffebee,stroke:#c62828
-    style DD fill:#f3e5f5,stroke:#6a1b9a
-    style EE fill:#eceff1,stroke:#455a64
+    START2(("Chart 1")) --> S1
+    S2 --> C2(("Chart 2"))
+    S4 --> C3(("Chart 3"))
+    S6 --> C4(("Chart 4"))
+
+    style S1 fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style S2 fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style S3 fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style S4 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    style S5 fill:#fff8e1,stroke:#f9a825,stroke-width:2px
+    style S6 fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+    style S7 fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+    style S8 fill:#ffebee,stroke:#c62828,stroke-width:2px
+    style START fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style FINISH fill:#e8f5e9,stroke:#2e7d32,stroke-width:3px
+    style KILL fill:#eceff1,stroke:#546e7a,stroke-width:2px
+    style RE fill:#fff8e1,stroke:#f9a825,stroke-width:2px
+    style START2 fill:#e1f5fe,stroke:#0277bd
+    style C2 fill:#e1f5fe,stroke:#0277bd
+    style C3 fill:#e1f5fe,stroke:#0277bd
+    style C4 fill:#e1f5fe,stroke:#0277bd
 ```
 
-> **Gate before retiring (Policy 1.3):** before anything is retired, the asset owner must first satisfy that **no alternate economic use exists anywhere within MSETCL**. Only then is retirement started.
+| # | Step | Owner | Input → Output | Frequency / clock |
+|---|---|---|---|---|
+| 1 | Identify & categorise | Asset Owner | Asset → Category A(a), A(b), B, C, D or E | Continuous |
+| 2 | Declare retirement | CLARC | Proforma-A / -B → **Retirement Certificate** | A(a) half-yearly · others quarterly |
+| 3 | Hand over | Asset Owner → EE (Store) | Asset + certificate → **Store stock register** | Immediately on retirement |
+| 4 | Value & lot | EE (Store) | Stock → **Reserve Price + STA% + lots** | RP fixed within **7 days** |
+| 5 | Approve | ZSC → Competent Authority | Lot proposal → **approval per GO 1 (F&A)** | ZSC meets quarterly cycle |
+| 6 | Auction | MSTC | Approved lot → **H-1 bid** | Bidding **4 h + 8 min × 3** |
+| 7 | Realise | Buyer / EE (Store) | 10% EMD + balance by RTGS → **Delivery Order** | EMD **7 days** · lift after DO |
+| 8 | De-capitalise | Finance | Sale proceeds → **item removed from Asset Register** | After lifting |
 
 ---
 
-## 2. Chart 2 — Part 1: Asset Retirement approval chain
-
-Four bodies sit in a row: **Asset Owner → CLARC → ZSC → CO R&D Committee**.
+## 3. Chart 1 — Which category? (the entry gate)
 
 ```mermaid
 flowchart TD
-    subgraph OWNER["ASSET OWNER (concerned division)"]
-        O1["Identifies the asset &amp; its category"]
-        O2["Prepares Asset Assessment Certificate<br/><b>Proforma-A</b> for Cat. A(a) — half-yearly<br/><b>Proforma-B</b> for Cat. A(b), B, C, D — quarterly"]
-        O3["Organises JOINT INSPECTION of the<br/>items/materials through CLARC"]
+    START(["Asset under review"]) --> Q1{"Served its<br/>useful life?"}
+
+    Q1 -->|"Yes"| Q1B{"Still in<br/>active use?"}
+    Q1B -->|"Yes"| AA["<b>CATEGORY A(a)</b><br/>life over,<br/>still running"]
+    Q1B -->|"No"| AB["<b>CATEGORY A(b)</b><br/>life over,<br/>out of service"]
+
+    Q1 -->|"No"| Q2{"Damaged / unserviceable /<br/>beyond economic repair<br/>WITHIN its life?"}
+    Q2 -->|"Yes"| CC["<b>CATEGORY C</b><br/>failed, burnt,<br/>burst, degraded"]
+
+    Q2 -->|"No"| Q3{"Obsolete — retention<br/>uneconomical?"}
+    Q3 -->|"Yes"| BB["<b>CATEGORY B</b><br/>obsolete"]
+
+    Q3 -->|"No"| Q4{"Salvage value?"}
+    Q4 -->|"Meagre"| DD["<b>CATEGORY D</b><br/>e-waste, packing,<br/>furniture, dead spares"]
+    Q4 -->|"Nil"| EE["<b>CATEGORY E</b><br/>deteriorated wood,<br/>debris"]
+
+    AA --> PA[/"Proforma-A<br/><b>half-yearly</b>"/]
+    AB --> PB[/"Proforma-B<br/><b>quarterly</b>"/]
+    BB --> PB
+    CC --> PB
+    DD --> PB
+    EE --> BIN(["Destroy / dispose<br/>as garbage-debris"])
+
+    PA --> OUT(("Chart 2"))
+    PB --> OUT
+
+    style AA fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style AB fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style BB fill:#fff8e1,stroke:#f9a825,stroke-width:2px
+    style CC fill:#ffebee,stroke:#c62828,stroke-width:2px
+    style DD fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+    style EE fill:#eceff1,stroke:#546e7a,stroke-width:2px
+    style START fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style BIN fill:#eceff1,stroke:#546e7a,stroke-width:2px
+    style OUT fill:#e1f5fe,stroke:#0277bd
+```
+
+| Category | Meaning | Form | Reporting | Ends in |
+|---|---|---|---|---|
+| **A(a)** | Useful life over, **still in active use** | Proforma-A | Half-yearly | Concurrence to continue **or** retirement |
+| **A(b)** | Useful life over, **removed from active use** / to be replaced by advanced equipment | Proforma-B | Quarterly | Retirement → scrap |
+| **B** | Obsolete, retention uneconomical | Proforma-B | Quarterly | Retirement → scrap |
+| **C** | Damaged / unserviceable / beyond economic repair **within** defined life | Proforma-B | Quarterly | Retirement → scrap |
+| **D** | Misc. scrap with meagre salvage value — e-waste, packing boxes, containers, furniture, discarded stationery, dead spares | Proforma-B | Quarterly | Retirement → scrap |
+| **E** | Nil worth — deteriorated wood, packing, debris | — | — | Destroy / garbage, **no auction** |
+
+> **Gate before retiring (Policy 1.3):** the asset owner must first satisfy that **no alternate economic use exists anywhere in MSETCL**. Only then can retirement start.
+
+---
+
+## 4. Chart 2 — Part 1: Asset Retirement approval chain
+
+```mermaid
+flowchart TD
+    START(["Asset identified<br/>+ categorised"]) --> O1
+
+    subgraph LANE1["🔵 ASSET OWNER — concerned division"]
+        O1["Inspect the asset<br/>with EE (Testing)"]
+        O2[/"Prepare certificate:<br/><b>Proforma-A</b> for A(a)<br/><b>Proforma-B</b> for A(b), B, C, D"/]
+        O3["Arrange JOINT INSPECTION<br/>through CLARC"]
         O1 --> O2 --> O3
     end
 
-    subgraph CLARC["CLARC — Circle Level Asset Retirement Committee (one per Circle)"]
-        C0["SE (O&amp;M) Circle — Chairman<br/>EE (O&amp;M) concerned division — Conveyor<br/>EE (Testing) concerned division — Member<br/>Manager (F&amp;A) concerned Circle — Member"]
-        C1{"Category?"}
-        C2["Cat. A(a): scrutinise &amp; ascertain whether the<br/>asset NEEDS TO CONTINUE in service<br/>→ give CONCURRENCE to continue"]
-        C3["Cat. A(b), B, C, D: certify<br/>IDENTIFICATION → DECLARATION → RETIREMENT"]
-        C4["Issue <b>Asset Retirement Report</b>:<br/>description, book value, reasons for retirement"]
-        C0 --> C1
+    subgraph LANE2["🟢 CLARC — Circle Level Asset Retirement Committee"]
+        C1{"Which<br/>category?"}
+        C2["Ascertain need to<br/>CONTINUE IN SERVICE"]
+        C3["Certify identification →<br/>declaration → RETIREMENT"]
+        C4[/"<b>Asset Retirement Report</b><br/>description · book value · reasons"/]
         C1 -->|"A(a)"| C2
-        C1 -->|"A(b), B, C, D"| C3
-        C3 --> C4
+        C1 -->|"A(b), B, C, D"| C3 --> C4
     end
 
-    subgraph ZSC1["ZSC — Zonal Scrapping Committee (reporting leg)"]
-        Z1["Consolidate CLARC reports of the zone"]
-        Z2["Add views / observations / remarks"]
-        Z3["Submit to CO R&amp;D Committee EVERY QUARTER"]
-        Z1 --> Z2 --> Z3
+    subgraph LANE3["🟠 ZSC — Zonal Scrapping Committee"]
+        Z1["Consolidate all CLARC<br/>reports of the zone"]
+        Z2[/"ZSC report + views<br/>&amp; observations"/]
+        Z1 --> Z2
     end
 
-    subgraph CORD["CO R&amp;D Committee — Corporate Office"]
-        R1["Director (Operations) — Chairman<br/>Chief Engineer (O&amp;M) — Conveyor<br/>Chief Engineer (Design) — Member<br/>CGM (Finance) — Member<br/>SE (CPA) — Member"]
-        R2["Take CORRECTIVE ACTION on ZSC reports<br/>(technology / design / O&amp;M feedback loop)"]
+    subgraph LANE4["🔵 CO R&amp;D Committee — Corporate Office"]
+        R1["Review trends &amp; failures"]
+        R2["Issue CORRECTIVE ACTION<br/>to design / O&amp;M / finance"]
         R1 --> R2
     end
 
-    O3 --> CLARC
-    C2 -->|"Concurrence given"| KEEP["Asset continues in service<br/>→ reviewed again next half-year"]
-    KEEP -.-> O1
-    C4 -->|"Cat. A, B, C (and items burnt/burst/<br/>degraded within life)"| ZSC1
-    Z3 --> CORD
-    C4 -->|"Cat. D / E"| NEXT(["Move to Part 2 —<br/>Scrapping &amp; Disposal"])
-    C3 --> NEXT
+    O3 --> C1
+    C2 -->|"Concurrence given"| KEEP(["Asset continues<br/>in service"])
+    KEEP -.->|"reviewed again<br/>next half-year"| O1
+    C4 -->|"Cat. A, B, C — and anything<br/>burnt, burst or degraded<br/>within its life"| Z1
+    Z2 -->|"EVERY QUARTER"| R1
+    C4 -->|"Cat. D"| NEXT(("Chart 3"))
+    C3 -->|"Cat. D"| NEXT
+    R2 -.->|"design / spec feedback"| O1
 
-    style CLARC fill:#e8f5e9,stroke:#2e7d32
-    style ZSC1 fill:#fff8e1,stroke:#f9a825
-    style CORD fill:#e3f2fd,stroke:#1565c0
+    style C1 fill:#fff8e1,stroke:#f9a825,stroke-width:2px
+    style C2 fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style C3 fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style Z2 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    style C4 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    style O2 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    style START fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style KEEP fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style NEXT fill:#e1f5fe,stroke:#0277bd
 ```
+
+| Committee | Composition | Job in this chart |
+|---|---|---|
+| **CLARC** | SE (O&M) Circle — **Chairman** · EE (O&M) division — **Conveyor** · EE (Testing) — Member · Manager (F&A) — Member | Concurrence for A(a); declare retirement for A(b), B, C, D; issue the Asset Retirement Report |
+| **ZSC** | CE, EHV PC O&M Zone — **Chairman** · SE (Testing) — Member · AGM (F&A) — Member · EE (Store) — **Conveyor** | Consolidate every CLARC report → CO R&D each quarter |
+| **CO R&D** | Director (Operations) — **Chairman** · CE (O&M) — **Conveyor** · CE (Design) · CGM (Finance) · SE (CPA) | Corrective action on retirement/failure trends |
 
 ---
 
-## 3. Chart 3 — Part 2: Scrapping & disposal procedure
-
-Once CLARC declares the asset retired, **EE (Store) drives the file from here till the money is realised** (General Guideline 6).
+## 5. Chart 3 — Part 2: Scrapping & disposal procedure
 
 ```mermaid
 flowchart TD
-    START(["CLARC declares asset RETIRED<br/>+ issues Retirement Certificate"]) --> H1["Asset owner hands over the asset and the<br/>retirement certificate to <b>EE (Store)</b>"]
-    H1 --> S1["EE (Store) scrutinises the scrap proposal<br/>+ verifies the REASON for scrap declaration"]
-    S1 --> S2["Check BOOK VALUE of every item;<br/>Manager (F&amp;A) plays the key role here"]
-    S2 --> BV{"Book value readily<br/>available in the<br/>Asset Register?"}
-    BV -->|No| BV1["Item not in Asset Register:<br/>ZSC arrives at a ROUGH book value from<br/>likely purchase price − depreciation;<br/>Finance Dept. fixes value during PPE<br/>physical verification;<br/>O&amp;M issues weight guidelines"]
-    BV -->|Yes| S3
-    BV1 --> S3["EE (Store) prepares CONSOLIDATED<br/>SCRAPPING LIST with book / depreciated value"]
-    S3 --> Z1["<b>ZSC</b> grants IN-PRINCIPLE APPROVAL of the scrap"]
-    Z1 --> Z2["EE (Store) conducts PHYSICAL SURVEY<br/>of the scrap material"]
-    Z2 --> Z3["Fix <b>RESERVE PRICE</b> within 7 days from<br/>last auctioned rate or latest metal scrap<br/>rates published on the MSTC site"]
-    Z3 --> Z4["MAKE LOTS — realistic lotting + realistic<br/>reserve price is the key to a successful auction"]
-    Z4 --> Z5["<b>ZSC</b> scrutinises the whole proposal and<br/>recommends MRP + STA% + lot details"]
-    Z5 --> CA{"Competent Authority<br/>approval as per<br/><b>GO No. 1 (F&amp;A)</b> MSETCL"}
-    CA -->|"Returned / query"| Z5
-    CA -->|"Approved"| AUC["<b>e-AUCTION through MSTC</b><br/>Disposal of the approved lot<br/>(see Chart 4)"]
+    START(["CLARC declares<br/>asset RETIRED"]) --> D1[/"<b>Retirement Certificate</b><br/>+ physical asset"/]
+    D1 --> P1["EE (Store) takes over the file"]
+    P1 --> P2["Scrutinise the proposal<br/>+ reason for scrap"]
+    P2 --> P3["Verify BOOK VALUE<br/>item by item"]
+    REG[("Asset<br/>Register")] -.-> P3
+    P3 --> DEC{"Value available<br/>in the Asset<br/>Register?"}
+    DEC -->|"No"| ALT["Estimate rough value:<br/>purchase price − depreciation<br/>(Finance fixes value at PPE<br/>verification · O&amp;M fixes weight)"]
+    DEC -->|"Yes"| P4
+    ALT --> P4[/"<b>Consolidated Scrapping List</b><br/>book / depreciated value"/]
 
-    subgraph ZSCB["ZSC — Zonal Scrapping Committee (disposal leg)"]
-        ZC["Chief Engineer, EHV PC O&amp;M Zone — Chairman<br/>Superintending Engineer (Testing) — Member<br/>AGM (F&amp;A) — Member<br/>Executive Engineer (Store) — Conveyor"]
-    end
+    P4 --> Z1{"ZSC grants<br/>IN-PRINCIPLE<br/>approval?"}
+    Z1 -->|"No — back for<br/>correction"| P2
+    Z1 -->|"Yes"| P5["EE (Store) conducts<br/>PHYSICAL SURVEY"]
+    P5 --> P6["Fix RESERVE PRICE within<br/><b>7 days</b> — last auctioned rate<br/>or latest MSTC metal rate"]
+    P6 --> P7["MAKE LOTS — realistic lotting<br/>is the key to a sale"]
+    P7 --> Z2[/"<b>ZSC recommendation</b><br/>MRP + STA% + lot details"/]
+    Z2 --> CA{"COMPETENT AUTHORITY<br/>approval as per<br/><b>GO 1 (F&amp;A)</b>?"}
+    CA -->|"Query / revise"| P7
+    CA -->|"Approved"| AUC[["Chart 4 ·<br/>MSTC e-auction"]]
+    CA -->|"Rejected"| P2
 
-    style ZSCB fill:#fff8e1,stroke:#f9a825
-    style CA fill:#ffebee,stroke:#c62828
-    style AUC fill:#f3e5f5,stroke:#6a1b9a
+    style START fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style D1 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    style P4 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    style Z2 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    style REG fill:#eceff1,stroke:#546e7a,stroke-width:2px
+    style Z1 fill:#fff8e1,stroke:#f9a825,stroke-width:2px
+    style CA fill:#ffebee,stroke:#c62828,stroke-width:3px
+    style AUC fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
 ```
 
-**Valuation of high-value assets:** a *separate committee with Technical + Finance members* finalises the standardised valuation method.
+| Block | What actually happens |
+|---|---|
+| Book-value check | Manager (F&A) is the key player. If an item is **not in the Asset Register**, ZSC estimates a rough value from likely purchase price less depreciation; Finance fixes the value during **PPE physical verification**; O&M issues the **weight** guidelines |
+| High-value assets | A **separate committee with Technical + Finance members** finalises the standardised valuation method |
+| Reserve Price | Minimum RP, fixed within 7 days from the last auctioned rate or the latest scrap rates on the MSTC site |
+| After hand-over | General Guideline 6: once the material + certificate reach EE (Store), **all** further approvals till disposal are done by EE (Store) |
 
 ---
 
-## 4. Chart 4 — The MSTC e-auction: what happens to each lot
-
-MSTC portal mechanics: catalogue prepared in 2–3 days, bidding runs **4 hours**, auto-extended by **8 minutes** whenever a bid lands in the last 8 minutes (**3 auto-extensions**). H-1 (highest bid) is always visible; bidder identity is not.
+## 6. Chart 4 — The MSTC e-auction: fate of each lot
 
 ```mermaid
 flowchart TD
-    A0(["Lot approved by Competent Authority"]) --> A1["EE (Store) sends lot list, item specifications,<br/>HSN Nos. &amp; terms to MSTC → catalogue created"]
-    A1 --> A2["E-bidding opens — 4 hours,<br/>auto-extension 8 min, max 3 extensions"]
-    A2 --> A3["Auction closes — result visible online immediately"]
-    A3 --> Q1{"Compare H-1 bid<br/>with Reserve Price (RP)<br/>and STA%"}
+    START(["Lot approved by<br/>Competent Authority"]) --> A1[/"<b>Lot list + HSN + terms</b><br/>sent to MSTC"/]
+    A1 --> A2[["MSTC builds the<br/><b>Auction Catalogue</b><br/>(2–3 days)"]]
+    A2 --> A3["E-bidding opens<br/><b>4 hours</b> · auto-extension<br/><b>8 min × 3</b>"]
+    A3 --> A4(["Auction closes —<br/>result online at once"])
+    A4 --> Q1{"Where did the<br/><b>H-1 bid</b> land?"}
 
-    Q1 -->|"H-1 ≥ RP"| SOLD["<b>CONFIRMED / SOLD</b><br/>MSTC auto-issues Sale Intimation Letter"]
-    Q1 -->|"RP &gt; H-1 ≥ STA floor"| STA["<b>STA — Subject To Approval</b><br/>MSTC issues Provisional Sale Intimation Letter"]
-    Q1 -->|"H-1 &lt; STA floor"| REJ["<b>REJECTED</b><br/>Lot cannot be sold at this price"]
-    Q1 -->|"No bid at all"| NOBID["<b>NO BID</b><br/>ZSC / SDD Committee critically analyses why"]
+    Q1 -->|"H-1 ≥ Reserve Price"| SOLD["<b>CONFIRMED</b><br/>Sale Intimation Letter<br/>auto-issued"]
+    Q1 -->|"Between STA floor<br/>and RP"| STA["<b>STA</b> — Subject To Approval<br/>Provisional Sale Intimation Letter"]
+    Q1 -->|"Below STA floor"| REJ["<b>REJECTED</b>"]
+    Q1 -->|"No bid received"| NOBID["<b>NO BID</b>"]
 
-    SOLD --> P1["H-1 pays 10% Security Deposit / EMD<br/>within 7 days"]
-    STA --> P2["MSETCL reviews overall situation →<br/>Competent Authority approves/rejects<br/>within 7 working days"]
-    P2 -->|Approved| P1
-    P2 -->|Rejected| REJ
+    STA --> Q2{"Competent Authority<br/>accepts the STA bid?<br/><b>≤ 7 working days</b>"}
+    Q2 -->|"Yes"| SOLD
+    Q2 -->|"No"| REJ
 
-    P1 --> Q2{"Balance payment<br/>+ EMD received?"}
-    Q2 -->|Yes| PAY["Payment by RTGS;<br/>CGM / AGM (F&amp;A) confirms receipt<br/>in writing within 2 days"]
-    Q2 -->|"No — H-1 defaults"| DEF["ZSC may recommend re-auction<br/>(penal re-charges to MSTC)"]
-    PAY --> DO["<b>Delivery Order issued</b> — EE (Store) facilitates<br/>security clearance, trucks, entry of personnel"]
-    DO --> LIFT["Material lifted by buyer"]
-    LIFT --> CLOSE(["Disposal complete"])
+    SOLD --> EMD["H-1 deposits<br/><b>10% EMD</b> within 7 days"]
+    EMD --> Q3{"EMD received?"}
+    Q3 -->|"Yes"| PAY["Balance by RTGS ·<br/>CGM/AGM (F&amp;A) confirms<br/>receipt in writing in <b>2 days</b>"]
+    Q3 -->|"No — default"| REJ
 
-    REJ --> RE1["ZSC re-analysis: condition, location,<br/>loading/transport issues → increase STA%<br/>(0%–50% range) or re-fix MRP"]
+    PAY --> DO[/"<b>Delivery Order</b>"/]
+    DO --> LIFT["EE (Store) facilitates security<br/>clearance, trucks, entry passes"]
+    LIFT --> DONE(["<b>DISPOSED</b><br/>→ Chart 3 de-capitalisation"])
+
+    REJ --> RE1["ZSC re-analysis: condition, location,<br/>loading &amp; transport issues"]
     NOBID --> RE1
-    DEF --> RE1
-    RE1 --> Q3{"Sold on<br/>re-auction?"}
-    Q3 -->|Yes| PAY
-    Q3 -->|"No — still unsold"| SHIFT["ZSC may recommend SHIFTING THE LOT<br/>from Category A–D to <b>Category E</b><br/>(destroy / dispose as debris)<br/>— objective is to free the occupied space"]
-    SHIFT --> CLOSE
+    RE1 --> RE2["Raise STA% (0–50% band)<br/>and/or re-fix MRP"]
+    RE2 --> Q4{"Sold on<br/>re-auction?"}
+    Q4 -->|"Yes"| PAY
+    Q4 -->|"No"| SHIFT["Shift the lot from<br/>Category A–D → <b>Category E</b><br/>destroy / dispose as debris"]
+    SHIFT --> DONE
 
-    style SOLD fill:#e8f5e9,stroke:#2e7d32
-    style STA fill:#fff8e1,stroke:#f9a825
-    style REJ fill:#ffebee,stroke:#c62828
-    style NOBID fill:#ffebee,stroke:#c62828
-    style SHIFT fill:#eceff1,stroke:#455a64
+    style START fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style A4 fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+    style DONE fill:#e8f5e9,stroke:#2e7d32,stroke-width:3px
+    style SOLD fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style STA fill:#fff8e1,stroke:#f9a825,stroke-width:2px
+    style REJ fill:#ffebee,stroke:#c62828,stroke-width:2px
+    style NOBID fill:#ffebee,stroke:#c62828,stroke-width:2px
+    style SHIFT fill:#eceff1,stroke:#546e7a,stroke-width:2px
+    style DO fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
 ```
 
-**STA explained with the policy's own example**
+**STA in one picture**
+
+```
+        Reserve Price (RP)  ───────────────────────────────  H-1 ≥ RP  →  CONFIRMED
+                            │                              │
+        STA floor           │  RP − (STA% × RP)            │  bid in this band  →  STA (needs approval)
+                            │                              │
+                            ▼                              ▼
+                    below STA floor  →  REJECTED  →  ZSC raises STA% / re-fixes MRP  →  re-auction
+```
 
 | Entered by MSETCL | Example 1 | Example 2 |
 |---|---|---|
-| Reserve Price (RP) | ₹ 50,000 | ₹ 10,000 |
-| % STA below RP | 10% (i.e. ₹ 5,000) | 40% (i.e. ₹ 4,000) |
-| Lowest bid that stays alive | ₹ 45,000 | ₹ 6,000 |
+| Reserve Price | ₹ 50,000 | ₹ 10,000 |
+| % STA below RP | 10% → ₹ 5,000 | 40% → ₹ 4,000 |
+| Lowest bid that survives | ₹ 45,000 | ₹ 6,000 |
 
-- Reserve Price must be entered as a **minimum**.
-- The **same Competent Authority** that approves the minimum RP is also empowered to approve the **% STA**.
-- Any **variation in % STA** (lot remaining unsold) must be approved by **ZSC**.
-- Hazardous waste: ZSC should keep a **high STA%** so the lot sells in the first attempt.
+- The **same Competent Authority** that approves the minimum RP also approves the **% STA**.
+- Any **change in % STA** because a lot stayed unsold must be approved by **ZSC**.
+- **Hazardous waste:** keep a high STA% so it sells first time.
 
 ---
 
-## 5. Chart 5 — IT equipment (PCs, laptops, printers, scanners)
+## 7. Chart 5 — IT equipment (PC, laptop, printer, scanner)
 
 ```mermaid
 flowchart TD
-    I1(["IT asset completes 5 years<br/>from date of capitalisation<br/>(life as per MERC Regulations)"]) --> I2["IT Department initiates the disposal proposal"]
-    I2 --> I3{"Still suitable for use?"}
-    I3 -->|Yes| I4["Donate FREE OF COST to Government<br/>educational institutes / schools under CSR<br/>— institutes identified by CIRO<br/>— approval of Competent Authority"]
-    I4 --> I9(["Asset leaves MSETCL — no auction"])
-    I3 -->|"No / still surplus"| I5["Proposal placed before <b>SCIT</b><br/>Scrapping Committee for IT"]
-    I5 --> I6["SCIT composition:<br/>CGM (IT) — Chairman<br/>EE (Admin), Zone office — Member<br/>AGM (HR), Zone office — Member<br/>IT Analyst — Conveyor"]
-    I6 --> I7["SCIT scrutinises &amp; forwards to the<br/>Competent Authority as per GO 1 (F&amp;A)"]
-    I7 -->|Approved| I8["EE (Store) disposes through MSTC<br/>e-auction — same as general lot"]
-    I7 -->|Rejected| I5
-    I8 --> I10(["Finance de-capitalises the item<br/>from the Asset Register"])
+    START(["IT asset completes<br/><b>5 years</b> from capitalisation<br/>(MERC life)"]) --> I1["IT Department raises<br/>the disposal proposal"]
+    I1 --> Q1{"Still fit<br/>for use?"}
+    Q1 -->|"Yes"| GIFT["Donate FREE OF COST to Government<br/>schools / institutes under CSR<br/>— identified by CIRO"]
+    GIFT --> Q2{"Competent Authority<br/>approves?"}
+    Q2 -->|"No"| I2
+    Q2 -->|"Yes"| GIFTED(["Asset leaves MSETCL<br/>— no auction"])
+    Q1 -->|"No / surplus"| I2[/"Proposal to <b>SCIT</b><br/>Scrapping Committee – IT"/]
 
-    style I4 fill:#e8f5e9,stroke:#2e7d32
-    style I8 fill:#f3e5f5,stroke:#6a1b9a
+    subgraph SCIT["⚪ SCIT composition"]
+        S1["CGM (IT) — Chairman<br/>EE (Admin), Zone — Member<br/>AGM (HR), Zone — Member<br/>IT Analyst — Conveyor"]
+    end
+
+    I2 --> S1
+    S1 --> I3["SCIT scrutinises &amp; forwards<br/>for approval"]
+    I3 --> Q3{"Competent Authority<br/>as per <b>GO 1 (F&amp;A)</b>?"}
+    Q3 -->|"No"| I2
+    Q3 -->|"Yes"| I4[["EE (Store) disposes<br/>through MSTC<br/>— same as a general lot"]]
+    I4 --> I5(["Finance de-capitalises<br/>the item"])
+
+    style START fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style GIFTED fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style I5 fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style I2 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    style I4 fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+    style GIFT fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
 ```
 
 ---
 
-## 6. Chart 6 — Used lead acid batteries (hazardous waste)
+## 8. Chart 6 — Used lead acid batteries (hazardous waste)
 
 ```mermaid
 flowchart TD
-    B1(["Used lead acid battery"]) --> B2["Make a SEPARATE lot under<br/>HAZARDOUS WASTE"]
-    B2 --> B3["Route: dealer / manufacturer / importer /<br/>assembler / registered recycler / re-conditioner<br/>or designated collection centre"]
-    B3 --> B4["E-auction through MSTC — ONLY recyclers<br/>registered with the Pollution Control Board may bid"]
-    B4 --> B5["Field offices ensure safety &amp; environmental<br/>compliance during handling"]
-    B5 --> B6["ZSC keeps a HIGH STA% so the lot sells<br/>in the first attempt itself"]
-    B6 --> B7(["Disposal complete — rest of the procedure<br/>is the same as the general lot"])
+    START(["Used lead acid<br/>battery"]) --> B1["Make a SEPARATE lot<br/>tagged <b>HAZARDOUS WASTE</b>"]
+    B1 --> B2{"Route"}
+    B2 -->|"Channel 1"| B3["Deposit with dealer / manufacturer /<br/>importer / assembler / registered<br/>recycler / re-conditioner"]
+    B2 -->|"Channel 2"| B4["Deposit at a designated<br/>collection centre"]
+    B2 -->|"Channel 3"| B5[["MSTC e-auction — ONLY recyclers<br/>registered with the Pollution<br/>Control Board may bid"]]
+    B3 --> B6["Field offices ensure safety &amp;<br/>environmental compliance"]
+    B4 --> B6
+    B5 --> B6
+    B6 --> B7["ZSC keeps a <b>HIGH STA%</b><br/>so it sells first time"]
+    B7 --> DONE(["DISPOSED — rest of the<br/>procedure same as a general lot"])
 
-    style B2 fill:#ffebee,stroke:#c62828
-    style B4 fill:#f3e5f5,stroke:#6a1b9a
+    style START fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style DONE fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style B1 fill:#ffebee,stroke:#c62828,stroke-width:2px
+    style B5 fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+    style B7 fill:#fff8e1,stroke:#f9a825,stroke-width:2px
 ```
 
 ---
 
-## 7. Who does what — at a glance
+## 9. Chart 7 — The paper trail (every document the policy creates)
 
-| Body | Full name | Composition | Main job |
-|---|---|---|---|
-| **Asset Owner** | Concerned division | — | Identify, categorise, prepare Proforma-A/B, arrange joint inspection, hand over asset |
-| **CLARC** | Circle Level Asset Retirement Committee | SE (O&M) Circle – Chairman; EE (O&M) – Conveyor; EE (Testing) – Member; Manager (F&A) – Member | Concurrence for A(a); declare retirement for A(b), B, C, D; issue Retirement Report |
-| **ZSC** | Zonal Scrapping Committee | CE, EHV PC O&M Zone – Chairman; SE (Testing) – Member; AGM (F&A) – Member; EE (Store) – Conveyor | Consolidate CLARC reports → CO R&D; in-principle approval; recommend MRP + STA%; re-analysis of unsold lots |
-| **CO R&D** | Corporate Office Research & Development Committee | Director (Operations) – Chairman; CE (O&M) – Conveyor; CE (Design); CGM (Finance); SE (CPA) | Corrective action on retirement trends |
-| **SCIT** | Scrapping Committee for IT | CGM (IT) – Chairman; EE (Admin); AGM (HR); IT Analyst – Conveyor | Scrutinise IT disposal proposals |
-| **Competent Authority** | As per GO No. 1 (F&A), MSETCL | Delegated financial powers | Final approval of RP, % STA, lot details |
-| **MSTC** | Metal Scrap Trade Corporation | E-auction platform | Catalogue, bidding, sale/delivery orders, payment collection |
+```mermaid
+flowchart LR
+    D1[/"<b>Proforma-A</b><br/>half-yearly<br/><i>Asset Owner</i>"/] --> D2[/"<b>Proforma-B</b><br/>quarterly<br/><i>Asset Owner</i>"/]
+    D2 --> D3[/"<b>Asset Retirement Report</b><br/><i>CLARC</i>"/]
+    D3 --> D4[/"<b>ZSC consolidated report</b><br/>quarterly<br/><i>ZSC</i>"/]
+    D4 --> D5[/"<b>Retirement Certificate</b><br/><i>CLARC</i>"/]
+    D5 --> D6[/"<b>Consolidated Scrapping List</b><br/><i>EE (Store)</i>"/]
+    D6 --> D7[/"<b>Lot proposal: MRP + STA%</b><br/><i>ZSC → Competent Authority</i>"/]
+    D7 --> D8[/"<b>Auction Catalogue</b><br/><i>MSTC</i>"/]
+    D8 --> D9[/"<b>Sale / Provisional Sale<br/>Intimation Letter</b><br/><i>MSTC</i>"/]
+    D9 --> D10[/"<b>Delivery Order</b><br/><i>MSTC</i>"/]
+    D10 --> D11[/"<b>De-capitalisation advice</b><br/><i>EE (Store) → Finance</i>"/]
+    D11 --> D12[("Asset<br/>Register<br/>updated")]
+
+    style D1 fill:#fff3e0,stroke:#ef6c00
+    style D2 fill:#fff3e0,stroke:#ef6c00
+    style D3 fill:#fff3e0,stroke:#ef6c00
+    style D4 fill:#fff3e0,stroke:#ef6c00
+    style D5 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    style D6 fill:#fff3e0,stroke:#ef6c00
+    style D7 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    style D8 fill:#f3e5f5,stroke:#6a1b9a
+    style D9 fill:#f3e5f5,stroke:#6a1b9a
+    style D10 fill:#f3e5f5,stroke:#6a1b9a
+    style D11 fill:#ffebee,stroke:#c62828
+    style D12 fill:#eceff1,stroke:#546e7a,stroke-width:2px
+```
 
 ---
 
-## 8. The clock — every deadline in the policy
+## 10. Chart 8 — The clock: every deadline in the policy
+
+```mermaid
+flowchart LR
+    T1(["Half-yearly<br/>Proforma-A"]) --> T2(["Quarterly<br/>Proforma-B"])
+    T2 --> T3(["Quarterly<br/>ZSC → CO R&amp;D"])
+    T3 --> T4(["Quarterly<br/>4 auctions a year"])
+    T4 --> T5(["7 days<br/>fix Reserve Price"])
+    T5 --> T6(["2–3 days<br/>MSTC catalogue"])
+    T6 --> T7(["4 h + 8 min × 3<br/>e-bidding"])
+    T7 --> T8(["7 days<br/>buyer deposits EMD"])
+    T8 --> T9(["≤ 7 working days<br/>STA decision"])
+    T9 --> T10(["2 days<br/>payment confirmation"])
+
+    style T1 fill:#e3f2fd,stroke:#1565c0
+    style T2 fill:#e3f2fd,stroke:#1565c0
+    style T3 fill:#fff8e1,stroke:#f9a825
+    style T4 fill:#f3e5f5,stroke:#6a1b9a
+    style T5 fill:#fff3e0,stroke:#ef6c00
+    style T6 fill:#f3e5f5,stroke:#6a1b9a
+    style T7 fill:#f3e5f5,stroke:#6a1b9a
+    style T8 fill:#ffebee,stroke:#c62828
+    style T9 fill:#ffebee,stroke:#c62828
+    style T10 fill:#ffebee,stroke:#c62828
+```
 
 | When | What | Owner |
 |---|---|---|
 | **Half-yearly** | Proforma-A for Category A(a) | Asset Owner → CLARC |
 | **Quarterly** | Proforma-B for Category A(b), B, C, D | Asset Owner → CLARC |
-| **Quarterly** | ZSC consolidated report to CO R&D | ZSC |
-| **Quarterly (4× a year)** | Auction of approved scrap by each Major Store | EE (Store) |
-| **Immediately** | Replaced material (LE scheme / failure) credited to Major Store or location identified by EE (Store) — *except ICT / Power Transformer* | Work-executing agency / Asset Owner |
-| **Within 7 days** | Fix Reserve Price from last auctioned rate / latest MSTC scrap rate | EE (Store) |
+| **Quarterly** | Consolidated report to CO R&D | ZSC |
+| **4× a year** | Auction of approved scrap by each Major Store | EE (Store) |
+| **Immediately** | Material replaced under LE scheme / on failure credited to the Major Store or a location identified by EE (Store) — *except ICT / Power Transformer* | Work-executing agency |
+| **7 days** | Fix Reserve Price from last auctioned rate / latest MSTC rate | EE (Store) |
 | **2–3 days** | MSTC prepares the auction catalogue | MSTC |
-| **4 hours + 8 min × 3** | E-bidding duration and auto-extensions | MSTC |
-| **Within 7 days** | H-1 bidder deposits 10% EMD / security deposit | Buyer |
-| **≤ 7 working days** | MSETCL communicates acceptance/rejection of STA bids | Competent Authority → MSTC |
-| **Within 2 days** | CGM/AGM (F&A) confirms receipt of RTGS payment in writing | Finance |
+| **4 h + 8 min × 3** | E-bidding duration and auto-extensions | MSTC |
+| **7 days** | H-1 deposits 10% EMD / security deposit | Buyer |
+| **≤ 7 working days** | MSETCL posts acceptance / rejection of STA bids online | Competent Authority → MSTC |
+| **2 days** | CGM/AGM (F&A) confirms RTGS receipt in writing | Finance |
 
 ---
 
-## 9. Housekeeping rules (General Guidelines)
+## 11. Housekeeping rules (General Guidelines)
 
-1. **Small misc. scrap below ₹ 5,000** (newspapers, magazines, broken furniture, misc. items) is disposed of **regularly by the Office In-charge** — no MSTC auction. It must be done frequently to keep premises clean.
-2. Every **work order** issued to a work-executing agency must state that removed material will be moved from site to the Major Store / space identified by EE (Store).
-3. **Additional security guard / CCTV** at every Major Store or identified scrap space, if required.
-4. If the Major Store has no space, EE (Store) identifies space at a **nearby substation**.
-5. Once the material and retirement certificate reach **EE (Store)**, *all* further approvals up to disposal are handled by EE (Store) — the division is not chased again.
-6. After the auction, EE (Store) intimates the auctioned amount to the division so the equipment can be **written off** in the asset book.
-7. All bids are on **"as is where is basis"**, subject to prior inspection; **no photography** of lots by outsiders/bidders (security).
-8. Amendments to the policy are carried out whenever required for smooth implementation.
+1. **Misc. scrap below ₹ 5,000** (newspapers, magazines, broken furniture, odd items) is disposed of **regularly by the Office In-charge** — no MSTC auction; do it often to keep premises clean.
+2. Every **work order** to a work-executing agency must state that removed material goes to the Major Store or the space identified by EE (Store).
+3. **Extra security guard / CCTV** at every Major Store or identified scrap space, if required.
+4. If the Major Store is full, EE (Store) identifies space at a **nearby substation**.
+5. Once material + retirement certificate reach **EE (Store)**, all further approvals till disposal are handled by EE (Store).
+6. After auction, EE (Store) intimates the amount to the division so the equipment can be **written off** in the asset book.
+7. All bids are **"as is where is"**, subject to prior inspection; **no photography** of lots by outsiders (security).
+8. Amendments are issued whenever needed for smooth implementation.
 
-## 10. Why the policy exists (stated advantages)
+## 12. Why the policy exists (stated advantages)
 
-- Scrap accumulates **at one place** instead of being scattered across the zone → **theft risk drops**.
-- **One single stock register** of scrap for the whole zone, kept by the Major Store.
+- Scrap collects **at one place** instead of being scattered across the zone → **theft risk falls**.
+- **One stock register** for all scrap in the zone, kept by the Major Store.
 - Scrapping becomes **smooth, fast and simple**; administrative approvals become **directional and fast**.
-- **Timely revenue** to MSETCL and **no unnecessary inventory build-up**.
+- **Timely revenue** and **no unnecessary inventory build-up**.
 - Sub-station premises stay **aesthetic** — no scrap lying around.
