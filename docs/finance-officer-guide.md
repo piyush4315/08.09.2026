@@ -3,7 +3,7 @@
 
 > **How to read this document.** Every duty is tagged with its source: **[P 3.4(b)]** means it comes from that clause of `Policy.pdf`; **[Practice]** means the policy does not say it — it is standard finance hygiene you must still do, and you should confirm it against your own office orders. Where the policy is silent or unclear, I say so plainly.
 >
-> **Companion documents:** [story-guide.html](story-guide.html) (plain-language story version) and [flowchart.html](flowchart.html) (diagram version).
+> **Companion documents:** [story-guide.html](story-guide.html) (plain-language story version), [flowchart.html](flowchart.html) (diagram version), and [dy-manager-finance-guide.html](dy-manager-finance-guide.html) — the hands-on desk version for a Deputy Manager (Finance) at the store.
 
 ---
 

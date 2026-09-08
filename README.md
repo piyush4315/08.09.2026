@@ -27,6 +27,7 @@ MSETCL **Asset Retirement, Scrap Declaration & Disposal Policy** — source docu
 python3 docs/build_html.py docs/flowchart.md docs/flowchart.html
 python3 docs/build_html.py docs/story-guide.md docs/story-guide.html
 python3 docs/build_html.py docs/finance-officer-guide.md docs/finance-officer-guide.html
+python3 docs/build_html.py docs/dy-manager-finance-guide.md docs/dy-manager-finance-guide.html
 ```
 
 Mermaid is loaded from `docs/vendor/mermaid.min.js` when present (offline use) and from the jsDelivr CDN otherwise; `docs/vendor/` is git-ignored, so a fresh clone uses the CDN.
